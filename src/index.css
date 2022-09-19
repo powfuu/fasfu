@@ -34,7 +34,7 @@ svg,html,body{
 #initial-view-cart{
   transition:.6s;
   color:white;
-  font-size:45px;
+  font-size:43px;
   margin-left:auto;
   margin-right:28px;
   margin-top:7px;
@@ -42,14 +42,28 @@ svg,html,body{
   background:#0307a6;
   border-radius:100%;
   padding:19px;
-  padding-left:15px;
-  padding-bottom:15px;
   position:fixed;
   right:0;
   z-index:10;
+  border-bottom-left-radius:10px;
+  padding-bottom:10px;
+  padding-left:12px;
+  padding-right:16px;
+  padding-top:12px;
 }
-@media screen and (max-width: 600px) {
+#initial-view-cart:hover{
+    background:rgb(252,252,252);
+    border:1px solid #0307a6;
+    color:#0307a6;
+}
+@media screen and (max-width:1000px) {
   #initial-view-cart{
     font-size:40px;
+    margin-top:12px;
+  }
+}
+@media screen and (max-width:750px) {
+  #initial-view-cart{
+    font-size:36px;
   }
 }

@@ -38,6 +38,11 @@ export const CountrySelection = styled.img`
   margin-left:35px;
   margin-top:23px;
   cursor:pointer;
+    ${mxw(600)}{
+        height:45px;
+        width:45px;
+        margin-top:19px;
+    }
 `
 export const CountrySelectionView = styled.div`
   position:absolute;
@@ -77,20 +82,18 @@ export const InitialViewLogo=styled.img`
   }
 `
 export const InitialViewCenterLogo=styled.img`
-  height:70px;
+  height:60px;
   position:absolute;
   transform:translate(-50%,-50%);
   -ms-transform:translate(-50%,-50%);
   left:50%;
   margin-top:60px;
+    margin-left:25px;
   ${mxw(600)}{
     left:0%;
-    margin-left:180px;
-    margin-top:60.5px
-  }
-  ${mxw(360)}{
-    height:60px;
-    margin-left:175px;
+    margin-left:152px;
+        margin-top:53.5px;
+        height:52px;
   }
 `
 export const InitialViewContentTop=styled.div`
@@ -127,7 +130,7 @@ export const InitialViewContentPresentationDesc=styled.p`
   color:rgb(210,210,210);
   text-align:center;
   margin-top:-112px;
-  font-size:16px;
+  font-size:15px;
   ${mxw(1150)}{
     display:none;
   }
@@ -148,9 +151,9 @@ export const InitialViewContentPresentationImg=styled.img`
     margin-left:-35px;
     width:400px;
   }
-  ${mxw(428)}{
-    width:320px;
-    margin-top:-185px;
+  ${mxw(440)}{
+    width:380px;
+    margin-top:-155px;
     margin-left:-40px;
   }
 `
@@ -165,8 +168,8 @@ export const InitialViewContentTitle=styled.h1`
   ${mxw(668)}{
     margin-top:40px;
   }
-  ${mxw(428)}{
-    font-size:26px;
+  ${mxw(440)}{
+    font-size:24px;
   }
 `
 export const InitialViewContentDesc=styled.p`
@@ -176,8 +179,8 @@ export const InitialViewContentDesc=styled.p`
   ${mxw(1150)}{
     text-align:center;
   }
-  ${mxw(428)}{
-    font-size:15.5px;
+  ${mxw(440)}{
+    font-size:14.85px;
     margin-top:-5px;
   }
 `
@@ -194,15 +197,22 @@ export const InitialViewContentButton=styled.span`
   width:max-content;
   margin-top:45px;
   margin-left:270px;
+    transition:.4s all ease-in-out;
+        &:hover{
+            background:transparent;
+            border:1px solid rgb(253,253,253);
+            color:rgb(253,253,253);
+    }
   ${mxw(1223)}{
     margin:20px auto;
   }
   ${mxw(1150)}{
     margin:30px auto;
   }
-  ${mxw(428)}{
+  ${mxw(440)}{
     margin-top:15px;
     margin-bottom:15px;
+        font-size:30px;
   }
 `
 export const InitialViewContentTitleLeft=styled.div`
@@ -259,34 +269,51 @@ export const LuisImg = styled.img`
 `
 export const CategoriesContent = styled.div`
   margin-top:-305px;
+  ${mxw(440)}{
+        margin-top:-380px;
+    }
 `
 export const CategoriesView = styled.div`
   margin-right:50px;
   margin-left:50px;
   margin-bottom:55px;
   padding-top:10px;
+    ${mxw(565)}{
+        margin-right:20px;
+        margin-left:20px;
+    }
   ${mxw(365)}{
     margin-right:20px;
-    margin-left:20px;
+    margin-left:15px;
   }
 `
 export const TopTitleImg = styled.img`
   height:44px;
   margin-right:-6px;
+  margin-left:10px;
   margin-top:-2.5px;
   width:44px;
   position:absolute;
   ${mxw(444)}{
-    margin-top:5px !important;
+    margin-top:0px;
   }
 `
 export const CategoryTitle = styled.h1`
-  padding-left:20px;
+  padding-left:30px;
   color:rgb(120,120,120);
   font-weight:300;
-  font-size:25px;
+  font-size:22px;
   margin-left:34px;
   margin-right:20px;
+span{
+${mxw(1000)}{
+    font-size:24px !important;
+}
+}
+${mxw(1000)}{
+    font-size:18px;
+    margin-top:5px;
+}
 `
 export const ExpandCategories = styled.h3`
   margin-left:auto;
@@ -335,16 +362,27 @@ export const CategoryView = styled.div`
   gap:30px;
   width:100%;
   flex-wrap:wrap;
-  transition:.5s all ease-in-out;
+    transition: max-height .8s ease-in-out;
   ${mxw(1500)}{
     align-items:center;
     justify-content:center;
   }
+    ${mxw(759)}{
+        gap:15px;
+    }
+    ${mxw(432)}{
+        gap:13px;
+    }
+`
+export const CategoryDesktop=styled.div`
+    ${mxw(759)}{
+        display:none;
+    }
 `
 export const Category = styled.div`
   margin-top:50px;
-  width:265px;
-  height:260px;
+  width:200px;
+  height:205px;
   cursor:pointer;
   padding-top:45px;
   padding-bottom:45px;
@@ -353,10 +391,18 @@ export const Category = styled.div`
   position:relative;
 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   color:white;
+    overflow:hidden;
   transition:.3s;
   &:hover{
     background:#e5f2ff;
   }
+    ${mxw(759)}{
+        width:90%;
+        height:60px;
+    }
+    ${mxw(432)}{
+        width:95%;
+    }
 `
 export const CategoryAbs = styled.div`
   position:absolute;
@@ -367,28 +413,32 @@ export const CategoryAbs = styled.div`
   gap:15px;
   justify-content:center;
   width:100%;
+    ${mxw(759)}{
+        flex-direction:row-reverse;
+    }
 `
 export const ProductTitle = styled.h1`
   text-align:center;
-  font-size:19px;
+  font-size:16.25px;
   margin-top:5px;
-  margin-right:14.5px;
-  margin-left:14.5px;
+  margin-right:10.5px;
+  margin-left:10.5px;
+    color:rgb(240,240,240);
   height:55px;
 `
 export const ProductDesc = styled.h3`
   text-align:center;
   color:rgb(225,225,225);
   font-weight:400;
-  margin-top:-36px;
-  font-size:14px;
+  margin-top:-43px;
+  font-size:13px;
   height:55px;
-  margin-left:20px;
-  margin-right:20px;
+  margin-left:14px;
+  margin-right:14px;
 `
 export const ProductImg = styled.img`
-  height:120px;
-  width:140px;
+  height:75px;
+  width:95px;
   object-fit:cover;
   border-radius:20px;
   margin-top:12px;
@@ -410,7 +460,7 @@ export const ProductQuickAdd = styled.button`
 export const ProductWave = styled.svg`
   position:absolute;
   bottom:0;
-  height:460px;
+  height:370px;
 `
 export const CategoryPrice = styled.h1`
   color:black;
@@ -418,12 +468,12 @@ export const CategoryPrice = styled.h1`
   float:right;
   margin-left:auto;
   margin-right:16px;
-  font-size:19px;
+    font-size:16px;
   margin-top:-30px;
 `
 export const FooterView = styled.div`
   overflow:hidden;
-  margin-top:-80px;
+  margin-top:-140px;
   height:700px;
     position:relative;
 `
@@ -464,7 +514,7 @@ export const Logo3 = styled.img`
 export const Frase = styled.h1`
     color:white;
     font-weight:300;
-    font-size:25px;
+    font-size:24.75px;
     color:rgb(210,210,210);
     line-height:55px;
     white-space:nowrap;
@@ -477,26 +527,264 @@ export const FooterCenter = styled.div`
     position:absolute;
     height:160px;
     left:50%;
-    margin-top:530px;
+    margin-top:510px;
     text-align:center;
     .bx.bxs-quote-alt-right{
         margin-left:10px;
-        margin-bottom:5px;
+        margin-bottom:5.5px;
     }
     .bx.bxs-quote-alt-left{
         margin-right:10px;
-        margin-bottom:5px;
+        margin-bottom:5.5px;
     }
 `
 export const SocialNetworks=styled.div`
     display:flex;
-    gap:35px;
-    margin-top:67px;
+    gap:25px;
+    margin-top:55px;
     align-items:center;
     justify-content:center;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    left:50%;
+    top:78%;
     i{
         color:white;
         font-size:40px;
+        padding:18px;
+        border-radius:100%;
+        transition:.3s all ease-in-out;
+        &:hover{
+            color:#0306a6;
+            cursor:pointer;
+            background:white;
+        }
+    }
+`
+export const Motogato = styled.img`
+    height:415px;
+    opacity:.6;
+    position:absolute;
+    right:0;
+    margin-right:60px;
+    margin-top:515px;
+`
+export const Direction = styled.p`
+    color:rgb(210,210,210);
+    position:absolute;
+    white-space:nowrap;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    left:50%;
+    top:94%;
+    z-index:5;
+    font-size:15.75px;
+`
+export const IsRestaurantOpen=styled.div`
+    background:${p=>p.backgroundStatus};
+    z-index:10;
+    width:100%;
+    display:flex;
+    position:fixed;
+    width: max-content;
+    padding-left:25px;
+    padding-right:25px;
+    padding-bottom:12px;
+    padding-top:11px;
+    border-bottom-left-radius:7.5px;
+    border-bottom-right-radius:7.5px;
+    gap:12px;
+    right:0;
+    margin-right:165px;
+    transition:1s all ease-in-out;
+    color: ${p=>p.colorStatus};
+    margin-top:${p=>p.statusVisible}px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 8px;
+    p{
+        font-weight:400;
+        font-size:17.5px;
+    }
+    i{
+        font-size:28px;
+        margin-top:-1px;
         cursor:pointer;
+    }
+    ${mxw(759)}{
+        display:none;
+    }
+`
+export const IsRestaurantOpenResponsive=styled.div`
+    background:${p=>p.backgroundStatus};
+    z-index:10;
+    display:none;
+    position:fixed;
+    padding-left:25px;
+    padding-bottom:12px;
+    padding-top:11px;
+    width:100%;
+    border-bottom-left-radius:7.5px;
+    border-bottom-right-radius:7.5px;
+    flex-direction:row;
+    bottom:0;
+    gap:12px;
+    transition:1s all ease-in-out;
+    color: ${p=>p.colorStatus};
+    margin-bottom:${p=>p.statusVisible}px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 8px;
+    p{
+        font-weight:400;
+        font-size:17.5px;
+            width:85%;
+        ${mxw(484)}{
+            font-size:15px;
+            margin-top:2px;
+    }
+        ${mxw(400)}{
+            font-size:13px;
+            margin-top:4px;
+    }
+    }
+    i{
+        font-size:28px;
+        margin-top:-1px;
+        cursor:pointer;
+            width:15%;
+        ${mxw(400)}{
+            font-size:26px;
+            margin-right:10px;
+            margin-top:2px;
+    }
+    }
+    ${mxw(759)}{
+        display:flex;
+    }
+`
+export const CategoryResponsive = styled.div`
+    display:none;
+    height:100%;
+    ${mxw(759)}{
+        display:flex;
+    }
+`
+export const ProductWaveResponsive = styled.svg`
+  position:absolute;
+  bottom:0;
+    height:100%;
+  background:#0307a6;
+    width:78%;
+    border-bottom-right-radius: 17px;
+    border-top-right-radius: 17px;
+    ${mxw(650)}{
+        width:76%;
+    }
+    ${mxw(432)}{
+        width:71%;
+    }
+`
+export const CRLeft = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    position:absolute;
+    z-index:2;
+    width:70%;
+    height:100%;
+    margin-top:-22px;
+    padding-left:25px;
+`
+export const CRRight = styled.div`
+    display:flex;
+    flex-direction:column;
+    margin-top:-55px;
+    text-align:center;
+    justify-content:center;
+    z-index:2;
+    position:absolute;
+    width:30%;
+    height:100%;
+    right:0;
+    ${mxw(650)}{
+        margin-right:15px;
+    }
+    ${mxw(540)}{
+        margin-top:-53px;
+        margin-right:20px;
+    }
+    ${mxw(432)}{
+        margin-right:20px;
+    }
+`
+export const ProductImgResponsive = styled.img`
+    height:85px;
+    width:110px;
+    position:absolute;
+    object-fit:cover;
+    object-position:center;
+    border-radius:14px;
+    ${mxw(540)}{
+        height:70px;
+        width:95px;
+    }
+`
+export const ProductPriceResponsive = styled.h3`
+    color:black;
+    margin-top:128.5px;
+    font-weight:500;
+    margin-left:auto;
+    margin-right:17px;
+    font-size:15px;
+    ${mxw(540)}{
+        margin-right:0px;
+    }
+    ${mxw(532)}{
+        font-size:15.25;
+    }
+`
+export const ProductTitleResponsive = styled.h1`
+  text-align:left;
+  font-size:16.5px;
+  color:rgb(240,240,240);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+      overflow: hidden;
+height:20px;
+width:250px;
+${mxw(507)}{
+    width:200px;
+}
+${mxw(507)}{
+    font-size:15px;
+    width:180px;
+}
+${mxw(507)}{
+    width:160px;
+}
+`
+export const ProductDescResponsive = styled.p`
+  color:rgb(225,225,225);
+  font-weight:400;
+    margin-top:7px;
+  font-size:12px;
+    margin-right:60px;
+    margin-bottom:25px;
+    ${mxw(500)}{
+        font-size:11px;
+    }
+`
+export const ProductQuickAddResponsive = styled.button`
+  text-align:center;
+  border:none;
+  display:flex;
+  background:transparent;
+  cursor:pointer;
+  color:white;
+  transition:.4s;
+  &:hover{
+    color:white;
+  }
+    ${mxw(720)}{
+        display:none;
     }
 `

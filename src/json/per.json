@@ -2,221 +2,187 @@
     {
      "type":"COMBO",
      "name":"COMBO FASFÚ",
-     "desc":"Elige hamburgesa + Patatas + Bebida.",
-     "price":"14,50",
+     "desc":"Hamburguesa 100% carne de res de 125gr en potato bun con vegetales y salsa fasfú (contiene pepinillos). + fries + bebida",
+     "price":"26,90",
      "pic":"combo0.jpg"
     },
     {
      "type":"COMBO",
-     "name":"COMBO CHEESEBURGER",
-     "desc":"Nuestra hamburguesa estilo Smash (150gr), en pan de papa con una loncha de queso americano fundido, salsa Fasfú y vegetales + Bebida.",
-     "price":"13,95",
+     "name":"DOUBLE BURGER", "desc":"Hamburguesa doble 100% carne de res de 125gr c/u en potato bun con vegetales y salsa fasfú (contiene pepinillos). + fries + bebida",
+     "price":"32,90",
      "pic":"combo1.png"
     },
     {
      "type":"COMBO",
-     "name":"COMBO FRIED CHICKEN",
-     "desc":"Nuestra hamburguesa de pollo frito en pan de papa con coleslaw, mayo verde y pepinillos + Bebida.",
-     "price":"12,50",
+     "name":"COMBO CHEESE BURGER",
+     "desc":"Hamburguesa 100% carne de res de 125gr en potato bun con rebanada de queso americano, vegetales y salsa fasfú (contiene pepinillos). + fries + bebida",
+     "price":"29,90",
+     "pic":"combo2.png"
+    },
+    {
+     "type":"COMBO",
+     "name":"CHEESEBURGER X2",
+     "desc":"Dos hamburguesas en potato bun con carne 100% de res de 125gr c/u, tajada de queso americano, vegetales y salsa fasfú (contiene pepinillos).",
+     "price":"49,80",
+     "pic":"combo6.png"
+    },
+    {
+     "type":"COMBO",
+     "name":"COMBO DOUBLE CHEESE",
+     "desc":"Hamburguesa doble 100% carne de res de 125gr c/u en potato bun, queso americano, vegetales y salsa fasfú (contiene pepinillos). + fries + bebida",
+     "price":"35,90",
      "pic":"combo3.png"
     },
     {
      "type":"COMBO",
-     "name":"COMBO CLASSIC BURGER",
-     "desc":"Nuestra hamburguesa estilo Smash (150gr), en pan de papa con salsa Fasfú y vegetales + Bebida.",
-     "price":"12,50",
-     "pic":"combo2.png"
+     "name":"COMBO FRIED CHICKEN",
+     "desc":"Sándwich de pollo frito en potato bun con coleslaw, mayo verde y pepinillos. + fries + bebida",
+     "price":"30,90",
+     "pic":"combo4.png"
+    },
+    {
+     "type":"COMBO",
+     "name":"COMBO MER, CHE, TOC",
+     "desc":"COMBO MERMELA CHEESE TOCINETA, En potato bun con carne 100% de res de 125gr, queso americano, vegetales, salsa fasfú (contiene pepinillos) y mermelada de tocineta y whisky + papas + bebida",
+     "price":"28,90",
+     "pic":"combo5.png"
     },
     {
         "type":"BURGER",
-        "name":"Fasfú Doble Cheese",
-        "desc":"Doble hamburguesa estilo Smash(125gr x 2), en pan de papa con 2 lonchas de queso americano fundido, salsa Fasfú y vegetales.",
-        "price":"14,50",
-        "pic":"burger0.jpeg"
+        "name":"Fasfú Burger",
+        "desc":"Hamburguesa en potato bun con carne 100% de res de 125gr, vegetales y salsa fasfú (contiene pepinillos).",
+        "price":"20,90",
+        "pic":"burger0.png"
     },
     {
         "type":"BURGER",
-        "name":"Fasfú Doble",
-        "desc":"Hamburguesa estilo Smash (150gr), en pan de papa con salsa Fasfú y vegetales.",
-        "price":"14,00",
-        "pic":"burger1.jpeg"
+        "name":"Fasfú Cheese Burger",
+        "desc":"Hamburguesa en potato bun con carne 100% de res de 125gr, rebanada de queso americano, vegetales y salsa fasfú (contiene pepinillos).",
+        "price":"24,90",
+        "pic":"burger1.png"
     },
     {
         "type":"BURGER",
-        "name":"Fasfú Cheese",
-        "desc":"Hamburguesa estilo Smash (150gr), en pan de papa con una loncha de queso americano fundido, salsa Fasfú y vegetales.",
-        "price":"11,95",
-        "pic":"burger2.jpeg"
+        "name":"Fasfú Double Burger",
+        "desc":"Hamburguesa doble en potato bun con carne 100% de res de 125gr c/u, vegetales y salsa fasfú (contiene pepinillos).",
+        "price":"27,90",
+        "pic":"burger2.png"
     },
     {
         "type":"BURGER",
-        "name":"Fasfú Burger (150gr)",
-        "desc":"Hamburguesa estilo Smash (150 g.), en pan de papa con salsa Fasfú y vegetales.",
-        "price":"10,50",
-        "pic":"burger3.jpg"
+        "name":"Fasfú Double Cheese",
+        "desc":"Hamburguesa doble en potato bun con carne 100% de res de 125gr c/u, con 2 rebanadas de queso americano, vegetales y salsa fasfú (contiene pepinillos).",
+        "price":"30,90",
+        "pic":"burger3.png"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Fried Chicken",
-        "desc":"Hamburguesa de pollo frito en pan de papa con coleslaw, mayo verde y pepinillos.",
-        "price":"10,50",
+        "desc":"Sándwich de pollo frito en potato bun con coleslaw, mayo verde y pepinillos.",
+        "price":"19,90",
         "pic":"burger4.png"
     },
     {
+        "type":"BURGER",
+        "name":"Fasfú Grilled Cheese",
+        "desc":"Grilled cheese sandwich, con salsa fasfú aparte (contiene pepinillos).",
+        "price":"14,90",
+        "pic":"burger5.png"
+    },
+    {
         "type":"PATATAS",
-        "name":"Bacon Cheese Fries Grandes",
-        "price":"7,50",
+        "name":"Papas Fritas Grandes",
+        "price":"9,90",
         "pic":"patatas0.jpeg"
     },
     {
         "type":"PATATAS",
-        "name":"Bacon Cheese Fries Medianas",
-        "price":"5,00",
+        "name":"Papas Fritas Personales",
+        "price":"6,90",
         "pic":"patatas1.jpeg"
     },
     {
         "type":"PATATAS",
-        "name":"Patatas Grandes",
-        "price":"3,00",
+        "name":"Papas Fritas Grandes con Queso y Tocino",
+        "price":"14,90",
         "pic":"patatas2.jpeg"
     },
     {
-        "type":"PATATAS",
-        "name":"Patatas Medianas",
-        "price":"2,00",
-        "pic":"patatas3.jpeg"
-    },
-    {
         "type":"PS",
-        "name":"Malteada de Chocolate y Aguacate",
-        "price":"7,50",
+        "name":"Mermelada De Tocino & Whisky & Chile",
+        "price":"4,00",
         "pic":"ps0.jpeg"
     },
     {
         "type":"PS",
-        "name":"Malteada de Chocolate",
-        "price":"6,50",
+        "name":"Mermelada De Cebolla & Chile",
+        "price":"3,00",
         "pic":"ps1.jpeg"
     },
     {
         "type":"PS",
-        "name":"Malteada de Vainilla con caramelo",
-        "price":"6,50",
+        "name":"Milkshake De Vainilla",
+        "price":"14,90",
         "pic":"ps2.jpeg"
     },
     {
         "type":"PS",
-        "name":"Vasito Red Velvet (130g)",
-        "price":"3,99",
+        "name":"Milkshake De Chocolate",
+        "price":"14,90",
         "pic":"ps3.jpeg"
     },
     {
         "type":"PS",
-        "name":"Vasito de tarta de zanahoria (130g)",
-        "price":"3,99",
+        "name":"Galleta Tahine Chocolate",
+        "price":"6,90",
         "pic":"ps4.jpeg"
     },
     {
         "type":"PS",
-        "name":"Vasito Oreo (130g)",
-        "price":"3,99",
+        "name":"Postres De Tres Leche",
+        "price":"12,00",
         "pic":"ps5.jpeg"
     },
     {
         "type":"PS",
-        "name":"Vasito de brownie y crema de chocolate",
-        "price":"3,99",
+        "name":"Postre De Chocolate Cremoso",
+        "price":"12,40",
         "pic":"ps6.jpeg"
     },
     {
-        "type":"PS",
-        "name":"Mermelada de bacon y whisky",
-        "price":"2,00",
-        "pic":"ps7.jpeg"
-    },
-    {
-        "type":"PS",
-        "name":"Mermelada de cebolla y chile",
-        "price":"2,00",
-        "pic":"ps8.jpeg"
-    },
-    {
-        "type":"PS",
-        "name":"Queso Americano",
-        "price":"2,00",
-        "pic":"ps9.jpeg"
-    },
-    {
-        "type":"PS",
-        "name":"Salsa Fasfú",
-        "price":"2,00",
-        "pic":"ps10.jpeg"
-    },
-
-    {
         "type":"Bebida",
-        "name":"Monster Energy Original",
-        "price":"2,50",
-        "pic":"monster.jpeg"
+        "name":"Coca-cola Sabor Original (500 Ml)",
+        "price":"6,00",
+        "pic":"bebida1.jpg"
     },
     {
         "type":"Bebida",
-        "name":"Coca-Cola Sabor Original (500ml)",
-        "price":"2,00",
-        "pic":"cocacola.jpg"
+        "name":"Coca-cola Sin Azúcar (500 Ml)",
+        "price":"6,00",
+        "pic":"bebida2.jpg"
     },
     {
         "type":"Bebida",
-        "name":"Coca-Cola Sabor Zero (500ml)",
-        "price":"2,00",
-        "pic":"cocacolazero.jpg"
+        "name":"Agua San Mateo Sin Gas",
+        "price":"6,00",
+        "pic":"bebida3.jpg"
     },
     {
         "type":"Bebida",
-        "name":"Coca-Cola Zero Zero (500ml)",
-        "price":"2,00",
-        "pic":"cocacolazerozero.jpg"
+        "name":"Agua San Mateo Con Gas",
+        "price":"6,00",
+        "pic":"bebida4.jpg"
     },
     {
         "type":"Bebida",
-        "name":"Sprite (500ml)",
-        "price":"2,00",
-        "pic":"sprite.jpeg"
+        "name":"Inca Kola Sin Azúcar (500 Ml)",
+        "price":"6,00",
+        "pic":"bebida5.jpg"
     },
     {
         "type":"Bebida",
-        "name":"Fanta Naranja (500ml)",
-        "price":"2,00",
-        "pic":"fantanaranja.jpg"
-    },
-    {
-        "type":"Bebida",
-        "name":"Fanta Limón (500ml)",
-        "price":"2,00",
-        "pic":"fantalimon.jpg"
-    },
-    {
-        "type":"Bebida",
-        "name":"Aquarius Naranja (500ml)",
-        "price":"2,00",
-        "pic":"aquariusnaranja.jpg"
-    },
-    {
-        "type":"Bebida",
-        "name":"Aquarius Limón (500ml)",
-        "price":"2,00",
-        "pic":"aquariuslimon.jpg"
-    },
-    {
-        "type":"Bebida",
-        "name":"Nestea Té Negro Limón (500ml)",
-        "price":"2,00",
-        "pic":"nestea.jpeg"
-    },
-    {
-        "type":"Bebida",
-        "name":"Agua (50 cl)",
-        "price":"1,00",
-        "pic":"agua.jpg"
+        "name":"Inca Kola Sabor Original (500 Ml)",
+        "price":"6,00",
+        "pic":"bebida6.jpg"
     }
 ]
