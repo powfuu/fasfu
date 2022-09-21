@@ -17,7 +17,6 @@ export const CountriesView = styled.div`
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  overflow-y:scroll;
   ${mxw(1000)}{
     justify-content:initial;
   }
@@ -35,6 +34,11 @@ export const CountriesTitle = styled.h1`
     margin-top:212px;
     margin-bottom:30px;
   }
+    ${mxw(700)}{
+        font-size:25px;
+        margin-top:205px;
+        margin-bottom:-15px;
+    }
   ${mxw(532)}{
     height:120px;
   }
@@ -58,10 +62,16 @@ export const CountriesLogo = styled.img`
     height:180px;
     width:180px;
   }
+    ${mxw(700)}{
+        height:150px;
+        width:150px;
+        margin-left:-65px;
+    }
 `
 export const CountriesContent = styled.div`
   display:flex;
   gap:55px;
+    overflow:hidden;
   ${mxw(1000)}{
     gap:35px;
     padding-bottom:115px;
@@ -71,6 +81,9 @@ export const CountriesContent = styled.div`
     padding-left:22px;
     padding-right:22px;
   }
+    ${mxw(700)}{
+        gap:15px;
+    }
   ${mxw(500)}{
     padding-bottom:140px;
   }
@@ -91,11 +104,17 @@ export const Country = styled.div`
 export const CountriesCountry = styled.img`
   height:80px;
   width:80px;
+    ${mxw(700)}{
+        height:60px;
+        width:60px;
+    }
 `
 export const CountriesCountryVal = styled.h3`
   font-weight:300;
   color:rgb(115,115,115);
-  margin-left:-5px;
+    ${mxw(700)}{
+        font-size:16px;
+    }
 `
 export const Wave = styled.svg`
   position:fixed;

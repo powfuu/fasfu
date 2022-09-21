@@ -92,65 +92,76 @@
     {
         "type":"PATATAS",
         "name":"Papas Fritas Grandes",
+        "desc":"Papas fritas tamaño grande",
         "price":"9,90",
         "pic":"patatas0.jpeg"
     },
     {
         "type":"PATATAS",
         "name":"Papas Fritas Personales",
+        "desc":"Papas fritas tamaño personal",
         "price":"6,90",
         "pic":"patatas1.jpeg"
     },
     {
         "type":"PATATAS",
         "name":"Papas Fritas Grandes con Queso y Tocino",
+        "desc":"Papas fritas con queso americano y tocino",
         "price":"14,90",
         "pic":"patatas2.jpeg"
     },
     {
         "type":"PS",
         "name":"Mermelada De Tocino & Whisky & Chile",
+        "desc":"Mermelada de tocino con whisky y chile 2oz",
         "price":"4,00",
         "pic":"ps0.jpeg"
     },
     {
         "type":"PS",
         "name":"Mermelada De Cebolla & Chile",
+        "desc":"Mermelada cebolla y chile 2oz",
         "price":"3,00",
         "pic":"ps1.jpeg"
     },
     {
         "type":"PS",
         "name":"Milkshake De Vainilla",
+        "desc":"Milkshake de vainilla con manjar de dulce de leche",
         "price":"14,90",
         "pic":"ps2.jpeg"
     },
     {
         "type":"PS",
         "name":"Milkshake De Chocolate",
+        "desc":"Milkshake de chocolate con crocante de mani salado",
         "price":"14,90",
         "pic":"ps3.jpeg"
     },
     {
         "type":"PS",
         "name":"Galleta Tahine Chocolate",
+        "desc":"Galleta con tahine y chocolate",
         "price":"6,90",
         "pic":"ps4.jpeg"
     },
     {
         "type":"PS",
         "name":"Postres De Tres Leche",
+        "desc":"Postre de tres leches con dulce de leche",
         "price":"12,00",
         "pic":"ps5.jpeg"
     },
     {
         "type":"PS",
         "name":"Postre De Chocolate Cremoso",
+        "desc":"Postre cremoso de chocolate con nueces crocantes y crema ligera",
         "price":"12,40",
         "pic":"ps6.jpeg"
     },
     {
         "type":"Bebida",
+        "desc":"Bebida Gaseosa",
         "name":"Coca-cola Sabor Original (500 Ml)",
         "price":"6,00",
         "pic":"bebida1.jpg"
@@ -158,30 +169,35 @@
     {
         "type":"Bebida",
         "name":"Coca-cola Sin Azúcar (500 Ml)",
+        "desc":"Bebida Gaseosa",
         "price":"6,00",
         "pic":"bebida2.jpg"
     },
     {
         "type":"Bebida",
         "name":"Agua San Mateo Sin Gas",
+        "desc":"Bebida de Agua",
         "price":"6,00",
         "pic":"bebida3.jpg"
     },
     {
         "type":"Bebida",
         "name":"Agua San Mateo Con Gas",
+        "desc":"Bebida de Agua",
         "price":"6,00",
         "pic":"bebida4.jpg"
     },
     {
         "type":"Bebida",
         "name":"Inca Kola Sin Azúcar (500 Ml)",
+        "desc":"Botella Gaseosa",
         "price":"6,00",
         "pic":"bebida5.jpg"
     },
     {
         "type":"Bebida",
         "name":"Inca Kola Sabor Original (500 Ml)",
+        "desc":"Botella Gaseosa",
         "price":"6,00",
         "pic":"bebida6.jpg"
     }

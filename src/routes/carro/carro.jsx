@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react"
 import * as c from "./carroComponents"
+import {ShoppingCartOutline} from "@styled-icons/evaicons-outline/ShoppingCartOutline"
 const Carro = (prop) =>{
   const cartRef = useRef(null)
 var prevScrollpos = window.pageYOffset;
@@ -14,7 +15,7 @@ var currentScrollPos = window.pageYOffset;
 }
 return(
     <>
-        <i class="bx bx-cart" onClick={()=>prop.setIsInCar(true)} ref={cartRef} id="initial-view-cart"></i>
+        <ShoppingCartOutline onClick={()=>prop.setIsInCar(true)} ref={cartRef} id="initial-view-cart"/>
         <c.CarContent mgl={
             prop.isInCar ? 0 : 100 
             }>

@@ -23,6 +23,7 @@ import beverage from "../../assets/products/beverage.png";
 import motogatomochi from "../../assets/motogato.png"
 import Carro from "../carro/carro"
 import Product from "../producto/producto"
+import 'react-loading-skeleton/dist/skeleton.css'
 export default function Inicio(prop: any) {
   let date = new Date();
     let time = `${date.getHours({
@@ -45,6 +46,11 @@ export default function Inicio(prop: any) {
     //#00e57e is open and #ff441f is closed
   const [restaurantStatus,setRestaurantStatus]=useState(null)
   const [restaurantStatusVisible, setRestaurantStatusVisible]=useState(false)
+  const [loaded0, setLoaded0]=useState(false)
+  const [loaded1, setLoaded1]=useState(false)
+  const [loaded2, setLoaded2]=useState(false)
+  const [loaded3, setLoaded3]=useState(false)
+  const [loaded4, setLoaded4]=useState(false)
   const countriesArr: []=[
     {
       id:0,
@@ -72,6 +78,13 @@ export default function Inicio(prop: any) {
     }
   ]
     const setDataCountry = (data: string) =>{
+                         if(data != prop.countrySelectionState){
+                            setLoaded0(false)
+                            setLoaded1(false)
+                            setLoaded2(false)
+                            setLoaded3(false)
+                            setLoaded4(false)
+                         }
                  switch (data) {
                    case "España":
                      setCurrentJson(spaJson);
@@ -207,10 +220,28 @@ export default function Inicio(prop: any) {
       </span>
       </c.CategoryTitle>
       </c.TopTitleCategory>
-      <c.CategoryView style={{ paddingTop: "50px" }}>
+              {
+                  !loaded0 ? 
+              <c.CategoryLoadingView>
+                  {[...Array(4)].fill().map(()=>{
+                          return(
+                  <c.CategoryLoading>
+                      <br/>
+                  <c.Skel circle={0} borderRadius={16} width={90} height={80}/>
+                      <br/>
+                  <c.Skel width={250} height={16} />                    
+                      <br/>
+                  <c.Skel width={250} count={3} height={10} />                    
+                  </c.CategoryLoading>
+                          )
+                      })}
+              </c.CategoryLoadingView>
+              : null }
+
+              <c.CategoryView style={{ visibility:!loaded0 ? "hidden" : "visible", opacity: !loaded0 ? "0" : "1",paddingTop: "50px", maxHeight: !loaded0 ? "0px" : null}}>
       {currentJson
         .filter((prop) => prop.type == "BURGER")
-        .map((data) => {
+        .map((data, index) => {
           return (
               <c.Category onClick={()=>prop.setIsInProduct(true)} style={{ marginTop: "0px" }}>
                 <c.CategoryDesktop>
@@ -222,7 +253,13 @@ export default function Inicio(prop: any) {
                 : prop.countrySelectionState == "Perú" ? "S/" : "$"}
             </c.CategoryPrice>
             <c.CategoryAbs>
-            <c.ProductImg
+                <c.ProductImg onLoad={(prop)=>{
+                    if(data.index == data.length){
+                        setTimeout(() => {
+                            setLoaded0(true)
+                        }, 500);
+                    }
+                    }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
             />
             <c.ProductTitle>{data.name}</c.ProductTitle>
@@ -283,7 +320,13 @@ export default function Inicio(prop: any) {
                          </c.ProductQuickAddResponsive> 
                     </c.CRLeft>
                     <c.CRRight>
-            <c.ProductImgResponsive
+            <c.ProductImgResponsive onLoad={()=>{
+                    if(data.index == data.length){
+                        setTimeout(() => {
+                            setLoaded0(true)
+                        }, 500);
+                    }
+                    }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive>
@@ -300,6 +343,7 @@ export default function Inicio(prop: any) {
           );
         })}
       </c.CategoryView>
+
       </c.CategoriesView>
 
       <c.CategoriesView ref={comRef}>
@@ -346,10 +390,28 @@ export default function Inicio(prop: any) {
       : null
           }
       </c.TopTitleCategory>
+              {
+                  !loaded1 ? 
+              <c.CategoryLoadingView>
+                  {[...Array(4)].fill().map(()=>{
+                          return(
+                  <c.CategoryLoading>
+                      <br/>
+                  <c.Skel circle={0} borderRadius={16} width={90} height={80}/>
+                      <br/>
+                  <c.Skel width={250} height={16} />                    
+                      <br/>
+                  <c.Skel width={250} count={3} height={10} />                    
+                  </c.CategoryLoading>
+                          )
+                      })}
+              </c.CategoryLoadingView>
+              : null }
           <c.CategoryView
       style={{
-        maxHeight: !ComEx? "3200px" : "3200px",
-          overflowY: "hidden",
+opacity: !loaded1 ? "0" : "1",
+          visibility: !loaded1 ? "hidden" : "visible",
+          maxHeight: !loaded1 ? "0px" : !ComEx ? "3200px" : "3200px",
           paddingBottom: "65px",
             paddingTop: "50px"
       }}>
@@ -367,7 +429,13 @@ export default function Inicio(prop: any) {
                 : prop.countrySelectionState == "Perú" ? "S/" : "$"}
             </c.CategoryPrice>
             <c.CategoryAbs>
-            <c.ProductImg
+            <c.ProductImg onLoad={()=>{
+                    if(data.index == data.length){
+                        setTimeout(() => {
+                            setLoaded1(true)
+                        }, 500);
+                    }
+                    }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
             />
                 <c.ProductTitle style={{fontSize:"14px",marginBottom:"-1px"}}>{data.name}</c.ProductTitle>
@@ -428,7 +496,13 @@ export default function Inicio(prop: any) {
                          </c.ProductQuickAddResponsive> 
                     </c.CRLeft>
                     <c.CRRight>
-            <c.ProductImgResponsive
+            <c.ProductImgResponsive onLoad={()=>{
+                    if(data.index == data.length){
+                        setTimeout(() => {
+                            setLoaded1(true)
+                        }, 500);
+                    }
+                    }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive>
@@ -467,7 +541,24 @@ export default function Inicio(prop: any) {
       </span>
       </c.CategoryTitle>
       </c.TopTitleCategory>
-      <c.CategoryView style={{ paddingTop: "50px" }}>
+              {
+                  !loaded2 ? 
+              <c.CategoryLoadingView>
+                  {[...Array(4)].fill().map(()=>{
+                          return(
+                  <c.CategoryLoading>
+                      <br/>
+                  <c.Skel circle={0} borderRadius={16} width={90} height={80}/>
+                      <br/>
+                  <c.Skel width={250} height={16} />                    
+                      <br/>
+                  <c.Skel width={250} count={3} height={10} />                    
+                  </c.CategoryLoading>
+                          )
+                      })}
+              </c.CategoryLoadingView>
+              : null }
+      <c.CategoryView  style={{ opacity: !loaded2 ? "0" : "1",visibility:!loaded2 ? "hidden" : "visible",paddingTop: "50px", maxHeight: !loaded2 ? "0px" : null}}>
       {currentJson
         .filter((prop) => prop.type == "PATATAS")
         .map((data) => {
@@ -482,7 +573,13 @@ export default function Inicio(prop: any) {
                 : prop.countrySelectionState == "Perú" ? "S/" : "$"}
             </c.CategoryPrice>
             <c.CategoryAbs>
-            <c.ProductImg
+            <c.ProductImg onLoad={(prop)=>{
+                    if(data.index == data.length){
+                        setTimeout(() => {
+                            setLoaded2(true)
+                        }, 500);
+                    }
+                    }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
             />
             <c.ProductTitle>{data.name}</c.ProductTitle>
@@ -516,6 +613,11 @@ export default function Inicio(prop: any) {
                 <c.CategoryResponsive>
                     <c.CRLeft>
              <c.ProductTitleResponsive>{data.name}</c.ProductTitleResponsive>
+                         <c.ProductDescResponsive>
+                             {data.desc.length >= 97 
+                                 ? data.desc.slice(0, 97) + "..."
+                                 : data.desc} 
+                         </c.ProductDescResponsive> 
                           <c.ProductQuickAddResponsive style={{ marginTop: "-13px" }}>  
                              <i 
                                 class="bx bx-cart"
@@ -533,7 +635,13 @@ export default function Inicio(prop: any) {
                          </c.ProductQuickAddResponsive> 
                     </c.CRLeft>
                     <c.CRRight>
-            <c.ProductImgResponsive
+            <c.ProductImgResponsive onLoad={(prop)=>{
+                    if(data.index == data.length){
+                        setTimeout(() => {
+                            setLoaded2(true)
+                        }, 500);
+                    }
+                    }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive>
@@ -571,7 +679,7 @@ export default function Inicio(prop: any) {
       </span>
       </c.CategoryTitle>
           {
-              prop.countrySelectionState != "" ? 
+              prop.countrySelectionState == "España" ? 
           <c.ExpandCategories 
       onClick={() => {
         setPSEx((prop) => !prop);
@@ -597,11 +705,26 @@ export default function Inicio(prop: any) {
       </c.ExpandCategories>
       : null}
       </c.TopTitleCategory>
+            {
+                  !loaded3 ? 
+              <c.CategoryLoadingView>
+                  {[...Array(4)].fill().map(()=>{
+                          return(
+                  <c.CategoryLoading>
+                      <br/>
+                  <c.Skel circle={0} borderRadius={16} width={90} height={80}/>
+                      <br/>
+                  <c.Skel width={250} height={16} />                    
+                      <br/>
+                  <c.Skel width={250} count={3} height={10} />                    
+                  </c.CategoryLoading>
+                          )
+                      })}
+              </c.CategoryLoadingView>
+              : null }
       <c.CategoryView
-      style={{
-        maxHeight: !PSEx ? "300px" : "3200px",
-          overflowY: "hidden",
-          paddingBottom: "65px",
+      style={{opacity: !loaded3 ? "0" : "1",
+          visibility:!loaded3 ? "hidden" : "visible",paddingBottom:"50px", maxHeight: !loaded3 ? "0px" : !PSEx ? "320px" : "3200px"
       }}
       >
       {currentJson
@@ -618,7 +741,14 @@ export default function Inicio(prop: any) {
                 : prop.countrySelectionState == "Perú" ? "S/" : "$"}
             </c.CategoryPrice>
             <c.CategoryAbs>
-            <c.ProductImg
+            <c.ProductImg onLoad={(prop)=>{
+                    if(data.index == data.length){
+                        setTimeout(() => {
+                            setLoaded3(true)
+                        }, 500);
+                    }
+                    }}
+ 
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
             />
                 <c.ProductTitle style={{fontSize:data.name=="Malteada de Chocolate y Aguacate" ? "15px": null}}>{data.name}</c.ProductTitle>
@@ -652,6 +782,11 @@ export default function Inicio(prop: any) {
                 <c.CategoryResponsive>
                     <c.CRLeft>
              <c.ProductTitleResponsive>{data.name}</c.ProductTitleResponsive>
+                         <c.ProductDescResponsive>
+                             {data.desc.length >= 97 
+                                 ? data.desc.slice(0, 97) + "..."
+                                 : data.desc} 
+                         </c.ProductDescResponsive> 
                           <c.ProductQuickAddResponsive style={{ marginTop: "-13px" }}>  
                              <i 
                                 class="bx bx-cart"
@@ -669,7 +804,13 @@ export default function Inicio(prop: any) {
                          </c.ProductQuickAddResponsive> 
                     </c.CRLeft>
                     <c.CRRight>
-            <c.ProductImgResponsive
+            <c.ProductImgResponsive onLoad={(prop)=>{
+                    if(data.index == data.length){
+                        setTimeout(() => {
+                            setLoaded3(true)
+                        }, 500);
+                    }
+                    }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive>
@@ -709,7 +850,7 @@ export default function Inicio(prop: any) {
       </c.CategoryTitle>
 
           {
-              prop.countrySelectionState != "" ?
+              prop.countrySelectionState == "España" ?
           <c.ExpandCategories
       onClick={() => {
         setBebEx((prop) => !prop);
@@ -738,11 +879,26 @@ export default function Inicio(prop: any) {
       : null
           }
       </c.TopTitleCategory>
+{
+                  !loaded4 ? 
+              <c.CategoryLoadingView>
+                  {[...Array(4)].fill().map(()=>{
+                          return(
+                  <c.CategoryLoading>
+                      <br/>
+                  <c.Skel circle={0} borderRadius={16} width={90} height={80}/>
+                      <br/>
+                  <c.Skel width={250} height={16} />                    
+                      <br/>
+                  <c.Skel width={250} count={3} height={10} />                    
+                  </c.CategoryLoading>
+                          )
+                      })}
+              </c.CategoryLoadingView>
+              : null }
       <c.CategoryView
-      style={{
-        maxHeight: !BebEx ? "300px" : "3200px",
-          overflowY: "hidden",
-          paddingBottom: "65px",
+      style={{opacity: !loaded4 ? "0" : "1",
+          visibility:!loaded4 ? "hidden" : "visible",paddingBottom: !loaded4 ? "0px" : "65px", maxHeight: !loaded4 ? "0px" : !BebEx ? "300px" : "3200px"
       }}
       >
       {currentJson
@@ -759,11 +915,19 @@ export default function Inicio(prop: any) {
                 : prop.countrySelectionState == "Perú" ? "S/" : "$"}
             </c.CategoryPrice>
             <c.CategoryAbs>
-            <c.ProductImg
+            <c.ProductImg onLoad={(prop)=>{
+                    if(data.index == data.length){
+                        setTimeout(() => {
+                            setLoaded4(true)
+                        }, 500);
+                    }
+                    }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
             />
             <c.ProductTitle>{data.name}</c.ProductTitle>
-            <c.ProductQuickAdd style={{ marginTop: "5px" }}>
+            </c.CategoryAbs>
+
+                    <c.ProductQuickAdd style={{ position:"absolute",zIndex:"5", marginTop:"180px", marginLeft:"25px" }}>
             <i
             class="bx bx-cart"
             style={{
@@ -778,7 +942,6 @@ export default function Inicio(prop: any) {
             Agregar al carro
             </p>
             </c.ProductQuickAdd>
-            </c.CategoryAbs>
             <c.ProductWave
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
@@ -793,6 +956,11 @@ export default function Inicio(prop: any) {
                 <c.CategoryResponsive>
                     <c.CRLeft>
              <c.ProductTitleResponsive>{data.name}</c.ProductTitleResponsive>
+                         <c.ProductDescResponsive>
+                             {data.desc.length >= 97 
+                                 ? data.desc.slice(0, 97) + "..."
+                                 : data.desc} 
+                         </c.ProductDescResponsive> 
                           <c.ProductQuickAddResponsive style={{ marginTop: "-13px" }}>  
                              <i 
                                 class="bx bx-cart"
@@ -810,7 +978,13 @@ export default function Inicio(prop: any) {
                          </c.ProductQuickAddResponsive> 
                     </c.CRLeft>
                     <c.CRRight>
-            <c.ProductImgResponsive
+            <c.ProductImgResponsive onLoad={(prop)=>{
+                    if(data.index == data.length){
+                        setTimeout(() => {
+                            setLoaded4(true)
+                        }, 500);
+                    }
+                    }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive>
@@ -847,9 +1021,15 @@ export default function Inicio(prop: any) {
               <c.FooterContentAri src={ari}/>
 
                   <c.SocialNetworks>
-                    <i class='bx bxl-twitter' ></i>
-                    <i class='bx bxl-instagram' ></i>
-                    <i class='bx bxl-facebook' ></i>
+                      <a href="https://twitter.com/fasfuburgers?lang=es" target="_blank">
+                        <i class='bx bxl-twitter' ></i>
+                      </a>
+                      <a href="https://www.instagram.com/fasfu.burgers/?hl=es" target="_blank">
+                        <i class='bx bxl-instagram' ></i>
+                      </a>
+                      <a href="https://www.facebook.com/people/Fasf%C3%BA-Burgers/100076023661997/" target="_blank">
+                        <i class='bx bxl-facebook' ></i>
+                      </a>
                   </c.SocialNetworks>
           </c.FooterContent>
           <c.Direction>
@@ -865,7 +1045,7 @@ export default function Inicio(prop: any) {
       </c.CategoriesContent>
       </c.InitialView>
      : 
-      <Countries setCountrySelectionState={prop.setCountrySelectionState} />
+      <Countries country={prop.countrySelectionState} setCountrySelectionState={prop.setCountrySelectionState} />
           }
       </c.HomeView>
   );

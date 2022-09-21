@@ -1,9 +1,27 @@
 import styled from "styled-components"
+import Skeleton from 'react-loading-skeleton'
 
 const mxw = (width) =>{
   return `@media (max-width: ${width}px)`
 }
-
+export const Skel = styled(Skeleton)`
+`
+export const CategoryLoading = styled.div`
+    margin-top:35px;
+    margin-left:50px;
+`
+export const CategoryLoadingView = styled.div`
+    display:flex;
+    gap:80px;
+    flex-wrap:wrap;
+    ${mxw(1539)}{
+        justify-content:center;
+        text-align:center;
+    }
+    ${mxw(779)}{
+        gap:20px;
+    }
+`
 export const HomeView=styled.div`
   background:rgb(252,252,252);
 `
@@ -362,7 +380,9 @@ export const CategoryView = styled.div`
   gap:30px;
   width:100%;
   flex-wrap:wrap;
-    transition: max-height .8s ease-in-out;
+    overflow-y:hidden;
+    transition: all .8s ease-in-out;
+    opacity:0;
   ${mxw(1500)}{
     align-items:center;
     justify-content:center;
@@ -476,6 +496,9 @@ export const FooterView = styled.div`
   margin-top:-140px;
   height:700px;
     position:relative;
+    ${mxw(1530)}{
+        height:750px;
+    }
 `
 export const FooterWave = styled.svg`
   height:100%;
@@ -503,6 +526,18 @@ export const FooterContentAri = styled.img`
     margin-left:auto;
     margin-right:30px;
     margin-top:130px;
+    ${mxw(1530)}{
+        margin-right:-40px;
+    }
+    ${mxw(1230)}{
+        opacity:.5;
+    }
+    ${mxw(590)}{
+        opacity:.4;
+    }
+    ${mxw(500)}{
+        margin-right:-90px;
+    }
 `
 export const Logo3 = styled.img`
     height:250px;
@@ -510,6 +545,26 @@ export const Logo3 = styled.img`
     margin-top:390px;
     margin-left:60px;
     opacity:.7;
+    ${mxw(1530)}{
+        height:220px;
+        width:220px;
+        margin-top:420px;
+    }
+    ${mxw(1230)}{
+        margin-top:490px;
+        height:180px;
+        width:180px;
+    }
+${mxw(800)}{
+    margin-left:0px;
+    opacity:.6;
+    height:170px;
+    width:170px;
+    margin-top:500px;
+}
+    ${mxw(590)}{
+        display:none;
+    }
 `
 export const Frase = styled.h1`
     color:white;
@@ -518,6 +573,30 @@ export const Frase = styled.h1`
     color:rgb(210,210,210);
     line-height:55px;
     white-space:nowrap;
+    ${mxw(1530)}{
+        font-size:21px;
+    }
+    ${mxw(800)}{
+        white-space:initial;
+        font-size:19px;
+        margin-left:52px;
+        margin-right:52px;
+        text-align:center;
+        line-height:40px;
+    }
+    ${mxw(590)}{
+        margin-top:15px;
+    }
+    ${mxw(454)}{
+        font-size:17.5px;
+        margin-right:30px;
+        margin-left:30px;
+    }
+    ${mxw(369)}{
+        font-size:16px;
+        margin-right:20px;
+        margin-left:20px;
+    }
 `
 export const FooterCenter = styled.div`
     margin-left: auto;
@@ -526,6 +605,7 @@ export const FooterCenter = styled.div`
     -ms-transform:translate(-50%,-50%);
     position:absolute;
     height:160px;
+    width:100%;
     left:50%;
     margin-top:510px;
     text-align:center;
@@ -560,6 +640,14 @@ export const SocialNetworks=styled.div`
             cursor:pointer;
             background:white;
         }
+    ${mxw(590)}{
+            font-size:35px;
+            padding:16px;
+    }
+    }
+    ${mxw(590)}{
+        margin-top:85px;
+        gap:15px;
     }
 `
 export const Motogato = styled.img`
@@ -581,6 +669,13 @@ export const Direction = styled.p`
     top:94%;
     z-index:5;
     font-size:15.75px;
+    ${mxw(1530)}{
+        margin-top:-35px;
+    }
+    ${mxw(432)}{
+        margin-top:-50px;
+        font-size:14px;
+    }
 `
 export const IsRestaurantOpen=styled.div`
     background:${p=>p.backgroundStatus};
@@ -611,7 +706,7 @@ export const IsRestaurantOpen=styled.div`
         margin-top:-1px;
         cursor:pointer;
     }
-    ${mxw(759)}{
+    ${mxw(1530)}{
         display:none;
     }
 `
@@ -641,6 +736,9 @@ export const IsRestaurantOpenResponsive=styled.div`
             font-size:15px;
             margin-top:2px;
     }
+        ${mxw(432)}{
+            width:80%;
+    }
         ${mxw(400)}{
             font-size:13px;
             margin-top:4px;
@@ -650,14 +748,15 @@ export const IsRestaurantOpenResponsive=styled.div`
         font-size:28px;
         margin-top:-1px;
         cursor:pointer;
-            width:15%;
+        position:absolute;
+        right:0;
+        margin-right:40px;
         ${mxw(400)}{
             font-size:26px;
-            margin-right:10px;
             margin-top:2px;
     }
     }
-    ${mxw(759)}{
+    ${mxw(1530)}{
         display:flex;
     }
 `
