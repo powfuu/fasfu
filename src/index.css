@@ -70,3 +70,19 @@ svg,html,body{
   width:36px;
   }
 }
+@media screen and (max-width:760px) {
+    #psv{
+        min-height:310px;
+    }
+    #bebv{
+        min-height:245px;
+    }
+}
+@media screen and (max-width:432px) {
+    #psv{
+        min-height:305px;
+    }
+    #bebv{
+        min-height:240px;
+    }
+}

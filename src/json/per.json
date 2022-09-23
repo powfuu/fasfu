@@ -3,202 +3,202 @@
      "type":"COMBO",
      "name":"COMBO FASFÚ",
      "desc":"Hamburguesa 100% carne de res de 125gr en potato bun con vegetales y salsa fasfú (contiene pepinillos). + fries + bebida",
-     "price":"26,90",
-     "pic":"combo0.jpg"
+     "price":"26.90",
+     "pic":"combo0.webp"
     },
     {
      "type":"COMBO",
      "name":"DOUBLE BURGER", "desc":"Hamburguesa doble 100% carne de res de 125gr c/u en potato bun con vegetales y salsa fasfú (contiene pepinillos). + fries + bebida",
-     "price":"32,90",
-     "pic":"combo1.png"
+     "price":"32.90",
+     "pic":"combo1.webp"
     },
     {
      "type":"COMBO",
      "name":"COMBO CHEESE BURGER",
      "desc":"Hamburguesa 100% carne de res de 125gr en potato bun con rebanada de queso americano, vegetales y salsa fasfú (contiene pepinillos). + fries + bebida",
-     "price":"29,90",
-     "pic":"combo2.png"
+     "price":"29.90",
+     "pic":"combo2.webp"
     },
     {
      "type":"COMBO",
      "name":"CHEESEBURGER X2",
      "desc":"Dos hamburguesas en potato bun con carne 100% de res de 125gr c/u, tajada de queso americano, vegetales y salsa fasfú (contiene pepinillos).",
-     "price":"49,80",
-     "pic":"combo6.png"
+     "price":"49.80",
+     "pic":"combo6.webp"
     },
     {
      "type":"COMBO",
      "name":"COMBO DOUBLE CHEESE",
      "desc":"Hamburguesa doble 100% carne de res de 125gr c/u en potato bun, queso americano, vegetales y salsa fasfú (contiene pepinillos). + fries + bebida",
-     "price":"35,90",
-     "pic":"combo3.png"
+     "price":"35.90",
+     "pic":"combo3.webp"
     },
     {
      "type":"COMBO",
      "name":"COMBO FRIED CHICKEN",
      "desc":"Sándwich de pollo frito en potato bun con coleslaw, mayo verde y pepinillos. + fries + bebida",
-     "price":"30,90",
-     "pic":"combo4.png"
+     "price":"30.90",
+     "pic":"combo4.webp"
     },
     {
      "type":"COMBO",
      "name":"COMBO MER, CHE, TOC",
      "desc":"COMBO MERMELA CHEESE TOCINETA, En potato bun con carne 100% de res de 125gr, queso americano, vegetales, salsa fasfú (contiene pepinillos) y mermelada de tocineta y whisky + papas + bebida",
-     "price":"28,90",
-     "pic":"combo5.png"
+     "price":"28.90",
+     "pic":"combo5.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Burger",
         "desc":"Hamburguesa en potato bun con carne 100% de res de 125gr, vegetales y salsa fasfú (contiene pepinillos).",
-        "price":"20,90",
-        "pic":"burger0.png"
+        "price":"20.90",
+        "pic":"burger0.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Cheese Burger",
         "desc":"Hamburguesa en potato bun con carne 100% de res de 125gr, rebanada de queso americano, vegetales y salsa fasfú (contiene pepinillos).",
-        "price":"24,90",
-        "pic":"burger1.png"
+        "price":"24.90",
+        "pic":"burger1.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Double Burger",
         "desc":"Hamburguesa doble en potato bun con carne 100% de res de 125gr c/u, vegetales y salsa fasfú (contiene pepinillos).",
-        "price":"27,90",
-        "pic":"burger2.png"
+        "price":"27.90",
+        "pic":"burger2.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Double Cheese",
         "desc":"Hamburguesa doble en potato bun con carne 100% de res de 125gr c/u, con 2 rebanadas de queso americano, vegetales y salsa fasfú (contiene pepinillos).",
-        "price":"30,90",
-        "pic":"burger3.png"
+        "price":"30.90",
+        "pic":"burger3.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Fried Chicken",
         "desc":"Sándwich de pollo frito en potato bun con coleslaw, mayo verde y pepinillos.",
-        "price":"19,90",
-        "pic":"burger4.png"
+        "price":"19.90",
+        "pic":"burger4.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Grilled Cheese",
         "desc":"Grilled cheese sandwich, con salsa fasfú aparte (contiene pepinillos).",
-        "price":"14,90",
-        "pic":"burger5.png"
+        "price":"14.90",
+        "pic":"burger5.webp"
     },
     {
         "type":"PATATAS",
         "name":"Papas Fritas Grandes",
         "desc":"Papas fritas tamaño grande",
-        "price":"9,90",
-        "pic":"patatas0.jpeg"
+        "price":"9.90",
+        "pic":"patatas0.webp"
     },
     {
         "type":"PATATAS",
         "name":"Papas Fritas Personales",
         "desc":"Papas fritas tamaño personal",
-        "price":"6,90",
-        "pic":"patatas1.jpeg"
+        "price":"6.90",
+        "pic":"patatas1.webp"
     },
     {
         "type":"PATATAS",
         "name":"Papas Fritas Grandes con Queso y Tocino",
         "desc":"Papas fritas con queso americano y tocino",
-        "price":"14,90",
-        "pic":"patatas2.jpeg"
+        "price":"14.90",
+        "pic":"patatas2.webp"
     },
     {
         "type":"PS",
         "name":"Mermelada De Tocino & Whisky & Chile",
         "desc":"Mermelada de tocino con whisky y chile 2oz",
-        "price":"4,00",
-        "pic":"ps0.jpeg"
+        "price":"4.00",
+        "pic":"ps0.webp"
     },
     {
         "type":"PS",
         "name":"Mermelada De Cebolla & Chile",
         "desc":"Mermelada cebolla y chile 2oz",
-        "price":"3,00",
-        "pic":"ps1.jpeg"
+        "price":"3.00",
+        "pic":"ps1.webp"
     },
     {
         "type":"PS",
         "name":"Milkshake De Vainilla",
         "desc":"Milkshake de vainilla con manjar de dulce de leche",
-        "price":"14,90",
-        "pic":"ps2.jpeg"
+        "price":"14.90",
+        "pic":"ps2.webp"
     },
     {
         "type":"PS",
         "name":"Milkshake De Chocolate",
         "desc":"Milkshake de chocolate con crocante de mani salado",
-        "price":"14,90",
-        "pic":"ps3.jpeg"
+        "price":"14.90",
+        "pic":"ps3.webp"
     },
     {
         "type":"PS",
         "name":"Galleta Tahine Chocolate",
         "desc":"Galleta con tahine y chocolate",
-        "price":"6,90",
-        "pic":"ps4.jpeg"
+        "price":"6.90",
+        "pic":"ps4.webp"
     },
     {
         "type":"PS",
         "name":"Postres De Tres Leche",
         "desc":"Postre de tres leches con dulce de leche",
-        "price":"12,00",
-        "pic":"ps5.jpeg"
+        "price":"12.00",
+        "pic":"ps5.webp"
     },
     {
         "type":"PS",
         "name":"Postre De Chocolate Cremoso",
         "desc":"Postre cremoso de chocolate con nueces crocantes y crema ligera",
-        "price":"12,40",
-        "pic":"ps6.jpeg"
+        "price":"12.40",
+        "pic":"ps6.webp"
     },
     {
         "type":"Bebida",
         "desc":"Bebida Gaseosa",
         "name":"Coca-cola Sabor Original (500 Ml)",
-        "price":"6,00",
-        "pic":"bebida1.jpg"
+        "price":"6.00",
+        "pic":"bebida1.webp"
     },
     {
         "type":"Bebida",
         "name":"Coca-cola Sin Azúcar (500 Ml)",
         "desc":"Bebida Gaseosa",
-        "price":"6,00",
-        "pic":"bebida2.jpg"
+        "price":"6.00",
+        "pic":"bebida2.webp"
     },
     {
         "type":"Bebida",
         "name":"Agua San Mateo Sin Gas",
         "desc":"Bebida de Agua",
-        "price":"6,00",
-        "pic":"bebida3.jpg"
+        "price":"6.00",
+        "pic":"bebida3.webp"
     },
     {
         "type":"Bebida",
         "name":"Agua San Mateo Con Gas",
         "desc":"Bebida de Agua",
-        "price":"6,00",
-        "pic":"bebida4.jpg"
+        "price":"6.00",
+        "pic":"bebida4.webp"
     },
     {
         "type":"Bebida",
         "name":"Inca Kola Sin Azúcar (500 Ml)",
         "desc":"Botella Gaseosa",
-        "price":"6,00",
-        "pic":"bebida5.jpg"
+        "price":"6.00",
+        "pic":"bebida5.webp"
     },
     {
         "type":"Bebida",
         "name":"Inca Kola Sabor Original (500 Ml)",
         "desc":"Botella Gaseosa",
-        "price":"6,00",
-        "pic":"bebida6.jpg"
+        "price":"6.00",
+        "pic":"bebida6.webp"
     }
 ]

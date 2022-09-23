@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Skeleton from 'react-loading-skeleton'
+import {ArrowDownwardOutline} from "@styled-icons/evaicons-outline/ArrowDownwardOutline"
 
 const mxw = (width) =>{
   return `@media (max-width: ${width}px)`
@@ -52,6 +53,7 @@ export const InitialViewContent = styled.div`
 export const CountrySelection = styled.img`
   height:52px;
   width:52px;
+border: 0; border-width: 0; border: none; border-style: none;
   margin-right:20px;
   margin-left:35px;
   margin-top:23px;
@@ -263,7 +265,7 @@ export const InitialViewContentTitleLeft=styled.div`
 `
 export const LuisImg = styled.img`
   position:absolute;
-  opacity:0.3;
+  opacity:0.3 !important;
   height:650px;
   margin-left:380px;
   margin-top:-925px;
@@ -371,6 +373,17 @@ export const ExpandCategoriesContent = styled.div`
   } 
   }
 `
+export const ArrowBottom = styled(ArrowDownwardOutline)`
+    width:20px;
+    height:20px;
+    margin-top:3.5px;
+`
+export const ArrowTop = styled(ArrowDownwardOutline)`
+    width:20px;
+    height:20px;
+    margin-top:3.5px;
+    transform:rotate(180deg);
+`
 export const TopTitleCategory = styled.div`
   display:flex;
   padding-top:10px;
@@ -404,7 +417,7 @@ export const Category = styled.div`
   width:200px;
   height:205px;
   cursor:pointer;
-  padding-top:45px;
+  padding-top:25px;
   padding-bottom:45px;
   background:white;
   border-radius:14px;
@@ -419,6 +432,7 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     ${mxw(759)}{
         width:90%;
         height:60px;
+  padding-top:45px;
     }
     ${mxw(432)}{
         width:95%;
@@ -476,6 +490,11 @@ export const ProductQuickAdd = styled.button`
   &:hover{
     color:white;
   }
+    #quick-add-cart{
+        height:27px;
+        width:27px;
+        margin-top:5px;
+    }
 `
 export const ProductWave = styled.svg`
   position:absolute;
@@ -487,13 +506,15 @@ export const CategoryPrice = styled.h1`
   font-weight:500;
   float:right;
   margin-left:auto;
-  margin-right:16px;
-    font-size:16px;
-  margin-top:-30px;
+  margin-right:12px;
+    font-size:15.25px;
+  margin-top:-17px;
+    position:absolute;
+    right:0;
 `
 export const FooterView = styled.div`
   overflow:hidden;
-  margin-top:-140px;
+  margin-top:-80px;
   height:700px;
     position:relative;
     ${mxw(1530)}{
@@ -610,11 +631,14 @@ export const FooterCenter = styled.div`
     margin-top:510px;
     text-align:center;
     .bx.bxs-quote-alt-right{
-        margin-left:10px;
+        margin-right:10px;
+        color:white;
+        height:28px;
         margin-bottom:5.5px;
     }
     .bx.bxs-quote-alt-left{
-        margin-right:10px;
+        height:28px;
+        margin-left:10px;
         margin-bottom:5.5px;
     }
 `
@@ -629,9 +653,10 @@ export const SocialNetworks=styled.div`
     -ms-transform:translate(-50%,-50%);
     left:50%;
     top:78%;
-    i{
+    #i{
         color:white;
         font-size:40px;
+        height:40px;
         padding:18px;
         border-radius:100%;
         transition:.3s all ease-in-out;
@@ -641,7 +666,7 @@ export const SocialNetworks=styled.div`
             background:white;
         }
     ${mxw(590)}{
-            font-size:35px;
+             height:35px;
             padding:16px;
     }
     }
@@ -883,7 +908,12 @@ export const ProductQuickAddResponsive = styled.button`
   &:hover{
     color:white;
   }
-    ${mxw(720)}{
+    ${mxw(700)}{
         display:none;
+    }
+    #quick-add-cart{
+        height:27px;
+        width:27px;
+        margin-top:5px;
     }
 `

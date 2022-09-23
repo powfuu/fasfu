@@ -1,10 +1,10 @@
 import { useState } from "react"
 import * as c from './countriesComponents'
-import spainflag from "../../assets/countries/spain.png"
-import peruflag from "../../assets/countries/peru.png"
-import colombiaflag from "../../assets/countries/colombia.png"
-import mexflag from "../../assets/countries/mexico.png"
-import logo from "../../assets/logos/logo0.png"
+import spainflag from "../../assets/countries/spain.webp"
+import peruflag from "../../assets/countries/peru.webp"
+import colombiaflag from "../../assets/countries/colombia.webp"
+import mexflag from "../../assets/countries/mexico.webp"
+import logo from "../../assets/logos/logo0.webp"
 export default function Countries(prop:any){
   const [countries]: Array<any>= useState([
     { id:0, title:"Colombia", flag:colombiaflag },

@@ -3,247 +3,247 @@
      "type":"COMBO",
      "name":"COMBO FASFÚ",
      "desc":"Elige hamburgesa + Patatas + Bebida.",
-     "price":"14,50",
-     "pic":"combo0.jpg"
+     "price":"14.50",
+     "pic":"combo0.webp"
     },
     {
      "type":"COMBO",
      "name":"COMBO CHEESEBURGER",
      "desc":"Nuestra hamburguesa estilo Smash (150gr), en pan de papa con una loncha de queso americano fundido, salsa Fasfú y vegetales + Bebida.",
-     "price":"13,95",
-     "pic":"combo1.png"
+     "price":"13.95",
+     "pic":"combo1.webp"
     },
     {
      "type":"COMBO",
      "name":"COMBO FRIED CHICKEN",
      "desc":"Nuestra hamburguesa de pollo frito en pan de papa con coleslaw, mayo verde y pepinillos + Bebida.",
-     "price":"12,50",
-     "pic":"combo3.png"
+     "price":"12.50",
+     "pic":"combo3.webp"
     },
     {
      "type":"COMBO",
      "name":"COMBO CLASSIC BURGER",
      "desc":"Nuestra hamburguesa estilo Smash (150gr), en pan de papa con salsa Fasfú y vegetales + Bebida.",
-     "price":"12,50",
-     "pic":"combo2.png"
+     "price":"12.50",
+     "pic":"combo2.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Doble Cheese",
         "desc":"Doble hamburguesa estilo Smash(125gr x 2), en pan de papa con 2 lonchas de queso americano fundido, salsa Fasfú y vegetales.",
-        "price":"14,50",
-        "pic":"burger0.jpeg"
+        "price":"14.50",
+        "pic":"burger0.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Doble",
         "desc":"Hamburguesa estilo Smash (150gr), en pan de papa con salsa Fasfú y vegetales.",
-        "price":"14,00",
-        "pic":"burger1.jpeg"
+        "price":"14.00",
+        "pic":"burger1.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Cheese",
         "desc":"Hamburguesa estilo Smash (150gr), en pan de papa con una loncha de queso americano fundido, salsa Fasfú y vegetales.",
-        "price":"11,95",
-        "pic":"burger2.jpeg"
+        "price":"11.95",
+        "pic":"burger2.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Burger (150gr)",
         "desc":"Hamburguesa estilo Smash (150 g.), en pan de papa con salsa Fasfú y vegetales.",
-        "price":"10,50",
-        "pic":"burger3.jpg"
+        "price":"10.50",
+        "pic":"burger3.webp"
     },
     {
         "type":"BURGER",
         "name":"Fasfú Fried Chicken",
         "desc":"Hamburguesa de pollo frito en pan de papa con coleslaw, mayo verde y pepinillos.",
-        "price":"10,50",
-        "pic":"burger4.png"
+        "price":"10.50",
+        "pic":"burger4.webp"
     },
     {
         "type":"PATATAS",
         "desc":"Racion Bacon Cheese Fries Grandes",
         "name":"Bacon Cheese Fries Grandes",
-        "price":"7,50",
-        "pic":"patatas0.jpeg"
+        "price":"7.50",
+        "pic":"patatas0.webp"
     },
     {
         "type":"PATATAS",
         "name":"Bacon Cheese Fries Medianas",
         "desc":"Racion Bacon Cheese Fries Medianas",
-        "price":"5,00",
-        "pic":"patatas1.jpeg"
+        "price":"5.00",
+        "pic":"patatas1.webp"
     },
     {
         "type":"PATATAS",
         "name":"Patatas Grandes",
         "desc":"Racion Patatas Grandes",
-        "price":"3,00",
-        "pic":"patatas2.jpeg"
+        "price":"3.00",
+        "pic":"patatas2.webp"
     },
     {
         "type":"PATATAS",
         "name":"Patatas Medianas",
         "desc":"Racion Patatas Medianas",
-        "price":"2,00",
-        "pic":"patatas3.jpeg"
+        "price":"2.00",
+        "pic":"patatas3.webp"
     },
     {
         "type":"PS",
         "name":"Malteada de Chocolate y Aguacate",
         "desc":"Malteada de Chocolate y Aguacate",
-        "price":"7,50",
-        "pic":"ps0.jpeg"
+        "price":"7.50",
+        "pic":"ps0.webp"
     },
     {
         "type":"PS",
         "name":"Malteada de Chocolate",
         "desc":"Chocolate",
-        "price":"6,50",
-        "pic":"ps1.jpeg"
+        "price":"6.50",
+        "pic":"ps1.webp"
     },
     {
         "type":"PS",
         "name":"Malteada de Vainilla con caramelo",
         "desc":"Malteada de Vainilla con caramelo",
-        "price":"6,50",
-        "pic":"ps2.jpeg"
+        "price":"6.50",
+        "pic":"ps2.webp"
     },
     {
         "type":"PS",
         "name":"Vasito Red Velvet (130g)",
         "desc":"1 Unidad",
-        "price":"3,99",
-        "pic":"ps3.jpeg"
+        "price":"3.99",
+        "pic":"ps3.webp"
     },
     {
         "type":"PS",
         "name":"Vasito de tarta de zanahoria (130g)",
         "desc":"1 Unidad",
-        "price":"3,99",
-        "pic":"ps4.jpeg"
+        "price":"3.99",
+        "pic":"ps4.webp"
     },
     {
         "type":"PS",
         "name":"Vasito Oreo (130g)",
         "desc":"1 Unidad",
-        "price":"3,99",
-        "pic":"ps5.jpeg"
+        "price":"3.99",
+        "pic":"ps5.webp"
     },
     {
         "type":"PS",
         "name":"Vasito de brownie y crema de chocolate",
         "desc":"1 Unidad",
-        "price":"3,99",
-        "pic":"ps6.jpeg"
+        "price":"3.99",
+        "pic":"ps6.webp"
     },
     {
         "type":"PS",
         "name":"Mermelada de bacon y whisky",
-        "price":"2,00",
+        "price":"2.00",
         "desc":"1 Unidad",
-        "pic":"ps7.jpeg"
+        "pic":"ps7.webp"
     },
     {
         "type":"PS",
         "name":"Mermelada de cebolla y chile",
-        "price":"2,00",
+        "price":"2.00",
         "desc":"1 Unidad",
-        "pic":"ps8.jpeg"
+        "pic":"ps8.webp"
     },
     {
         "type":"PS",
         "name":"Queso Americano",
-        "price":"2,00",
+        "price":"2.00",
         "desc":"1 Unidad",
-        "pic":"ps9.jpeg"
+        "pic":"ps9.webp"
     },
     {
         "type":"PS",
         "name":"Salsa Fasfú",
-        "price":"2,00",
+        "price":"2.00",
         "desc":"1 Unidad",
-        "pic":"ps10.jpeg"
+        "pic":"ps10.webp"
     },
 
     {
         "type":"Bebida",
         "name":"Monster Energy Original",
         "desc":"Lata Monster Energy Original",
-        "price":"2,50",
-        "pic":"monster.jpeg"
+        "price":"2.50",
+        "pic":"monster.webp"
     },
     {
         "type":"Bebida",
         "name":"Coca-Cola Sabor Original (500ml)",
         "desc":"Botella Coca-Cola Sabor Original (500ml)",
-        "price":"2,50",
+        "price":"2.50",
         "price":"2,00",
-        "pic":"cocacola.jpg"
+        "pic":"cocacola.webp"
     },
     {
         "type":"Bebida",
         "name":"Coca-Cola Sabor Zero (500ml)",
         "desc":"Botella Coca-Cola Sabor Zero (500ml)",
-        "price":"2,00",
-        "pic":"cocacolazero.jpg"
+        "price":"2.00",
+        "pic":"cocacolazero.webp"
     },
     {
         "type":"Bebida",
         "name":"Coca-Cola Zero Zero (500ml)",
         "desc":"Botella Coca-Cola Sabor Zero Zero (500ml)",
-        "price":"2,00",
-        "pic":"cocacolazerozero.jpg"
+        "price":"2.00",
+        "pic":"cocacolazerozero.webp"
     },
     {
         "type":"Bebida",
         "name":"Sprite (500ml)",
         "desc":"Botella Sprite (500ml)",
-        "price":"2,00",
-        "pic":"sprite.jpeg"
+        "price":"2.00",
+        "pic":"sprite.webp"
     },
     {
         "type":"Bebida",
         "name":"Fanta Naranja (500ml)",
         "desc":"Botella Fanta Naranja (500ml)",
-        "price":"2,00",
-        "pic":"fantanaranja.jpg"
+        "price":"2.00",
+        "pic":"fantanaranja.webp"
     },
     {
         "type":"Bebida",
         "name":"Fanta Limón (500ml)",
         "desc":"Botella Fanta Limón (500ml)",
-        "price":"2,00",
-        "pic":"fantalimon.jpg"
+        "price":"2.00",
+        "pic":"fantalimon.webp"
     },
     {
         "type":"Bebida",
         "name":"Aquarius Naranja (500ml)",
         "desc":"Botella Aquarius Naranja (500ml)",
-        "price":"2,00",
-        "pic":"aquariusnaranja.jpg"
+        "price":"2.00",
+        "pic":"aquariusnaranja.webp"
     },
     {
         "type":"Bebida",
         "name":"Aquarius Limón (500ml)",
         "desc":"Botella Aquarius Limón (500ml)",
-        "price":"2,00",
-        "pic":"aquariuslimon.jpg"
+        "price":"2.00",
+        "pic":"aquariuslimon.webp"
     },
     {
         "type":"Bebida",
         "name":"Nestea Té Negro Limón (500ml)",
         "desc":"Botella Té Negro Limón (500ml)",
-        "price":"2,00",
-        "pic":"nestea.jpeg"
+        "price":"2.00",
+        "pic":"nestea.webp"
     },
     {
         "type":"Bebida",
         "name":"Agua (50 cl)",
         "desc":"Botella de Agua (50 cl)",
-        "price":"1,00",
-        "pic":"agua.jpg"
+        "price":"1.00",
+        "pic":"agua.webp"
     }
 ]

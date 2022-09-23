@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import Countries from "./countries";
 import * as c from "./inicioComponents.js";
-import spainflag from "../../assets/countries/spain.png";
-import peruflag from "../../assets/countries/peru.png";
-import colombiaflag from "../../assets/countries/colombia.png";
-import mexflag from "../../assets/countries/mexico.png";
-import logo from "../../assets/logos/logo1_white.png";
-import logo2 from "../../assets/logos/logo2_white.png";
-import initialburger from "../../assets/initialburger.png";
-import luis from "../../assets/luisillo.png";
-import ari from "../../assets/arisilla.png";
-import logo3 from "../../assets/logos/logo3.png"
+import spainflag from "../../assets/countries/spain.webp";
+import peruflag from "../../assets/countries/peru.webp";
+import colombiaflag from "../../assets/countries/colombia.webp";
+import mexflag from "../../assets/countries/mexico.webp";
+import logo from "../../assets/logos/logo1_white.webp";
+import logo2 from "../../assets/logos/logo2_white.webp";
+import initialburger from "../../assets/initialburger.webp";
+import luis from "../../assets/luisillo.webp";
+import ari from "../../assets/arisilla.webp";
+import logo3 from "../../assets/logos/logo3.webp"
 import spaJson from "../../json/spain.json";
 import colJson from "../../json/col.json";
 import mexJson from "../../json/mex.json";
@@ -20,10 +20,12 @@ import combo from "../../assets/products/combo.png";
 import potato from "../../assets/products/potatos.png";
 import cake from "../../assets/products/cake.png";
 import beverage from "../../assets/products/beverage.png";
-import motogatomochi from "../../assets/motogato.png"
+import motogatomochi from "../../assets/motogato.webp"
 import Carro from "../carro/carro"
 import Product from "../producto/producto"
 import 'react-loading-skeleton/dist/skeleton.css'
+import {ShoppingCartOutline} from "@styled-icons/evaicons-outline/ShoppingCartOutline"
+import {Twitter, Facebook, Instagram} from "@styled-icons/boxicons-logos"
 export default function Inicio(prop: any) {
   let date = new Date();
     let time = `${date.getHours({
@@ -43,6 +45,7 @@ export default function Inicio(prop: any) {
   const burRef = useRef(null);
   const patRef = useRef(null);
   const [countriesViewStatus, setCountriesViewStatus]=useState(null)
+  const [restaurantStatusText, setRestaurantStatusText] = useState('')
     //#00e57e is open and #ff441f is closed
   const [restaurantStatus,setRestaurantStatus]=useState(null)
   const [restaurantStatusVisible, setRestaurantStatusVisible]=useState(false)
@@ -91,8 +94,10 @@ export default function Inicio(prop: any) {
                      setCountrySrc(spainflag)
                          if(time >= 12){
                              setRestaurantStatus("#00e57e")
+                         setRestaurantStatusText("Disponible, Horario de atención (12 - 00:00)")
                          }else{
                              setRestaurantStatus("#ff441f")
+                             setRestaurantStatusText("No Disponible, Horario de atención (12 - 00:00)")
                          }
                      break;
                    case "Perú":
@@ -100,8 +105,10 @@ export default function Inicio(prop: any) {
                      setCountrySrc(peruflag)
                          if(time >= 11){
                              setRestaurantStatus("#00e57e")
+                         setRestaurantStatusText("Disponible, Horario de atención (11am - 10pm)")
                          }else{
                              setRestaurantStatus("#ff441f")
+                             setRestaurantStatusText("No Disponible, Horario de atención (11am - 10pm)")
                          }
                      break;
                    case "México":
@@ -109,8 +116,10 @@ export default function Inicio(prop: any) {
                      setCountrySrc(mexflag)
                          if(time >= 12){
                              setRestaurantStatus("#00e57e")
+                         setRestaurantStatusText("Disponible, Horario de atención (12am - 10pm)")
                          }else{
                              setRestaurantStatus("#ff441f")
+                             setRestaurantStatusText("No Disponible, Horario de atención (12am - 10pm)")
                          }
                      break;
                    case "Colombia":
@@ -118,8 +127,10 @@ export default function Inicio(prop: any) {
                      setCountrySrc(colombiaflag)
                          if(time >= 11){
                              setRestaurantStatus("#00e57e")
+                         setRestaurantStatusText("Disponible, Horario de atención (11am - 10pm)")
                          }else{
                              setRestaurantStatus("#ff441f")
+                             setRestaurantStatusText("No Disponible, Horario de atención (11am - 10pm)")
                          }
                      break;
                  }
@@ -133,11 +144,11 @@ export default function Inicio(prop: any) {
       {prop.countrySelectionState ? 
       <c.InitialView>
           <c.IsRestaurantOpenResponsive statusVisible={ !restaurantStatusVisible ? -200 : 0 } backgroundStatus={restaurantStatus == "#00e57e" ? "#E9FCF2" : "#ffe2e2"} colorStatus={restaurantStatus}>
-              <p>{restaurantStatus == "#00e57e" ? prop.countrySelectionState == "España" ? "Disponible, Horario de atención (12 - 00:00)" : prop.countrySelectionState == "Perú" ? "Disponible, Horario de atención (10am - 11pm)" : "" : restaurantStatus == "#ff441f" ? prop.countrySelectionState == "España" ? "No Disponible, Horario de atención (12 - 00:00)" : prop.countrySelectionState == "Perú" ? "No Disponible, Horario de atención (10am - 11pm)" : null :  null}</p>
+              <p>{restaurantStatusText}</p>
               <i class="bx bx-x" onClick={()=>setRestaurantStatusVisible(false)}></i>
     </c.IsRestaurantOpenResponsive>
           <c.IsRestaurantOpen statusVisible={ !restaurantStatusVisible ? -200 : 0 } backgroundStatus={restaurantStatus == "#00e57e" ? "#E9FCF2" : "#ffe2e2"} colorStatus={restaurantStatus}>
-              <p>{restaurantStatus == "#00e57e" ? prop.countrySelectionState == "España" ? "Disponible, Horario de atención (12 - 00:00)" : prop.countrySelectionState == "Perú" ? "Disponible, Horario de atención (10am - 11pm)" : "" : restaurantStatus == "#ff441f" ? prop.countrySelectionState == "España" ? "No Disponible, Horario de atención (12 - 00:00)" : prop.countrySelectionState == "Perú" ? "No Disponible, Horario de atención (10am - 11pm)" : null :  null}</p>
+              <p>{restaurantStatusText}</p>
               <i class="bx bx-x" onClick={()=>setRestaurantStatusVisible(false)}></i>
           </c.IsRestaurantOpen>
       <c.InitialViewSvg
@@ -151,10 +162,10 @@ export default function Inicio(prop: any) {
       ></path>
       </c.InitialViewSvg>
 
-      <c.LuisImg src={luis} />
+      <c.LuisImg data-aos="zoom-in-up" src={luis} />
       <c.InitialViewContent>
       <c.InitialViewContentTop>
-      <c.CountrySelection onClick={()=> setCountriesViewStatus((prop)=>!prop)} src={countrySrc}/>
+      <c.CountrySelection data-aos="zoom-in" data-aos-delay="100" onClick={()=> setCountriesViewStatus((prop)=>!prop)} src={countrySrc}/>
       <c.CountrySelectionView height={
         countriesViewStatus ? 335 : 0
       }>
@@ -184,24 +195,24 @@ export default function Inicio(prop: any) {
       </c.InitialViewContentTop>
       <c.InitialViewContentPresentation>
       <c.InitialViewContentTitleLeft>
-      <c.InitialViewContentTitle>
+      <c.InitialViewContentTitle data-aos="zoom-in-up">
       Sabor único, presentación de 10 y lo mejor de todo ¡al
       alcance de tu paladar!
       </c.InitialViewContentTitle>
-      <c.InitialViewContentDesc>
+      <c.InitialViewContentDesc data-aos="fade-up" data-aos-delay="300">
       Más que un simple platillo, es una obra de arte. Pan e
       ingredientes elegidos con cautela para el agrado de tu
       paladar, una porciòn exacta de carne que es cocinada el
       tiempo preciso, vegetales frescos y con tus ingredientes
       favoritos al gusto.
       </c.InitialViewContentDesc>
-          <c.InitialViewContentButton onClick={()=>burRef.current.scrollIntoView({block:"start",behavior:"smooth"})}>
-          <i class="bx bx-down-arrow-alt"></i>
+          <c.InitialViewContentButton data-aos="zoom-in" data-aos-delay="500" onClick={()=>burRef.current.scrollIntoView({block:"start",behavior:"smooth"})}>
+              <c.ArrowBottom style={{height:'25px',width:'25px'}}/>
       </c.InitialViewContentButton>
       </c.InitialViewContentTitleLeft>
       <c.RightImageView>
-      <c.InitialViewContentPresentationImg src={initialburger} />
-      <c.InitialViewContentPresentationDesc>
+      <c.InitialViewContentPresentationImg data-aos='zoom-in-up' data-aos-delay="300" src={initialburger} />
+      <c.InitialViewContentPresentationDesc data-aos='fade-up' data-aos-delay="500">
       Experimenta una increíble experiencia y sabores 100% únicos
       </c.InitialViewContentPresentationDesc>
       </c.RightImageView>
@@ -209,7 +220,7 @@ export default function Inicio(prop: any) {
       </c.InitialViewContent>
       <c.CategoriesContent>
           <c.CategoriesView ref={burRef} style={{marginTop:"180px"}}>
-      <c.TopTitleCategory>
+      <c.TopTitleCategory data-aos="fade-up">
       <c.TopTitleImg src={burger} />
       <c.CategoryTitle>
       Fasfú Menu /{" "}
@@ -238,7 +249,7 @@ export default function Inicio(prop: any) {
               </c.CategoryLoadingView>
               : null }
 
-              <c.CategoryView style={{ visibility:!loaded0 ? "hidden" : "visible", opacity: !loaded0 ? "0" : "1",paddingTop: "50px", maxHeight: !loaded0 ? "0px" : null}}>
+              <c.CategoryView style={{ visibility:!loaded0 ? "hidden" : "visible", opacity: !loaded0 ? "0" : "1",paddingTop: "50px",paddingBottom:"20px", maxHeight: !loaded0 ? "0px" : null}}>
       {currentJson
         .filter((prop) => prop.type == "BURGER")
         .map((data, index) => {
@@ -260,7 +271,7 @@ export default function Inicio(prop: any) {
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
+                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
             <c.ProductTitle>{data.name}</c.ProductTitle>
             <c.ProductDesc>
@@ -269,14 +280,7 @@ export default function Inicio(prop: any) {
               : data.desc}
             </c.ProductDesc>
             <c.ProductQuickAdd style={{ marginTop: "-13px" }}>
-            <i
-            class="bx bx-cart"
-            style={{
-              fontSize: "28px",
-                marginTop:'3px',
-                background: "transparent",
-            }}
-            />
+        <ShoppingCartOutline id="quick-add-cart"/>
             <p
             style={{ marginTop: "10px", marginLeft: "5px" }}
             >
@@ -304,14 +308,7 @@ export default function Inicio(prop: any) {
                                  : data.desc} 
                          </c.ProductDescResponsive> 
                           <c.ProductQuickAddResponsive style={{ marginTop: "-13px" }}>  
-                             <i 
-                                class="bx bx-cart"
-                                style={{ 
-                                     fontSize: "28px", 
-                                     marginTop:'3px',
-                                     background: "transparent", 
-                                 }} 
-                             /> 
+        <ShoppingCartOutline id="quick-add-cart"/>
                              <p 
                                  style={{ marginTop: "10px", marginLeft: "5px" }} 
                              > 
@@ -327,7 +324,7 @@ export default function Inicio(prop: any) {
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
+                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive>
                             {data.price}
@@ -364,31 +361,6 @@ export default function Inicio(prop: any) {
       Combos
       </span>
       </c.CategoryTitle>
-          {
-              prop.countrySelectionState != "España" && prop.countrySelectionState != "Perú" ? 
-      <c.ExpandCategories onClick={() => {
-        setComEx((prop) => !prop);
-        if (ComEx == false) {
-          comRef.current.scrollIntoView({
-            block: "start",
-            behavior: "smooth",
-          });
-        }
-      }}>
-      <c.ExpandCategoriesContent>
-      <i
-      class={
-        !ComEx ? "bx bx-down-arrow-alt" : "bx bx-up-arrow-alt"
-      }
-      style={{ fontSize: "22px", marginTop: "1.5px" }}
-      ></i>
-      <p style={{ fontSize: "17px", marginTop: "2px" }}>
-      {!ComEx ? "Ver más" : "Ver menos"}
-      </p>
-      </c.ExpandCategoriesContent>
-      </c.ExpandCategories>
-      : null
-          }
       </c.TopTitleCategory>
               {
                   !loaded1 ? 
@@ -436,7 +408,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
+                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                 <c.ProductTitle style={{fontSize:"14px",marginBottom:"-1px"}}>{data.name}</c.ProductTitle>
             <c.ProductDesc>
@@ -445,14 +417,7 @@ opacity: !loaded1 ? "0" : "1",
               : data.desc}
             </c.ProductDesc>
             <c.ProductQuickAdd style={{ marginTop: "-13px" }}>
-            <i
-            class="bx bx-cart"
-            style={{
-              fontSize: "28px",
-                marginTop:'3px',
-                background: "transparent",
-            }}
-            />
+        <ShoppingCartOutline id="quick-add-cart"/>
             <p
             style={{ marginTop: "10px", marginLeft: "5px" }}
             >
@@ -480,14 +445,7 @@ opacity: !loaded1 ? "0" : "1",
                                  : data.desc} 
                          </c.ProductDescResponsive> 
                           <c.ProductQuickAddResponsive style={{ marginTop: "-13px" }}>  
-                             <i 
-                                class="bx bx-cart"
-                                style={{ 
-                                     fontSize: "28px", 
-                                     marginTop:'3px',
-                                     background: "transparent", 
-                                 }} 
-                             /> 
+        <ShoppingCartOutline id="quick-add-cart"/>
                              <p 
                                  style={{ marginTop: "10px", marginLeft: "5px" }} 
                              > 
@@ -503,7 +461,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
+                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive>
                             {data.price}
@@ -558,7 +516,7 @@ opacity: !loaded1 ? "0" : "1",
                       })}
               </c.CategoryLoadingView>
               : null }
-      <c.CategoryView  style={{ opacity: !loaded2 ? "0" : "1",visibility:!loaded2 ? "hidden" : "visible",paddingTop: "50px", maxHeight: !loaded2 ? "0px" : null}}>
+              <c.CategoryView  style={{ opacity: !loaded2 ? "0" : "1",visibility:!loaded2 ? "hidden" : "visible",paddingTop: "50px",paddingBottom:"20px", maxHeight: !loaded2 ? "0px" : null}}>
       {currentJson
         .filter((prop) => prop.type == "PATATAS")
         .map((data) => {
@@ -580,18 +538,11 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
+                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
             <c.ProductTitle>{data.name}</c.ProductTitle>
             <c.ProductQuickAdd style={{ marginTop: "5px" }}>
-            <i
-            class="bx bx-cart"
-            style={{
-              fontSize: "30px",
-                marginTop:'6px',
-                background: "transparent",
-            }}
-            />
+                <ShoppingCartOutline style={{marginTop:"9px"}} id="quick-add-cart"/>
             <p
             style={{ marginTop: "15px", marginLeft: "5px" }}
             >
@@ -618,15 +569,8 @@ opacity: !loaded1 ? "0" : "1",
                                  ? data.desc.slice(0, 97) + "..."
                                  : data.desc} 
                          </c.ProductDescResponsive> 
-                          <c.ProductQuickAddResponsive style={{ marginTop: "-13px" }}>  
-                             <i 
-                                class="bx bx-cart"
-                                style={{ 
-                                     fontSize: "28px", 
-                                     marginTop:'3px',
-                                     background: "transparent", 
-                                 }} 
-                             /> 
+                          <c.ProductQuickAddResponsive style={{ marginTop: "-3px" }}>  
+        <ShoppingCartOutline id="quick-add-cart"/>
                              <p 
                                  style={{ marginTop: "10px", marginLeft: "5px" }} 
                              > 
@@ -642,7 +586,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
+                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive>
                             {data.price}
@@ -679,7 +623,7 @@ opacity: !loaded1 ? "0" : "1",
       </span>
       </c.CategoryTitle>
           {
-              prop.countrySelectionState == "España" ? 
+              prop.countrySelectionState == "España"  ? 
           <c.ExpandCategories 
       onClick={() => {
         setPSEx((prop) => !prop);
@@ -692,12 +636,11 @@ opacity: !loaded1 ? "0" : "1",
       }}
           >
       <c.ExpandCategoriesContent>
-      <i
-      class={
-        !PSEx ? "bx bx-down-arrow-alt" : "bx bx-up-arrow-alt"
-      }
-      style={{ fontSize: "22px", marginTop: "1.5px" }}
-      ></i>
+          { !PSEx ? 
+              <c.ArrowBottom/>
+                    : 
+              <c.ArrowTop/>
+          }
       <p style={{ fontSize: "17px", marginTop: "2px" }}>
       {!PSEx ? "Ver más" : "Ver menos"}
       </p>
@@ -722,9 +665,11 @@ opacity: !loaded1 ? "0" : "1",
                       })}
               </c.CategoryLoadingView>
               : null }
-      <c.CategoryView
+          <c.CategoryView id={
+              prop.countrySelectionState == "España" ? "psv" : null
+              }
       style={{opacity: !loaded3 ? "0" : "1",
-          visibility:!loaded3 ? "hidden" : "visible",paddingBottom:"50px", maxHeight: !loaded3 ? "0px" : !PSEx ? "320px" : "3200px"
+          visibility:!loaded3 ? "hidden" : "visible",paddingBottom:"70px", maxHeight: !loaded3 ? "0px" : !PSEx ? prop.countrySelectionState == "España" ? "280px" : "3200px" : "3200px"
       }}
       >
       {currentJson
@@ -749,18 +694,11 @@ opacity: !loaded1 ? "0" : "1",
                     }
                     }}
  
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
+                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                 <c.ProductTitle style={{fontSize:data.name=="Malteada de Chocolate y Aguacate" ? "15px": null}}>{data.name}</c.ProductTitle>
             <c.ProductQuickAdd style={{ marginTop: "5px" }}>
-            <i
-            class="bx bx-cart"
-            style={{
-              fontSize: "30px",
-                marginTop:'6px',
-                background: "transparent",
-            }}
-            />
+                <ShoppingCartOutline style={{marginTop:"9px"}} id="quick-add-cart"/>
             <p
             style={{ marginTop: "15px", marginLeft: "5px" }}
             >
@@ -787,15 +725,8 @@ opacity: !loaded1 ? "0" : "1",
                                  ? data.desc.slice(0, 97) + "..."
                                  : data.desc} 
                          </c.ProductDescResponsive> 
-                          <c.ProductQuickAddResponsive style={{ marginTop: "-13px" }}>  
-                             <i 
-                                class="bx bx-cart"
-                                style={{ 
-                                     fontSize: "28px", 
-                                     marginTop:'3px',
-                                     background: "transparent", 
-                                 }} 
-                             /> 
+                          <c.ProductQuickAddResponsive style={{ marginTop: "-3px" }}>  
+        <ShoppingCartOutline id="quick-add-cart"/>
                              <p 
                                  style={{ marginTop: "10px", marginLeft: "5px" }} 
                              > 
@@ -811,7 +742,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
+                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive>
                             {data.price}
@@ -865,12 +796,12 @@ opacity: !loaded1 ? "0" : "1",
       }}
           >
       <c.ExpandCategoriesContent>
-      <i
-      class={
-        !BebEx ? "bx bx-down-arrow-alt" : "bx bx-up-arrow-alt"
+{
+          !BebEx ? 
+              <c.ArrowBottom/>
+              : 
+              <c.ArrowTop/>
       }
-      style={{ fontSize: "22px", marginTop: "1.5px" }}
-      ></i>
       <p style={{ fontSize: "17px", marginTop: "2px" }}>
       {!BebEx ? "Ver más" : "Ver menos"}
       </p>
@@ -896,9 +827,11 @@ opacity: !loaded1 ? "0" : "1",
                       })}
               </c.CategoryLoadingView>
               : null }
-      <c.CategoryView
+      <c.CategoryView id={
+              prop.countrySelectionState == "España" ? "bebv" : null
+              }
       style={{opacity: !loaded4 ? "0" : "1",
-          visibility:!loaded4 ? "hidden" : "visible",paddingBottom: !loaded4 ? "0px" : "65px", maxHeight: !loaded4 ? "0px" : !BebEx ? "300px" : "3200px"
+          visibility:!loaded4 ? "hidden" : "visible",paddingBottom: !loaded4 ? "0px" : "125px", maxHeight: !loaded4 ? "0px" : !BebEx ? prop.countrySelectionState == "España" ? "220px" : "3200px" : "3200px"
       }}
       >
       {currentJson
@@ -922,20 +855,13 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
+                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
             <c.ProductTitle>{data.name}</c.ProductTitle>
             </c.CategoryAbs>
 
                     <c.ProductQuickAdd style={{ position:"absolute",zIndex:"5", marginTop:"180px", marginLeft:"25px" }}>
-            <i
-            class="bx bx-cart"
-            style={{
-              fontSize: "30px",
-                marginTop:'6px',
-                background: "transparent",
-            }}
-            />
+                        <ShoppingCartOutline style={{marginTop:"9px"}} id="quick-add-cart"/>
             <p
             style={{ marginTop: "15px", marginLeft: "5px" }}
             >
@@ -961,15 +887,8 @@ opacity: !loaded1 ? "0" : "1",
                                  ? data.desc.slice(0, 97) + "..."
                                  : data.desc} 
                          </c.ProductDescResponsive> 
-                          <c.ProductQuickAddResponsive style={{ marginTop: "-13px" }}>  
-                             <i 
-                                class="bx bx-cart"
-                                style={{ 
-                                     fontSize: "28px", 
-                                     marginTop:'3px',
-                                     background: "transparent", 
-                                 }} 
-                             /> 
+                          <c.ProductQuickAddResponsive style={{ marginTop: "-3px" }}>  
+        <ShoppingCartOutline id="quick-add-cart"/>
                              <p 
                                  style={{ marginTop: "10px", marginLeft: "5px" }} 
                              > 
@@ -985,7 +904,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucol"}/${data.pic}`)}
+                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive>
                             {data.price}
@@ -1014,7 +933,9 @@ opacity: !loaded1 ? "0" : "1",
               <c.FooterCenter>
                   <c.Frase>
 <i class='bx bxs-quote-alt-left' ></i>
+<img class="bx bxs-quote-alt-right" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAR9JREFUSEvdlW9xwkAUxHcV0CooKCB1gIQ6oA5AAjhoFbRVUCS0CkACOCAKlnnMJfOS5s/LDPlQ7vPO/u52390RIy+O7I87B0h6AbAEMCX53BVnm7YxIkkZgG8zdqYzksc6pE/7ByDpFcCHM/oFsCH502Deq60A0m72zmhLctMUTVRbBxwAzJPhO8l1W+6SQtoSkEqy3Iv1SPLcsnsrP6T1gM80Md7TSrXsLaqyYElhrQeYwVNLJHYSm6LriSSFtR6gnmfji6RNjQHC2iGAQ3HZAoBSOwQAkld9AFBqox2Yb07yIdBBResBbwBWHT34DsJaD7Dd2XRMGiA5gKwYVUlhbf0m2+Nmu1sk0AnALr1FlUsnKaS98w/nFv/1/4/oAgG/oBmbRFOdAAAAAElFTkSuQmCC"/>
                       Siete vidas no son suficientes para dejar de amar las hamburguesas
+<img class="bx bxs-quote-alt-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASZJREFUSEvtldtNw0AQRc+tADqAVAB0QAlQAaEDUkFogQ6gg3QCqYBQAelg0Fhra7LYu+sP/2Uky5J9PWdeOxYLmxb2zxlQrfBJiczsEtgCD8B1+noHbCQdordW7QAwM3f4CTgktyOwkuR35mgj4B14KuT8JuklAZq1EWCVgh4krRKgWTsHgKROb2Y1wKCNgC/gppRFADRr5/QgZlDrwWgGPj0+ihcTWfxI6kY3jWhJu5d069r8HLiDV+AeuMpAH5LW/bM0qlXt5C5KUf4GyKMkP3T/rKQtAWKdh5QnAJPaUYCZeeq+Mnq7k+STMxZ9UZv3wGvvjv3e27Mkj/DEzKxJm++i7+BlD6zHIk8NbtLmGXgZ/NpNNTRMUZP2/Ecrra7u3eIl+gMS1pgZ+J6NOAAAAABJRU5ErkJggg=="/>
 <i class='bx bxs-quote-alt-right' ></i>
                   </c.Frase>
               </c.FooterCenter>
@@ -1022,13 +943,13 @@ opacity: !loaded1 ? "0" : "1",
 
                   <c.SocialNetworks>
                       <a href="https://twitter.com/fasfuburgers?lang=es" target="_blank">
-                        <i class='bx bxl-twitter' ></i>
+                          <Twitter id="i"/>
                       </a>
                       <a href="https://www.instagram.com/fasfu.burgers/?hl=es" target="_blank">
-                        <i class='bx bxl-instagram' ></i>
+                          <Instagram id="i"/>
                       </a>
                       <a href="https://www.facebook.com/people/Fasf%C3%BA-Burgers/100076023661997/" target="_blank">
-                        <i class='bx bxl-facebook' ></i>
+                          <Facebook id="i"/>
                       </a>
                   </c.SocialNetworks>
           </c.FooterContent>
