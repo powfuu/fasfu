@@ -217,7 +217,7 @@ export const InitialViewContentButton=styled.span`
   width:max-content;
   margin-top:45px;
   margin-left:270px;
-    transition:.4s all ease-in-out;
+    transition:.4s all ease-in-out !important;
         &:hover{
             background:transparent;
             border:1px solid rgb(253,253,253);
@@ -429,6 +429,10 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   &:hover{
     background:#e5f2ff;
   }
+    &:hover #cp{
+        color:dodgerblue;
+        transition:.5s;
+    }
     ${mxw(759)}{
         width:90%;
         height:60px;

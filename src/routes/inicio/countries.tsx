@@ -26,7 +26,7 @@ export default function Countries(prop:any){
             return(
               <c.Country onClick={()=>chooseCountry(co.title)}>
                 <c.CountriesCountry src={co.flag}/>
-                <c.CountriesCountryVal>{co.title}</c.CountriesCountryVal>
+                <c.CountriesCountryVal id="cpc">{co.title}</c.CountriesCountryVal>
               </c.Country>
             )
          })

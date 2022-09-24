@@ -13,11 +13,46 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +111 src/json/spain.json
+badd +6 src/routes/producto/producto.jsx
+badd +1 ~/Desktop/dev/webapps/fasfu/src/routes/producto/editar-producto/mex-customization.jsx
+badd +10 ~/Desktop/dev/webapps/fasfu/src/routes/producto/editar-producto/peru-customization.jsx
+badd +10 ~/Desktop/dev/webapps/fasfu/src/routes/producto/editar-producto/spain-customization.jsx
 argglobal
 %argdel
-edit src/json/spain.json
+$argadd .
+edit ~/Desktop/dev/webapps/fasfu/src/routes/producto/editar-producto/mex-customization.jsx
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 38 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 135 + 87) / 174)
 argglobal
+enew
+file NvimTree_1
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+wincmd w
+argglobal
+balt ~/Desktop/dev/webapps/fasfu/src/routes/producto/editar-producto/peru-customization.jsx
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -28,12 +63,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 245 - ((47 * winheight(0) + 26) / 52)
+let s:l = 3 - ((2 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 245
+keepjumps 3
 normal! 019|
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 38 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 135 + 87) / 174)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -41,12 +80,15 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

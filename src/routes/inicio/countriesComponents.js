@@ -100,6 +100,10 @@ export const Country = styled.div`
   &:hover{
     background:#e5f2ff;
   }
+    &:hover #cpc{
+        transition:.5s;
+        color:dodgerblue;
+    }
 `
 export const CountriesCountry = styled.img`
   height:80px;

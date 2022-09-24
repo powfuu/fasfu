@@ -54,6 +54,28 @@ export default function Inicio(prop: any) {
   const [loaded2, setLoaded2]=useState(false)
   const [loaded3, setLoaded3]=useState(false)
   const [loaded4, setLoaded4]=useState(false)
+const formatterEs = new Intl.NumberFormat('es-ES', {
+       style: 'currency',
+       currency: 'EUR',
+       minimumFractionDigits: 2
+     })
+const formatterPeso = new Intl.NumberFormat('es-CO', {
+       style: 'currency',
+       currency: 'COP',
+       minimumFractionDigits: 3
+     })
+const formatterPer = new Intl.NumberFormat('es-PE', {
+       style: 'currency',
+       currency: 'PEN',
+       minimumFractionDigits: 2
+     })
+const formatterMex = new Intl.NumberFormat('es-MX', {
+       style: 'currency',
+       currency: 'MXN',
+       minimumFractionDigits: 2
+     })
+  const [priceSign, setPriceSign]=useState(formatterMex)
+  const [customization, setCustomization]=useState("mex")
   const countriesArr: []=[
     {
       id:0,
@@ -92,6 +114,8 @@ export default function Inicio(prop: any) {
                    case "España":
                      setCurrentJson(spaJson);
                      setCountrySrc(spainflag)
+                         setPriceSign(formatterEs)
+                         setCustomization('spain')
                          if(time >= 12){
                              setRestaurantStatus("#00e57e")
                          setRestaurantStatusText("Disponible, Horario de atención (12 - 00:00)")
@@ -103,6 +127,8 @@ export default function Inicio(prop: any) {
                    case "Perú":
                      setCurrentJson(perJson);
                      setCountrySrc(peruflag)
+                         setCustomization('peru')
+                         setPriceSign(formatterPer)
                          if(time >= 11){
                              setRestaurantStatus("#00e57e")
                          setRestaurantStatusText("Disponible, Horario de atención (11am - 10pm)")
@@ -114,6 +140,8 @@ export default function Inicio(prop: any) {
                    case "México":
                      setCurrentJson(mexJson);
                      setCountrySrc(mexflag)
+                         setCustomization('mex')
+                         setPriceSign(formatterMex)
                          if(time >= 12){
                              setRestaurantStatus("#00e57e")
                          setRestaurantStatusText("Disponible, Horario de atención (12am - 10pm)")
@@ -125,6 +153,8 @@ export default function Inicio(prop: any) {
                    case "Colombia":
                      setCurrentJson(colJson);
                      setCountrySrc(colombiaflag)
+                         setPriceSign(formatterPeso)
+                         setCustomization('col')
                          if(time >= 11){
                              setRestaurantStatus("#00e57e")
                          setRestaurantStatusText("Disponible, Horario de atención (11am - 10pm)")
@@ -133,8 +163,8 @@ export default function Inicio(prop: any) {
                              setRestaurantStatusText("No Disponible, Horario de atención (11am - 10pm)")
                          }
                      break;
-                 }
     }
+        }
   useEffect(() => {
         setRestaurantStatusVisible(true)
     setDataCountry(prop.countrySelectionState)
@@ -191,7 +221,7 @@ export default function Inicio(prop: any) {
       <c.InitialViewLogo src={logo} />
       <c.InitialViewCenterLogo src={logo2} />
       <Carro isInCar={prop.isInCar} setIsInCar={prop.setIsInCar}/>
-      <Product isInProduct={prop.isInProduct} setIsInProduct={prop.setIsInProduct}/>
+      <Product customization={customization} country={prop.countrySelectionState} productSign={priceSign} isInProduct={prop.isInProduct} currentProduct={prop.currentProduct} setIsInProduct={prop.setIsInProduct}/>
       </c.InitialViewContentTop>
       <c.InitialViewContentPresentation>
       <c.InitialViewContentTitleLeft>
@@ -218,6 +248,8 @@ export default function Inicio(prop: any) {
       </c.RightImageView>
       </c.InitialViewContentPresentation>
       </c.InitialViewContent>
+
+
       <c.CategoriesContent>
           <c.CategoriesView ref={burRef} style={{marginTop:"180px"}}>
       <c.TopTitleCategory data-aos="fade-up">
@@ -254,14 +286,13 @@ export default function Inicio(prop: any) {
         .filter((prop) => prop.type == "BURGER")
         .map((data, index) => {
           return (
-              <c.Category onClick={()=>prop.setIsInProduct(true)} style={{ marginTop: "0px" }}>
+              <c.Category onClick={()=>{
+                  prop.setIsInProduct(true)
+                  prop.setCurrentProduct(data)
+                  }} style={{ marginTop: "0px" }}>
                 <c.CategoryDesktop>
-            <c.CategoryPrice>
-            {data.price}
-            {prop.countrySelectionState ==
-                "España"
-                ? "€"
-                : prop.countrySelectionState == "Perú" ? "S/" : "$"}
+            <c.CategoryPrice id="cp">
+            {priceSign.format(parseFloat(data.price))}
             </c.CategoryPrice>
             <c.CategoryAbs>
                 <c.ProductImg onLoad={(prop)=>{
@@ -326,12 +357,8 @@ export default function Inicio(prop: any) {
                     }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
-                        <c.ProductPriceResponsive>
-                            {data.price}
-                            {prop.countrySelectionState ==
-                                    "España"
-                                        ? "€"
-                                        : prop.countrySelectionState == "Perú" ? "S/" : "$"}
+                        <c.ProductPriceResponsive id="cp">
+                            {priceSign.format(parseFloat(data.price))}
                         </c.ProductPriceResponsive>
                     </c.CRRight>
                 <c.ProductWaveResponsive></c.ProductWaveResponsive>
@@ -391,14 +418,13 @@ opacity: !loaded1 ? "0" : "1",
         .filter((prop) => prop.type == "COMBO")
         .map((data) => {
           return (
-            <c.Category onClick={()=>prop.setIsInProduct(true)} style={{ marginTop: "0px" }}>
+            <c.Category onClick={()=>{
+                  prop.setIsInProduct(true)
+                  prop.setCurrentProduct(data)
+                  }} style={{ marginTop: "0px" }}>
                 <c.CategoryDesktop>
-            <c.CategoryPrice>
-            {data.price}
-            {prop.countrySelectionState ==
-                "España"
-                ? "€"
-                : prop.countrySelectionState == "Perú" ? "S/" : "$"}
+            <c.CategoryPrice  id="cp">
+            {priceSign.format(parseFloat(data.price))}
             </c.CategoryPrice>
             <c.CategoryAbs>
             <c.ProductImg onLoad={()=>{
@@ -463,12 +489,8 @@ opacity: !loaded1 ? "0" : "1",
                     }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
-                        <c.ProductPriceResponsive>
-                            {data.price}
-                            {prop.countrySelectionState ==
-                                    "España"
-                                        ? "€"
-                                        : prop.countrySelectionState == "Perú" ? "S/" : "$"}
+                        <c.ProductPriceResponsive id="cp">
+                            {priceSign.format(parseFloat(data.price))}
                         </c.ProductPriceResponsive>
                     </c.CRRight>
                 <c.ProductWaveResponsive></c.ProductWaveResponsive>
@@ -521,14 +543,13 @@ opacity: !loaded1 ? "0" : "1",
         .filter((prop) => prop.type == "PATATAS")
         .map((data) => {
           return (
-            <c.Category onClick={()=>prop.setIsInProduct(true)} style={{ marginTop: "0px" }}>
+            <c.Category onClick={()=>{
+                  prop.setIsInProduct(true)
+                  prop.setCurrentProduct(data)
+                  }} style={{ marginTop: "0px" }}>
                 <c.CategoryDesktop>
-            <c.CategoryPrice>
-            {data.price}
-            {prop.countrySelectionState ==
-                "España"
-                ? "€"
-                : prop.countrySelectionState == "Perú" ? "S/" : "$"}
+            <c.CategoryPrice id="cp">
+            {priceSign.format(parseFloat(data.price))}
             </c.CategoryPrice>
             <c.CategoryAbs>
             <c.ProductImg onLoad={(prop)=>{
@@ -588,12 +609,8 @@ opacity: !loaded1 ? "0" : "1",
                     }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
-                        <c.ProductPriceResponsive>
-                            {data.price}
-                            {prop.countrySelectionState ==
-                                    "España"
-                                        ? "€"
-                                        : prop.countrySelectionState == "Perú" ? "S/" : "$"}
+                        <c.ProductPriceResponsive id="cp">
+                            {priceSign.format(parseFloat(data.price))}
                         </c.ProductPriceResponsive>
                     </c.CRRight>
                 <c.ProductWaveResponsive></c.ProductWaveResponsive>
@@ -676,14 +693,13 @@ opacity: !loaded1 ? "0" : "1",
         .filter((prop) => prop.type == "PS")
         .map((data) => {
           return (
-            <c.Category onClick={()=>prop.setIsInProduct(true)} style={{ marginBottom: "-50px" }}>
+            <c.Category onClick={()=>{
+                  prop.setIsInProduct(true)
+                  prop.setCurrentProduct(data)
+                  }} style={{ marginBottom: "-50px" }}>
                 <c.CategoryDesktop>
-            <c.CategoryPrice>
-            {data.price}
-            {prop.countrySelectionState ==
-                "España"
-                ? "€"
-                : prop.countrySelectionState == "Perú" ? "S/" : "$"}
+            <c.CategoryPrice id="cp">
+            {priceSign.format(parseFloat(data.price))}
             </c.CategoryPrice>
             <c.CategoryAbs>
             <c.ProductImg onLoad={(prop)=>{
@@ -744,12 +760,8 @@ opacity: !loaded1 ? "0" : "1",
                     }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
-                        <c.ProductPriceResponsive>
-                            {data.price}
-                            {prop.countrySelectionState ==
-                                    "España"
-                                        ? "€"
-                                        : prop.countrySelectionState == "Perú" ? "S/" : "$"}
+                        <c.ProductPriceResponsive id="cp">
+                            {priceSign.format(parseFloat(data.price))}
                         </c.ProductPriceResponsive>
                     </c.CRRight>
                 <c.ProductWaveResponsive></c.ProductWaveResponsive>
@@ -838,14 +850,13 @@ opacity: !loaded1 ? "0" : "1",
         .filter((prop) => prop.type == "Bebida")
         .map((data) => {
           return (
-            <c.Category onClick={()=>prop.setIsInProduct(true)} style={{ marginBottom: "-55px" }}>
+            <c.Category onClick={()=>{
+                  prop.setIsInProduct(true)
+                  prop.setCurrentProduct(data)
+                  }} style={{ marginBottom: "-55px" }}>
                 <c.CategoryDesktop>
-            <c.CategoryPrice>
-            {data.price}
-            {prop.countrySelectionState ==
-                "España"
-                ? "€"
-                : prop.countrySelectionState == "Perú" ? "S/" : "$"}
+            <c.CategoryPrice id="cp">
+            {priceSign.format(parseFloat(data.price))}
             </c.CategoryPrice>
             <c.CategoryAbs>
             <c.ProductImg onLoad={(prop)=>{
@@ -906,12 +917,8 @@ opacity: !loaded1 ? "0" : "1",
                     }}
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
-                        <c.ProductPriceResponsive>
-                            {data.price}
-                            {prop.countrySelectionState ==
-                                    "España"
-                                        ? "€"
-                                        : prop.countrySelectionState == "Perú" ? "S/" : "$"}
+                        <c.ProductPriceResponsive id="cp">
+                            {priceSign.format(parseFloat(data.price))}
                         </c.ProductPriceResponsive>
                     </c.CRRight>
                 <c.ProductWaveResponsive></c.ProductWaveResponsive>
