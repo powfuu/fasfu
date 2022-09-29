@@ -175,11 +175,11 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       <c.InitialView>
           <c.IsRestaurantOpenResponsive statusVisible={ !restaurantStatusVisible ? -200 : 0 } backgroundStatus={restaurantStatus == "#00e57e" ? "#E9FCF2" : "#ffe2e2"} colorStatus={restaurantStatus}>
               <p>{restaurantStatusText}</p>
-              <i class="bx bx-x" onClick={()=>setRestaurantStatusVisible(false)}></i>
+              <h1 class="bx bx-x" onClick={()=>setRestaurantStatusVisible(false)}>x</h1>
     </c.IsRestaurantOpenResponsive>
           <c.IsRestaurantOpen statusVisible={ !restaurantStatusVisible ? -200 : 0 } backgroundStatus={restaurantStatus == "#00e57e" ? "#E9FCF2" : "#ffe2e2"} colorStatus={restaurantStatus}>
               <p>{restaurantStatusText}</p>
-              <i class="bx bx-x" onClick={()=>setRestaurantStatusVisible(false)}></i>
+              <h1 class="bx bx-x" onClick={()=>setRestaurantStatusVisible(false)}>x</h1>
           </c.IsRestaurantOpen>
       <c.InitialViewSvg
       xmlns="http://www.w3.org/2000/svg"

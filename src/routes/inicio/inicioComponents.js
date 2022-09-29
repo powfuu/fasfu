@@ -714,7 +714,7 @@ export const IsRestaurantOpen=styled.div`
     position:fixed;
     width: max-content;
     padding-left:25px;
-    padding-right:25px;
+    padding-right:30px;
     padding-bottom:12px;
     padding-top:11px;
     border-bottom-left-radius:7.5px;
@@ -730,9 +730,12 @@ export const IsRestaurantOpen=styled.div`
         font-weight:400;
         font-size:17.5px;
     }
-    i{
-        font-size:28px;
-        margin-top:-1px;
+    h1{
+        font-size:25px;
+        font-weight:500;
+        margin-right:-5px;
+        margin-left:10px;
+        margin-top:-7px;
         cursor:pointer;
     }
     ${mxw(1530)}{
@@ -773,16 +776,25 @@ export const IsRestaurantOpenResponsive=styled.div`
             margin-top:4px;
     }
     }
-    i{
-        font-size:28px;
-        margin-top:-1px;
+    h1{
+        font-size:25px;
+        font-weight:500;
+        margin-left:50px;
+        margin-top:-6.5px;
         cursor:pointer;
-        position:absolute;
-        right:0;
-        margin-right:40px;
+        ${mxw(750)}{
+            margin-left:25px;
+    }
+        ${mxw(615)}{
+            margin-left:10px;
+    }
+        ${mxw(480)}{
+            margin-left:0px;
+            margin-right:10px;
+    }
         ${mxw(400)}{
-            font-size:26px;
-            margin-top:2px;
+            font-size:22px;
+            margin-top:-4px;
     }
     }
     ${mxw(1530)}{
