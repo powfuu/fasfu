@@ -1,8 +1,19 @@
 import styled from "styled-components"
+import Skeleton from 'react-loading-skeleton'
 import {ArrowIosBackOutline} from "@styled-icons/evaicons-outline/ArrowIosBackOutline"
 const mxw = (width) =>{
   return `@media (max-width: ${width}px)`
 }
+export const Skel = styled(Skeleton)`
+    height:405px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width:405px;
+    display:${p=>p.display};
+    ${mxw(700)}{
+        height:315px;
+        width:315px;
+    }
+`
 export const ProductoContent = styled.div`
     height:100vh;
     width:100%;
@@ -158,6 +169,7 @@ export const ProductImg = styled.img`
     object-position:center;
     margin-bottom:7px;
     margin-top:8.5px;
+    display:${p=>p.display};
     ${mxw(700)}{
         height:315px;
         width:315px;
@@ -307,7 +319,7 @@ export const GoUp = styled(ArrowIosBackOutline)`
     height:36px;
     cursor:pointer;
     padding:8px 6px;
-    margin-top:15px;
+    margin-top:31.5px;
     display:none;
     border-radius:8px;
     transition:.5s;
@@ -331,7 +343,7 @@ export const LogoBottom = styled.img`
     float:left;
     height:120px;
     display:none;
-    margin-top:-16.5px;
+    margin-top:-0px;
     opacity:.7;
     ${mxw(1010)}{
         display:block;

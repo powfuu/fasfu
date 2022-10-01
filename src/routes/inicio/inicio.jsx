@@ -106,6 +106,15 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
     }
   ]
     const setDataCountry = (data: string) =>{
+            setCar([])
+            setCarAddons([])
+                        setTimeout(() => {
+                            setLoaded0(true)
+                            setLoaded1(true)
+                            setLoaded2(true)
+                            setLoaded3(true)
+                            setLoaded4(true)
+                        }, 3000);
                          if(data != prop.countrySelectionState){
                             setLoaded0(false)
                             setLoaded1(false)
@@ -115,10 +124,10 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
                          }
                  switch (data) {
                    case "España":
-                     setCurrentJson(spaJson);
+                        setCurrentJson(spaJson);
+                         setCustomization('spain')
                      setCountrySrc(spainflag)
                          setPriceSign(formatterEs)
-                         setCustomization('spain')
                          if(time >= 12){
                              setRestaurantStatus("#00e57e")
                          setRestaurantStatusText("Disponible, Horario de atención (12 - 00:00)")
@@ -224,12 +233,12 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       <c.InitialViewLogo src={logo} />
       <c.InitialViewCenterLogo src={logo2} />
       <Carro isInCar={prop.isInCar} car={car} setCar={setCar} setCarAddons={setCarAddons} carAddons={carAddons} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setIsInCar={prop.setIsInCar}/>
-      <Product additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setCarAddons={setCarAddons} carAddons={carAddons} car={car} setCar={setCar} customization={customization} country={prop.countrySelectionState} productSign={priceSign} isInProduct={prop.isInProduct} currentProduct={prop.currentProduct} setIsInProduct={prop.setIsInProduct}/>
+      <Product additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setCarAddons={setCarAddons} carAddons={carAddons} car={car} setCar={setCar} customization={customization} country={prop.countrySelectionState} productSign={priceSign} isInProduct={prop.isInProduct} currentProduct={prop.currentProduct} setCurrentProduct={prop.setCurrentProduct} setIsInProduct={prop.setIsInProduct}/>
       </c.InitialViewContentTop>
       <c.InitialViewContentPresentation>
       <c.InitialViewContentTitleLeft>
       <c.InitialViewContentTitle data-aos="zoom-in-up">
-      Sabor único, presentación de 10 y lo mejor de todo ¡al
+          {loaded0}Sabor único, presentación de 10 y lo mejor de todo ¡al
       alcance de tu paladar!
       </c.InitialViewContentTitle>
       <c.InitialViewContentDesc data-aos="fade-up" data-aos-delay="300">

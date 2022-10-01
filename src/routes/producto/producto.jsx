@@ -11,6 +11,7 @@ const Product = (prop) =>{
     const [finalProductPrice, setFinalProductPrice]=useState(prop.currentProduct.price)
     const [duplicatorVal, setDuplicatorVal]=useState(1)
     const [isDefaultValues, setIsDefaultValues]=useState(false)
+    const [loaded,setLoaded]=useState(false)
     const bodyRef = useRef(0)
     const increaseDuplicatorVal = () =>{
         setDuplicatorVal(p=>p+1)
@@ -42,7 +43,7 @@ const Product = (prop) =>{
 
     useEffect(()=>{
         setFinalProductPrice(prop.currentProduct.price)
-    },[prop.currentProduct])
+    },[prop.isInProduct])
     useEffect(()=>{
         if(prop.car.length >= 1){
         localStorage.setItem("@fasfu: car", JSON.stringify(prop.car))
@@ -65,6 +66,10 @@ const Product = (prop) =>{
                             prop.setIsInProduct(false)
                             setDuplicatorVal(1)
                             setIsDefaultValues(p=>!p)
+                            setTimeout(() => {
+                            prop.setCurrentProduct([])
+                            setLoaded(false)
+                            }, 500);
                         }}/>
                         <c.ProductName>{
                             prop.currentProduct.name ?
@@ -77,10 +82,12 @@ const Product = (prop) =>{
                     <c.ProductDivition >
                         <c.ProductLeft >
                             <c.LeftRelative>
-                            {
+                                <c.Skel display={loaded ? "none" : "block"} circle={0} borderRadius={16}/>
+                                {
                                 prop.currentProduct.pic ? 
-                            <c.ProductImg src={require(`../../assets/products/${prop.country == "España" ? "spain" : "perucolmex"}/${prop.currentProduct.pic}`)}/>
-                            : null
+                                    <c.ProductImg display={!loaded ? "none" : "block"} onLoad={(p)=>{
+                                            setLoaded(true)
+                                    }} src={require(`../../assets/products/${prop.country == "España" ? "spain" : "perucolmex"}/${prop.currentProduct.pic}`)}/> : null
                             }
                             <c.ProductDesc>
                                  {prop.currentProduct.desc}
@@ -108,11 +115,11 @@ const Product = (prop) =>{
                         <c.ProductRight>
                             {
                                 prop.customization == "spain" ?
-                                    <CustomizationSpain productSign={prop.productSign} category={prop.currentProduct.type}/>
+                                    <CustomizationSpain productId={prop.car.length+1} setAdditionalProducts={prop.setAdditionalProducts} additionalProducts={prop.additionalProducts} name={prop.currentProduct.name} isDefaultValues={isDefaultValues} setFinalProductPrice={setFinalProductPrice} productSign={prop.productSign} category={prop.currentProduct.type}/>
                                     : prop.customization == "mex" ? 
-                                        <CustomizationMex productSign={prop.productSign} category={prop.currentProduct.type}/> : prop.customization == "peru" ?
+                                        <CustomizationMex productId={prop.car.length+1} setAdditionalProducts={prop.setAdditionalProducts} additionalProducts={prop.additionalProducts} name={prop.currentProduct.name} isDefaultValues={isDefaultValues} setFinalProductPrice={setFinalProductPrice} productSign={prop.productSign} category={prop.currentProduct.type}/> : prop.customization == "peru" ?
                                             <CustomizationPeru productId={prop.car.length+1} setAdditionalProducts={prop.setAdditionalProducts} additionalProducts={prop.additionalProducts} name={prop.currentProduct.name} isDefaultValues={isDefaultValues} setFinalProductPrice={setFinalProductPrice} productSign={prop.productSign} category={prop.currentProduct.type}/> : prop.customization == "col" ?
-                                                <CustomizationCol productSign={prop.productSign} category={prop.currentProduct.type}/> : null
+                                                <CustomizationCol productId={prop.car.length+1} setAdditionalProducts={prop.setAdditionalProducts} additionalProducts={prop.additionalProducts} name={prop.currentProduct.name} isDefaultValues={isDefaultValues} setFinalProductPrice={setFinalProductPrice} productSign={prop.productSign} category={prop.currentProduct.type}/> : null
                             }
                             <c.GoUp onClick={()=>goUp()}/>
                             <c.LogoBottom src={logo}/>
