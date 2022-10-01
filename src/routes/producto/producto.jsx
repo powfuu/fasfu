@@ -9,7 +9,6 @@ import logo from "../../assets/logos/logo0.webp"
 
 const Product = (prop) =>{
     const [finalProductPrice, setFinalProductPrice]=useState(prop.currentProduct.price)
-    const [additionalProducts, setAdditionalProducts]=useState([])
     const [duplicatorVal, setDuplicatorVal]=useState(1)
     const [isDefaultValues, setIsDefaultValues]=useState(false)
     const bodyRef = useRef(0)
@@ -30,10 +29,28 @@ const Product = (prop) =>{
         })
     }
 
+    const onHandleAddProduct = () =>{
+        prop.setCar(old => [...old, {
+            productName: prop.currentProduct.name,
+            totalPrice: finalProductPrice,
+            productQuantity: duplicatorVal,
+            pic:prop.currentProduct.pic,
+            id: prop.car.length+1
+        }])
+        prop.setCarAddons(old=>[...old,...prop.additionalProducts])
+    }
+
     useEffect(()=>{
         setFinalProductPrice(prop.currentProduct.price)
-    },[prop])
-
+    },[prop.currentProduct])
+    useEffect(()=>{
+        if(prop.car.length >= 1){
+        localStorage.setItem("@fasfu: car", JSON.stringify(prop.car))
+        }
+    },[prop.car])
+    useEffect(()=>{
+        localStorage.setItem("@fasfu: addons", JSON.stringify(prop.carAddons))
+    },[prop.carAddons])
     return(
         <>
             <c.ProductoContent scale={
@@ -55,10 +72,10 @@ const Product = (prop) =>{
                                 prop.currentProduct.name.slice(0,25)+'...' : prop.currentProduct.name
                                 : null
                         }</c.ProductName>
-                        <c.AddProduct>Añadir por {prop.productSign.format(parseFloat(finalProductPrice))}</c.AddProduct>
+                        <c.AddProduct onClick={()=>onHandleAddProduct()}>Añadir por {prop.productSign.format(parseFloat(finalProductPrice))}</c.AddProduct>
                     </c.ProductViewTopTitle>
-                    <c.ProductDivition>
-                        <c.ProductLeft>
+                    <c.ProductDivition >
+                        <c.ProductLeft >
                             <c.LeftRelative>
                             {
                                 prop.currentProduct.pic ? 
@@ -94,7 +111,7 @@ const Product = (prop) =>{
                                     <CustomizationSpain productSign={prop.productSign} category={prop.currentProduct.type}/>
                                     : prop.customization == "mex" ? 
                                         <CustomizationMex productSign={prop.productSign} category={prop.currentProduct.type}/> : prop.customization == "peru" ?
-                                            <CustomizationPeru name={prop.currentProduct.name} isDefaultValues={isDefaultValues} setAdditionalProducts={setAdditionalProducts} setFinalProductPrice={setFinalProductPrice} productSign={prop.productSign} category={prop.currentProduct.type}/> : prop.customization == "col" ?
+                                            <CustomizationPeru productId={prop.car.length+1} setAdditionalProducts={prop.setAdditionalProducts} additionalProducts={prop.additionalProducts} name={prop.currentProduct.name} isDefaultValues={isDefaultValues} setFinalProductPrice={setFinalProductPrice} productSign={prop.productSign} category={prop.currentProduct.type}/> : prop.customization == "col" ?
                                                 <CustomizationCol productSign={prop.productSign} category={prop.currentProduct.type}/> : null
                             }
                             <c.GoUp onClick={()=>goUp()}/>

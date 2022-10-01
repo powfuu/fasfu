@@ -54,6 +54,9 @@ export default function Inicio(prop: any) {
   const [loaded2, setLoaded2]=useState(false)
   const [loaded3, setLoaded3]=useState(false)
   const [loaded4, setLoaded4]=useState(false)
+    const [car, setCar] = useState(localStorage.getItem("@fasfu: car") ? JSON.parse(localStorage.getItem("@fasfu: car")) : [])
+  const [additionalProducts, setAdditionalProducts]=useState([])
+    const [carAddons,setCarAddons]=useState(localStorage.getItem("@fasfu: addons") ? JSON.parse(localStorage.getItem("@fasfu: addons")) : [])
 const formatterEs = new Intl.NumberFormat('es-ES', {
        style: 'currency',
        currency: 'EUR',
@@ -220,8 +223,8 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       </c.CountrySelectionView>
       <c.InitialViewLogo src={logo} />
       <c.InitialViewCenterLogo src={logo2} />
-      <Carro isInCar={prop.isInCar} setIsInCar={prop.setIsInCar}/>
-      <Product customization={customization} country={prop.countrySelectionState} productSign={priceSign} isInProduct={prop.isInProduct} currentProduct={prop.currentProduct} setIsInProduct={prop.setIsInProduct}/>
+      <Carro isInCar={prop.isInCar} car={car} setCar={setCar} setCarAddons={setCarAddons} carAddons={carAddons} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setIsInCar={prop.setIsInCar}/>
+      <Product additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setCarAddons={setCarAddons} carAddons={carAddons} car={car} setCar={setCar} customization={customization} country={prop.countrySelectionState} productSign={priceSign} isInProduct={prop.isInProduct} currentProduct={prop.currentProduct} setIsInProduct={prop.setIsInProduct}/>
       </c.InitialViewContentTop>
       <c.InitialViewContentPresentation>
       <c.InitialViewContentTitleLeft>
@@ -289,6 +292,7 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
               <c.Category onClick={()=>{
                   prop.setIsInProduct(true)
                   prop.setCurrentProduct(data)
+                  setAdditionalProducts([])
                   }} style={{ marginTop: "0px" }}>
                 <c.CategoryDesktop>
             <c.CategoryPrice id="cp">

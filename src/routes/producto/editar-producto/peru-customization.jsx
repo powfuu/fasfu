@@ -8,64 +8,64 @@ const CustomizationPeru = (prop) =>{
                     <>
                         {prop.name === "Fasfú Fried Chicken" 
                             ?
-                                <EditFChicken/>
+                                <EditFChicken productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts}/>
                                 : prop.name === "Fasfú Grilled Cheese" ? 
-                                <EditGCheese/>
+                                <EditGCheese productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts}/>
                                 : null
                         }
-            <CustomizeFasfu isDefaultValues={prop.isDefaultValues}/>
-            <EditCondimentosAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-            <SalsasExtras isDefaultValues={prop.isDefaultValues}/>
-             <EditPapasAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-             <EditBebidaAdicional isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-             <EditPSAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-            <EditServilletas isDefaultValues={prop.isDefaultValues}/>
+            <CustomizeFasfu productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+            <EditCondimentosAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <SalsasExtras productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+             <EditPapasAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+             <EditBebidaAdicional productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+             <EditPSAdicionales productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <EditServilletas additionalProducts={prop.additionalProducts} productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
                     </>
                 : null
             }
             {
                 prop.category == "COMBO" ?
                     <>
-            <CustomizeFasfu isDefaultValues={prop.isDefaultValues}/>
-            <EditBebida isDefaultValues={prop.isDefaultValues}/>
-            <EditCondimentosAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-            <SalsasExtras isDefaultValues={prop.isDefaultValues}/>
-             <EditPapasAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-             <EditBebidaAdicional isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-             <EditPSAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-            <EditServilletas isDefaultValues={prop.isDefaultValues}/>
+            <CustomizeFasfu productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+            <EditBebida additionalProducts={prop.additionalProducts} productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+            <EditCondimentosAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <SalsasExtras productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+             <EditPapasAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+             <EditBebidaAdicional productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+             <EditPSAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <EditServilletas additionalProducts={prop.additionalProducts} productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
                     </>
                     : null
             }
             {
                 prop.category == "PATATAS" ?
                     <>
-            <SalsasExtras isDefaultValues={prop.isDefaultValues}/>
-            <EditBebidaAdicional isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-            <EditPapasAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-            <EditPSAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <SalsasExtras productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+            <EditBebidaAdicional productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <EditPapasAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <EditPSAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
                     </>
                 : null
             }
             {
                 prop.category == "PS" ?
                     <>
-            <EditPSAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-            <EditPapasAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-            <EditBebidaAdicional isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <EditPSAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <EditPapasAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <EditBebidaAdicional productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
                     </>
                 : null
             }
             {
                 prop.category == "Bebida" ?
                     <>
-            <EditPapasAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
-            <EditPSAdicionales isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <EditPapasAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
+            <EditPSAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
                     </>
                 : null
             }
         </c.CustomizationContent>
-    )
+)
 }
 export default CustomizationPeru;
 
@@ -96,6 +96,7 @@ const EditCondimentosAdicionales = (prop) =>{
                                 if(selectedAdditionalBeb.includes(beb.title)){
                                     setAdditionalBeb(selectedAdditionalBeb.filter((item)=>item !== beb.title))
                                     setIsSelected(true)
+                                    prop.setAdditionalProducts(old => old.filter((prop)=>prop.additionName == beb.title).slice(0,-old.length))
                                     setBeb2(i)
                                     if(selectedAdditionalBeb.filter((item)=>item == beb.title).length >= 2){
                                         let productsQuantity = selectedAdditionalBeb.filter((item)=>item == beb.title).length 
@@ -109,6 +110,11 @@ const EditCondimentosAdicionales = (prop) =>{
                                     setIsSelected(false)
                                     setBeb2(null)
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)+parseFloat(beb.price))
+                                        prop.setAdditionalProducts(old => [...old, {
+                                            additionName:beb.title,
+                                            additionPrice:beb.price,
+                                            id:prop.productId
+                                        }])
                                     }
                                 }
                         } 
@@ -126,6 +132,7 @@ const EditCondimentosAdicionales = (prop) =>{
                                     <c.SectionInsideMinus onClick={()=>{
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)-parseFloat(beb.price))
                                         setAdditionalBeb([...selectedAdditionalBeb.filter((item)=>item == beb.title).slice(0,-1),...selectedAdditionalBeb.filter((item)=>item!=beb.title)])
+                                    prop.setAdditionalProducts(old => old.filter((prop)=>prop.additionName == beb.title).slice(0,-old.slice(0,-1)))
                                     }}>-</c.SectionInsideMinus>
                                     <c.SectionInsideValue>{selectedAdditionalBeb.length >= 2 ? selectedAdditionalBeb.filter((data)=>data==beb.title).length : 1}</c.SectionInsideValue>
                                     {
@@ -133,6 +140,11 @@ const EditCondimentosAdicionales = (prop) =>{
                                     <c.SectionInsidePlus onClick={()=>{
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)+parseFloat(beb.price))
                                         setAdditionalBeb(p=>[...p,beb.title])
+                                        prop.setAdditionalProducts(old => [...old, {
+                                            additionName:beb.title,
+                                            additionPrice:beb.price,
+                                            id:prop.productId
+                                        }])
                                     }}>+</c.SectionInsidePlus>
                                     : null
                                     }
@@ -175,6 +187,7 @@ const EditPSAdicionales = (prop) =>{
                     bebidas2.map((beb,i)=>{
                         const handleClick = () =>{
                                 if(selectedAdditionalBeb.includes(beb.title)){
+                                    prop.setAdditionalProducts(old => [...old.filter((prop)=>prop.additionName == beb.title).slice(0,-old.length),beb.title])
                                     setAdditionalBeb(selectedAdditionalBeb.filter((item)=>item !== beb.title))
                                     setIsSelected(true)
                                     setBeb2(i)
@@ -187,6 +200,11 @@ const EditPSAdicionales = (prop) =>{
                                 }else{
                                     if(selectedAdditionalBeb.length < 10){
                                     setAdditionalBeb(p=>[...p, beb.title])
+                                        prop.setAdditionalProducts(old => [...old, {
+                                            additionName:beb.title,
+                                            additionPrice:beb.price,
+                                            id:prop.productId
+                                        }])
                                     setIsSelected(false)
                                     setBeb2(null)
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)+parseFloat(beb.price))
@@ -205,6 +223,7 @@ const EditPSAdicionales = (prop) =>{
                                     selectedAdditionalBeb.includes(beb.title) ? "flex" : "none"
                                     }>
                                     <c.SectionInsideMinus onClick={()=>{
+                                    prop.setAdditionalProducts(old => [...old.filter((prop)=>prop.additionName == beb.title).slice(0,-old.slice(0,-1)),beb.title])
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)-parseFloat(beb.price))
                                         setAdditionalBeb([...selectedAdditionalBeb.filter((item)=>item == beb.title).slice(0,-1),...selectedAdditionalBeb.filter((item)=>item!=beb.title)])
                                     }}>-</c.SectionInsideMinus>
@@ -213,6 +232,11 @@ const EditPSAdicionales = (prop) =>{
                                         selectedAdditionalBeb.length < 10 ?
                                     <c.SectionInsidePlus onClick={()=>{
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)+parseFloat(beb.price))
+                                        prop.setAdditionalProducts(old => [...old, {
+                                            additionName:beb.title,
+                                            additionPrice:beb.price,
+                                            id:prop.productId
+                                        }])
                                         setAdditionalBeb(p=>[...p,beb.title])
                                     }}>+</c.SectionInsidePlus>
                                     : null
@@ -253,6 +277,7 @@ const EditPapasAdicionales = (prop) =>{
                         const handleClick = () =>{
                                 if(selectedAdditionalBeb.includes(beb.title)){
                                     setAdditionalBeb(selectedAdditionalBeb.filter((item)=>item !== beb.title))
+                                    prop.setAdditionalProducts(old => [...old.filter((prop)=>prop.additionName == beb.title).slice(0,-old.length),beb.title])
                                     setIsSelected(true)
                                     setBeb2(i)
                                     if(selectedAdditionalBeb.filter((item)=>item == beb.title).length >= 2){
@@ -266,6 +291,11 @@ const EditPapasAdicionales = (prop) =>{
                                     setAdditionalBeb(p=>[...p, beb.title])
                                     setIsSelected(false)
                                     setBeb2(null)
+                                        prop.setAdditionalProducts(old => [...old, {
+                                            additionName:beb.title,
+                                            additionPrice:beb.price,
+                                            id:prop.productId
+                                        }])
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)+parseFloat(beb.price))
                                     }
                                 }
@@ -283,6 +313,7 @@ const EditPapasAdicionales = (prop) =>{
                                     }>
                                     <c.SectionInsideMinus onClick={()=>{
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)-parseFloat(beb.price))
+                                    prop.setAdditionalProducts(old => [...old.filter((prop)=>prop.additionName == beb.title).slice(0,-old.slice(0,-1)),beb.title])
                                         setAdditionalBeb([...selectedAdditionalBeb.filter((item)=>item == beb.title).slice(0,-1),...selectedAdditionalBeb.filter((item)=>item!=beb.title)])
                                     }}>-</c.SectionInsideMinus>
                                     <c.SectionInsideValue>{selectedAdditionalBeb.length >= 2 ? selectedAdditionalBeb.filter((data)=>data==beb.title).length : 1}</c.SectionInsideValue>
@@ -291,6 +322,11 @@ const EditPapasAdicionales = (prop) =>{
                                     <c.SectionInsidePlus onClick={()=>{
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)+parseFloat(beb.price))
                                         setAdditionalBeb(p=>[...p,beb.title])
+                                        prop.setAdditionalProducts(old => [...old, {
+                                            additionName:beb.title,
+                                            additionPrice:beb.price,
+                                            id:prop.productId
+                                        }])
                                     }}>+</c.SectionInsidePlus>
                                     : null
                                     }
@@ -336,6 +372,7 @@ const EditBebidaAdicional = (prop) =>{
                                     setAdditionalBeb(selectedAdditionalBeb.filter((item)=>item !== beb.title))
                                     setIsSelected(true)
                                     setBeb2(i)
+                                    prop.setAdditionalProducts(old => [...old.filter((prop)=>prop.additionName == beb.title).slice(0,-old.length),beb.title])
                                     if(selectedAdditionalBeb.filter((item)=>item == beb.title).length >= 2){
                                         let productsQuantity = selectedAdditionalBeb.filter((item)=>item == beb.title).length 
                                         prop.setFinalProductPrice(fp=>parseFloat(fp)-parseFloat(beb.price*productsQuantity))
@@ -347,6 +384,11 @@ const EditBebidaAdicional = (prop) =>{
                                     setAdditionalBeb(p=>[...p, beb.title])
                                     setIsSelected(false)
                                     setBeb2(null)
+                                        prop.setAdditionalProducts(old => [...old, {
+                                            additionName:beb.title,
+                                            additionPrice:beb.price,
+                                            id:prop.productId
+                                        }])
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)+parseFloat(beb.price))
                                     }
                                 }
@@ -364,6 +406,7 @@ const EditBebidaAdicional = (prop) =>{
                                     }>
                                     <c.SectionInsideMinus onClick={()=>{
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)-parseFloat(beb.price))
+                                    prop.setAdditionalProducts(old => [...old.filter((prop)=>prop.additionName == beb.title).slice(0,-old.slice(0,-1)),beb.title])
                                         setAdditionalBeb([...selectedAdditionalBeb.filter((item)=>item == beb.title).slice(0,-1),...selectedAdditionalBeb.filter((item)=>item!=beb.title)])
                                     }}>-</c.SectionInsideMinus>
                                     <c.SectionInsideValue>{selectedAdditionalBeb.length >= 2 ? selectedAdditionalBeb.filter((data)=>data==beb.title).length : 1}</c.SectionInsideValue>
@@ -388,17 +431,22 @@ const EditBebidaAdicional = (prop) =>{
 const EditBebida = (prop) =>{
     const [bebSelected,setBeb]=useState(null)
     const bebidas=([
-        {title:"Coca-cola sabor original 400ml"},
-        {title:"Coca-cola sin azúcar 400ml"},
-        {title:"Agua san mateo sin gas"},
-        {title:"Agua san mateo con gas"},
-        {title:"Inca cola sin azucar 400ml"},
-        {title:"Inca cola sabor original"}
+        {title:"Coca-cola sabor original 400ml",xid:0},
+        {title:"Coca-cola sin azúcar 400ml",xid:1},
+        {title:"Agua san mateo sin gas",xid:2},
+        {title:"Agua san mateo con gas",xid:3},
+        {title:"Inca cola sin azúcar 400ml",xid:4},
+        {title:"Inca cola sabor original",xid:5}
     ])
-
     useEffect(()=>{
-        setBeb(null)
+        setBeb(0)
     }, [prop.isDefaultValues])
+    useEffect(()=>{
+                                prop.setAdditionalProducts(old=>[...old, {
+                                    additionName:"Coca-cola sabor original 400ml",
+                                    id:prop.productId
+                                }])
+    },[])
     return(
         <c.SectionView>
             <c.SectionTopTitle>
@@ -409,7 +457,12 @@ const EditBebida = (prop) =>{
                 {
                     bebidas.map((beb,i)=>{
                         return(
-                            <c.Section onClick={()=>setBeb(i)}  col={bebSelected == i ? "dodgerblue" : null} bg={bebSelected == i ? "#e5f2ff" : null}>{beb.title}</c.Section>
+                            <c.Section onClick={()=>{
+                                prop.setAdditionalProducts(old=>[...old.filter((data)=>data.additionName != "Coca-cola sabor original 400ml" && data.additionName != "Coca-cola sin azúcar 400ml" && data.additionName != "Agua san mateo sin gas" && data.additionName != "Agua san mateo con gas" && data.additionName != "Inca cola sin azúcar 400ml" && data.additionName != "Inca cola sabor original"), {
+                                    additionName:beb.title,
+                                    id:prop.productId
+                                }])
+                                setBeb(i)}}  col={bebSelected == i ? "dodgerblue" : null} bg={bebSelected == i ? "#e5f2ff" : null}>{beb.title}</c.Section>
                         )
                     })
                 }
@@ -442,8 +495,13 @@ const CustomizeFasfu = (prop) =>{
                             <c.Section onClick={()=>{
                                 if(selectedCustomizeFasfu.includes(cf.title)){
                                     setCustomizeFasfu(selectedCustomizeFasfu.filter((item)=>item !== cf.title))
+                                prop.setAdditionalProducts(old=>old.filter((data)=>data.additionName == cf.title).slice(0,-1))
                                 }else{
                                     setCustomizeFasfu(p=>[...p, cf.title])
+                                prop.setAdditionalProducts(old=>[...old, {
+                                    additionName:cf.title,
+                                    id:prop.productId
+                                }])
                                 }
                             }} bg={selectedCustomizeFasfu.includes(cf.title) ? "#e5f2ff" : null} col={selectedCustomizeFasfu.includes(cf.title) ? "dodgerblue" : null}>{cf.title}</c.Section>
                         )
@@ -477,8 +535,13 @@ const SalsasExtras= (prop) =>{
                             <c.Section onClick={()=>{
                                 if(selectedCustomizeFasfu2.includes(cf.title)){
                                     setCustomizeFasfu2(selectedCustomizeFasfu2.filter((item)=>item !== cf.title))
+                                prop.setAdditionalProducts(old=>old.filter((data)=>data.additionName == cf.title).slice(0,-1))
                                 }else{
                                     setCustomizeFasfu2(p=>[...p, cf.title])
+                                prop.setAdditionalProducts(old=>[...old, {
+                                    additionName:cf.title,
+                                    id:prop.productId
+                                }])
                                 }
                             }} bg={selectedCustomizeFasfu2.includes(cf.title) ? "#e5f2ff" : null} col={selectedCustomizeFasfu2.includes(cf.title) ? "dodgerblue" : null}>{cf.title}</c.Section>
                         )
@@ -497,6 +560,10 @@ const EditServilletas = (prop) =>{
     ])
     useEffect(()=>{
         setBeb3(0)
+       prop.setAdditionalProducts(old=>[...old, {
+                                    additionName:"Si deseo servilletas",
+                                    id:prop.productId
+                                }])
     }, [prop.isDefaultValues])
     return(
         <c.SectionView>
@@ -507,7 +574,13 @@ const EditServilletas = (prop) =>{
                 {
                     bebidas3.map((beb,i)=>{
                         return(
-                            <c.Section onClick={()=>setBeb3(i)}  col={bebSelected3 == i ? "dodgerblue" : null} bg={bebSelected3 == i ? "#e5f2ff" : null}>{beb.title}</c.Section>
+                            <c.Section onClick={()=>{
+                                prop.setAdditionalProducts(old=>[...old.filter((data)=>data.title!="Si deseo servilletas" && data.title != "No deseo servilletas"), {
+                                    additionName:beb.title,
+                                    id:prop.productId
+                                }])
+                                setBeb3(i)
+                            }}  col={bebSelected3 == i ? "dodgerblue" : null} bg={bebSelected3 == i ? "#e5f2ff" : null}>{beb.title}</c.Section>
                         )
                     })
                 }
@@ -539,8 +612,13 @@ const EditFChicken = (prop) =>{
                             <c.Section onClick={()=>{
                                 if(selectedCustomizeFasfu2.includes(cf.title)){
                                     setCustomizeFasfu2(selectedCustomizeFasfu2.filter((item)=>item !== cf.title))
+                                prop.setAdditionalProducts(old=>old.filter((data)=>data.additionName ==cf.title).slice(0,-1))
                                 }else{
                                     setCustomizeFasfu2(p=>[...p, cf.title])
+                                prop.setAdditionalProducts(old=>[...old, {
+                                    additionName:cf.title,
+                                    id:prop.productId
+                                }])
                                 }
                             }} bg={selectedCustomizeFasfu2.includes(cf.title) ? "#e5f2ff" : null} col={selectedCustomizeFasfu2.includes(cf.title) ? "dodgerblue" : null}>{cf.title}</c.Section>
                         )
@@ -574,8 +652,13 @@ const EditGCheese = (prop) =>{
                             <c.Section onClick={()=>{
                                 if(selectedCustomizeFasfu2.includes(cf.title)){
                                     setCustomizeFasfu2(selectedCustomizeFasfu2.filter((item)=>item !== cf.title))
+                                prop.setAdditionalProducts(old=>old.filter((data)=>data.additionName ==cf.title).slice(0,-1))
                                 }else{
                                     setCustomizeFasfu2(p=>[...p, cf.title])
+                                prop.setAdditionalProducts(old=>[...old, {
+                                    additionName:cf.title,
+                                    id:prop.productId
+                                }])
                                 }
                             }} bg={selectedCustomizeFasfu2.includes(cf.title) ? "#e5f2ff" : null} col={selectedCustomizeFasfu2.includes(cf.title) ? "dodgerblue" : null}>{cf.title}</c.Section>
                         )
