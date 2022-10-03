@@ -6,12 +6,25 @@ import CustomizationPeru from "../producto/editar-producto/peru-customization"
 import CustomizationSpain from "../producto/editar-producto/spain-customization"
 import motogato from "../../assets/motogato.webp"
 import logo from "../../assets/logos/logo0.webp"
+import Swal from 'sweetalert2'
+import 'animate.css'
 
 const Product = (prop) =>{
     const [finalProductPrice, setFinalProductPrice]=useState(prop.currentProduct.price)
     const [duplicatorVal, setDuplicatorVal]=useState(1)
     const [isDefaultValues, setIsDefaultValues]=useState(false)
     const [loaded,setLoaded]=useState(false)
+    const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', swal.stopTimer)
+    toast.addEventListener('mouseleave', swal.resumeTimer)
+  }
+})
     const bodyRef = useRef(0)
     const increaseDuplicatorVal = () =>{
         setDuplicatorVal(p=>p+1)
@@ -39,6 +52,18 @@ const Product = (prop) =>{
             id: prop.car.length+1
         }])
         prop.setCarAddons(old=>[...old,...prop.additionalProducts])
+Toast.fire({
+  icon: 'success',
+  title: `Se ha añadido tu pedido al carro`,
+  iconColor:'#73e415',
+  showClass: {
+    popup: 'animate__animated animate__fadeInDown animate__faster'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutUp animate__faster'
+  }
+})
+prop.setIsInProduct(false)
     }
 
     useEffect(()=>{

@@ -73,9 +73,11 @@ const EditCondimentosAdicionales = (prop) =>{
     const [bebSelected2,setBeb2]=useState(null)
     const [isSelected, setIsSelected]=useState(false)
     const bebidas2=([
-        {title:"Tocino", price:"3.00"},
-        {title:"Queso Americano", price:"4.00"},
-        {title:"Salsa Fasfú (contiene pepinillos)", price:"2.00"},
+        {title:"Tocineta", price:"3.500"},
+        {title:"Queso Americano", price:"2.500"},
+        {title:"Queso colby jack", price:"4.000"},
+        {title:"Salsa Fasfú (contiene pepinillos)", price:"2.000"},
+        {title:"Mermelada cebolla y chile", price:"2.000"},
     ])
     const [selectedAdditionalBeb,setAdditionalBeb]=useState("")
     useEffect(()=>{
@@ -161,13 +163,13 @@ const EditPSAdicionales = (prop) =>{
     const [bebSelected2,setBeb2]=useState(null)
     const [isSelected, setIsSelected]=useState(false)
     const bebidas2=([
-        {title:"Mermelada De Tocino & Whisky & Chile", price:"4.00"},
-        {title:"Mermelada De Cebolla & Chile", price:"3.00"},
-        {title:"Milkshake De Vainilla", price:"14.90"},
-        {title:"Milkshake De Chocolate", price:"14.90"},
-        {title:"Galleta Tahine Chocolate", price:"6.90"},
-        {title:"Postres De Tres Leches", price:"12.00"},
-        {title:"Postre De Chocolate Cremoso", price:"12.40"},
+        {title:"Mermelada De Tocino & Whisky & Chile", price:"2.000"},
+        {title:"Malteada De Vainilla", price:"14.900"},
+        {title:"Malteada De Chocolate", price:"14.900"},
+        {title:"Galleta De Chocolate", price:"3.900"},
+        {title:"Cheesecake De Limón y Hierbabuena", price:"10.900"},
+        {title:"Postres De Tres Leches", price:"11.500"},
+        {title:"Postre De Chocolate Cremoso", price:"10.900"},
     ])
     const [selectedAdditionalBeb,setAdditionalBeb]=useState("")
 
@@ -254,9 +256,9 @@ const EditPapasAdicionales = (prop) =>{
     const [bebSelected2,setBeb2]=useState(null)
     const [isSelected, setIsSelected]=useState(false)
     const bebidas2=([
-        {title:"Papas Fritas Grandes", price:"9.90"},
-        {title:"Papas Fritas Personales", price:"6.90"},
-        {title:"Papas Fritas Grandes con Queso y Tocino", price:"14.90"},
+        {title:"Papas Fritas Grandes", price:"9.500"},
+        {title:"Papas Fritas Personales", price:"5.900"},
+        {title:"Papas Fritas Grandes con Queso y Tocino", price:"15.000"},
     ])
     const [selectedAdditionalBeb,setAdditionalBeb]=useState("")
 
@@ -344,12 +346,10 @@ const EditBebidaAdicional = (prop) =>{
     const [bebSelected2,setBeb2]=useState(null)
     const [isSelected, setIsSelected]=useState(false)
     const bebidas2=([
-        {title:"Coca-cola sabor original 400ml", price:"6.00"},
-        {title:"Coca-cola sin azúcar 400ml", price:"6.00"},
-        {title:"Agua san mateo sin gas", price:"6.00"},
-        {title:"Agua san mateo con gas", price:"6.00"},
-        {title:"Inca cola sin azucar 400ml", price:"6.00"},
-        {title:"Inca cola sabor original", price:"6.00"}
+        {title:"Coca-cola sabor original 400ml", price:"5.900"},
+        {title:"Coca-cola sin azúcar 400ml", price:"5.900"},
+        {title:"Agua Mantial con gas", price:"5.900"},
+        {title:"Agua Mantial sin gas", price:"5.900"},
     ])
     const [selectedAdditionalBeb,setAdditionalBeb]=useState("")
 
@@ -431,12 +431,10 @@ const EditBebidaAdicional = (prop) =>{
 const EditBebida = (prop) =>{
     const [bebSelected,setBeb]=useState(null)
     const bebidas=([
-        {title:"Coca-cola sabor original 400ml",xid:0},
-        {title:"Coca-cola sin azúcar 400ml",xid:1},
-        {title:"Agua san mateo sin gas",xid:2},
-        {title:"Agua san mateo con gas",xid:3},
-        {title:"Inca cola sin azúcar 400ml",xid:4},
-        {title:"Inca cola sabor original",xid:5}
+        {title:"Coca-cola sabor original 400ml", price:"5.900"},
+        {title:"Coca-cola sin azúcar 400ml", price:"5.900"},
+        {title:"Agua Mantial con gas", price:"5.900"},
+        {title:"Agua Mantial sin gas", price:"5.900"},
     ])
     useEffect(()=>{
         setBeb(0)
@@ -514,9 +512,9 @@ const CustomizeFasfu = (prop) =>{
 
 const SalsasExtras= (prop) =>{
     const customizeFasfu2=([
-        {title:"Ketchup"},
+        {title:"Salsa de tomate"},
         {title:"Mayonesa"},
-        {title:"Mostaza"}
+        {title:"Jalapeños"}
     ])
     const [selectedCustomizeFasfu2, setCustomizeFasfu2]=useState("")
     useEffect(()=>{
@@ -631,8 +629,7 @@ const EditFChicken = (prop) =>{
 
 const EditGCheese = (prop) =>{
     const customizeFasfu2=([
-        {title:"Mermelada cebolla y chile"},
-        {title:"Mermelada tocineta whisky"},
+        {title:"Mermelada tocineta & whisky & chile"},
         {title:"Mayo verde"}
     ])
     const [selectedCustomizeFasfu2, setCustomizeFasfu2]=useState("")

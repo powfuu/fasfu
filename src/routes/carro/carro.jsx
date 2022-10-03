@@ -22,39 +22,48 @@ return(
         <ShoppingCartOutline onClick={()=>{
             carBody.current.scrollTo(0,0)
             prop.setIsInCar(true)}} ref={cartRef} id="initial-view-cart"/>
-        {
-            prop.car.length >= 1 ?
-        <c.CarLength onClick={()=>{
+        <c.CarLength style={{
+            opacity:prop.car.length >= 1 ? "1" : "0"
+        }} onClick={()=>{
             carBody.current.scrollTo(0,0)
             prop.setIsInCar(true)}} ref={cartRef2}>{prop.car.length}</c.CarLength>
-            : null
-        }
         <c.CarContent ref={carBody} mgl={
             prop.isInCar ? 0 : 100 
             }>
-            {
-                prop.car.map((data)=>{
+            <c.CarLeftView>
+                {
+                prop.car.map((data,index)=>{
                     return(
-                        <>
-                        <h1 onClick={()=>prop.setIsInCar(false)}>{data.productName}</h1>
-                        <h2 onClick={()=>prop.setIsInCar(false)}>{data.totalPrice}</h2>
-                        <h3 onClick={()=>prop.setIsInCar(false)}>{data.productQuantity}</h3>
-                            <h4>{data.id}</h4>
-                            <br/>
+                        <c.CarProduct bb={
+                            prop.car.length == index+1 ? "1px solid rgb(215,215,215)" : null
+                            }>
+                            <c.CarProductContent>
+                                <c.CarProductImg src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}/>
+                                <c.CarProductRightContent>
+                                    <c.CarProductName>{data.productName}</c.CarProductName>
+
+                                    <c.CarProductAddonsView>
                         {
                             prop.carAddons.filter((itm)=>itm.id == data.id).map((ap)=>{
                                 //FILTAR MAP Y AGREGAR PRODUCTNAME PARA Q SOLO SE MUESTREN EN ESTE ID 
                                 return(
-                                    <>
-                                        <h5>{ap.additionName}</h5>
-                                    </>
+                                        <c.CarProductAddon>{ap.additionName}</c.CarProductAddon>
                                 )
                             })
                             }
-                        </>
+                                    </c.CarProductAddonsView>
+                                    <c.CarProductPrice>{prop.productSign.format(parseFloat(data.totalPrice))}</c.CarProductPrice>
+                                    <c.CarProductRemove src={require("../../assets/remove-shopping-cart.png")}/>
+                                </c.CarProductRightContent>
+                            </c.CarProductContent>
+                        </c.CarProduct>
                     )
             })
             }
+            </c.CarLeftView>
+            <c.CarRightView>
+
+            </c.CarRightView>
         </c.CarContent>
     </>
 )

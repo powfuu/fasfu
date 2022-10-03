@@ -106,8 +106,6 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
     }
   ]
     const setDataCountry = (data: string) =>{
-            setCar([])
-            setCarAddons([])
                         setTimeout(() => {
                             setLoaded0(true)
                             setLoaded1(true)
@@ -179,7 +177,7 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
         }
   useEffect(() => {
         setRestaurantStatusVisible(true)
-    setDataCountry(prop.countrySelectionState)
+    setDataCountry(prop.countrySelectionState)       
   }, [prop.countrySelectionState]);
   return (
       <c.HomeView> 
@@ -217,6 +215,10 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
           return(
             <c.CountrySelectionListContent onClick={()=>{
               setCountriesViewStatus((prop)=>!prop)
+              setCar([])
+              setCarAddons([])
+              localStorage.setItem("@fasfu: car",[])
+              localStorage.setItem("@fasfu: addons",[])
               setTimeout(() => {
               setRestaurantStatusVisible(true)
               prop.setCountrySelectionState(data.country)
@@ -232,7 +234,7 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       </c.CountrySelectionView>
       <c.InitialViewLogo src={logo} />
       <c.InitialViewCenterLogo src={logo2} />
-      <Carro isInCar={prop.isInCar} car={car} setCar={setCar} setCarAddons={setCarAddons} carAddons={carAddons} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setIsInCar={prop.setIsInCar}/>
+      <Carro productSign={priceSign} countrySelectionState={prop.countrySelectionState} isInCar={prop.isInCar} car={car} setCar={setCar} setCarAddons={setCarAddons} carAddons={carAddons} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setIsInCar={prop.setIsInCar}/>
       <Product additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setCarAddons={setCarAddons} carAddons={carAddons} car={car} setCar={setCar} customization={customization} country={prop.countrySelectionState} productSign={priceSign} isInProduct={prop.isInProduct} currentProduct={prop.currentProduct} setCurrentProduct={prop.setCurrentProduct} setIsInProduct={prop.setIsInProduct}/>
       </c.InitialViewContentTop>
       <c.InitialViewContentPresentation>
