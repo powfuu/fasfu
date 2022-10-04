@@ -5,6 +5,7 @@ const Carro = (prop) =>{
   const cartRef = useRef(null)
   const cartRef2 = useRef(null)
     const carBody = useRef(null)
+    const topviewref = useRef(null)
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
@@ -30,11 +31,30 @@ return(
         <c.CarContent ref={carBody} mgl={
             prop.isInCar ? 0 : 100 
             }>
-            <c.CarLeftView>
+            <c.TopInitialView ref={topviewref}>
+            <c.CloseProduct onClick={()=>prop.setIsInCar(false)}/>
+            <c.TopViewTitle>Carro ({prop.car.length})</c.TopViewTitle>
+            </c.TopInitialView>
+            <c.CarLeftView onScroll={(p)=>{
+                if(p.currentTarget.scrollTop >= 40){
+                    topviewref.current.style.boxShadow="rgba(100, 100, 111, 0.05) 0px 7px 29px 0px"
+                }else if(p.currentTarget.scrollTop<=39){
+                    topviewref.current.style.boxShadow="initial"
+                }
+                }}>
+                {
+                    prop.car.length >= 1 ?
+                        <> 
+                        <c.TitleTableView>  
+                    <c.TitleTableProduct>Producto</c.TitleTableProduct>
+                    <c.TitleTablePrice>Precio</c.TitleTablePrice>
+                </c.TitleTableView>
                 {
                 prop.car.map((data,index)=>{
                     return(
-                        <c.CarProduct bb={
+                        <c.CarProduct limb={
+                            prop.car.length == index+1 ? 200 : null
+                            } bb={
                             prop.car.length == index+1 ? "1px solid rgb(215,215,215)" : null
                             }>
                             <c.CarProductContent>
@@ -60,6 +80,7 @@ return(
                     )
             })
             }
+            </>: null }
             </c.CarLeftView>
             <c.CarRightView>
 

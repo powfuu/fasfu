@@ -64,6 +64,9 @@ Toast.fire({
   }
 })
 prop.setIsInProduct(false)
+setTimeout(() => {
+prop.setCurrentProduct([])
+}, 400);
     }
 
     useEffect(()=>{
