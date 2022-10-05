@@ -22,6 +22,13 @@
     },
     {
      "type":"COMBO",
+     "name":"CHEESEBURGER X2",
+     "desc":"Dos hamburguesas en potato bun con carne 100% de res de 125gr c/u, tajada de queso americano, vegetales y salsa fasfú (contiene pepinillos).",
+     "price":"318.00",
+     "pic":"combo6.webp"
+    },
+    {
+     "type":"COMBO",
      "name":"COMBO DOUBLE CHEESE",
      "desc":"Hamburguesa doble en potato bun con 100% carne de res de 125gr c/u, queso americano, vegetales y salsa fasfú (contiene pepinillos). + fries + bebida",
      "price":"295.00",

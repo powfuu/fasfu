@@ -13,7 +13,9 @@ const CustomizationPeru = (prop) =>{
                                 <EditGCheese productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts}/>
                                 : null
                         }
-            <CustomizeFasfu productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+                        {prop.name === "Fasfú Fried Chicken" || prop.name === "Fasfú Grilled Cheese" ? null : 
+                            <CustomizeFasfu productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+                        }
             <EditCondimentosAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
             <SalsasExtras productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
              <EditPapasAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
@@ -26,8 +28,18 @@ const CustomizationPeru = (prop) =>{
             {
                 prop.category == "COMBO" ?
                     <>
-            <CustomizeFasfu productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+                    <CustomizeFasfu productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+                        {
+                            prop.name == "CHEESEBURGER X2" ? 
+                                null
+                                : 
             <EditBebida additionalProducts={prop.additionalProducts} productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+                        }
+                        {
+                            prop.name == "COMBO FRIED CHICKEN" ? 
+                                <EditFChicken productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts}/>
+                                : null
+                        }
             <EditCondimentosAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
             <SalsasExtras productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
              <EditPapasAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
@@ -114,8 +126,7 @@ const EditCondimentosAdicionales = (prop) =>{
                                     prop.setFinalProductPrice(fp=>parseFloat(fp)+parseFloat(beb.price))
                                         prop.setAdditionalProducts(old => [...old, {
                                             additionName:beb.title,
-                                            additionPrice:beb.price,
-                                            id:prop.productId
+                                            additionPrice:beb.price, id:prop.productId
                                         }])
                                     }
                                 }
@@ -640,7 +651,7 @@ const EditGCheese = (prop) =>{
         <c.SectionView>
             <c.SectionTopTitleN>
                 <c.SectionViewTitle>Personaliza tu Fasfú Grilled Cheese Sandwich</c.SectionViewTitle>
-                <c.SectionViewDesc>Selecciona máximo 3 opciones</c.SectionViewDesc>
+                <c.SectionViewDesc>Selecciona máximo 2 opciones</c.SectionViewDesc>
             </c.SectionTopTitleN>
             <c.SectionBody>
                 {

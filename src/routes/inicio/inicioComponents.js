@@ -40,6 +40,7 @@ export const InitialViewSvg=styled.svg`
 export const InitialViewContent = styled.div`
   position:absolute;
   display:flex;
+    overflow-x:hidden;
   flex-direction:column;
   width:100%;
   margin-top:-870px;
@@ -48,6 +49,26 @@ export const InitialViewContent = styled.div`
   }
   ${mxw(668)}{
     margin-top:-1145px;
+  }
+  ${mxw(500)}{
+        width:102%;
+  }
+`
+export const InitialViewContentPresentation=styled.div`
+  display:flex;
+  width:90%;
+  ${mxw(1150)}{
+    flex-direction:column;
+    align-items:center;
+    padding-left:50px;
+    text-align:center;
+  }
+  ${mxw(1280)}{
+    width:100%;
+  }
+  ${mxw(500)}{
+        padding-left:20px;
+        width:108%;
   }
 `
 export const CountrySelection = styled.img`
@@ -119,19 +140,6 @@ export const InitialViewCenterLogo=styled.img`
 export const InitialViewContentTop=styled.div`
   display:flex;
 `
-export const InitialViewContentPresentation=styled.div`
-  display:flex;
-  width:90%;
-  ${mxw(1150)}{
-    flex-direction:column;
-    align-items:center;
-    padding-left:50px;
-    text-align:center;
-  }
-  ${mxw(1280)}{
-    width:100%;
-  }
-`
 export const RightImageView = styled.div`
   width:90%;
   overflow-y:hidden;
@@ -188,8 +196,11 @@ export const InitialViewContentTitle=styled.h1`
   ${mxw(668)}{
     margin-top:40px;
   }
+  ${mxw(500)}{
+        font-size:34px;
+  }
   ${mxw(440)}{
-    font-size:24px;
+    font-size:29px;
   }
 `
 export const InitialViewContentDesc=styled.p`
@@ -199,8 +210,11 @@ export const InitialViewContentDesc=styled.p`
   ${mxw(1150)}{
     text-align:center;
   }
+  ${mxw(500)}{
+        font-size:16.6px;
+  }
   ${mxw(440)}{
-    font-size:14.85px;
+    font-size:15.85px;
     margin-top:-5px;
   }
 `
@@ -433,13 +447,16 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         color:dodgerblue;
         transition:.5s;
     }
+    &:hover #acd{
+        color:white;
+    }
     ${mxw(759)}{
         width:90%;
         height:60px;
   padding-top:45px;
     }
-    ${mxw(432)}{
-        width:95%;
+    ${mxw(500)}{
+        width:100%;
     }
 `
 export const CategoryAbs = styled.div`
@@ -476,17 +493,17 @@ export const ProductDesc = styled.h3`
 `
 export const ProductImg = styled.img`
   height:75px;
-  width:95px;
+  width:90px;
   object-fit:cover;
   border-radius:20px;
-  margin-top:12px;
+  margin-top:14px;
+margin-bottom:-3px;
 `
 export const ProductQuickAdd = styled.button`
   text-align:center;
   border:none;
   display:flex;
   background:transparent;
-  cursor:pointer;
   color:white;
   color:rgb(190,190,190);
   margin-top:-10px;
@@ -918,7 +935,6 @@ export const ProductQuickAddResponsive = styled.button`
   border:none;
   display:flex;
   background:transparent;
-  cursor:pointer;
   color:white;
   transition:.4s;
   &:hover{

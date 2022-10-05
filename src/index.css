@@ -14,10 +14,9 @@
             user-select: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 outline: none;
-
 }
-body{
-            overflow-x:hidden;
+body,html{
+     overflow-x:hidden;
 }
 svg,html,body{
   transition:0s;
@@ -90,4 +89,7 @@ svg,html,body{
     #bebv{
         min-height:240px;
     }
+}
+.swal2-popup .swal2-styled:focus {
+    box-shadow: none !important;
 }

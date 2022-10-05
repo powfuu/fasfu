@@ -56,9 +56,22 @@ export const ProductName = styled.h1`
         font-size:19.5px;
         margin-left:-2px;
     }
+    ${mxw(550)}{
+        font-size:18px;
+        margin-left:-4px;
+        margin-top:8px;
+        margin-right:5px;
+    }
+    ${mxw(480)}{
+        font-size:17.5px;
+        margin-top:9px;
+        margin-left:-5.5px;
+    }
     ${mxw(470)}{
         font-size:17.5px;
-        margin-left:-5px;
+    }
+    ${mxw(411)}{
+        margin-top:6px;
     }
 `
 export const CloseProduct = styled(ArrowIosBackOutline)`
@@ -79,8 +92,9 @@ export const CloseProduct = styled(ArrowIosBackOutline)`
     ${mxw(500)}{
         height:35px;
     }
-    ${mxw(400)}{
-        height:40px;
+    ${mxw(480)}{
+        padding:2px 4px;
+        margin-left:-8px;
     }
 `
 export const AddProduct = styled.button`
@@ -104,8 +118,8 @@ export const AddProduct = styled.button`
     ${mxw(700)}{
         font-size:14px;
     }
-    ${mxw(470)}{
-        font-size:13px;
+    ${mxw(480)}{
+        font-size:12.75px;
     }
 `
 export const ProductDivition = styled.div`
@@ -174,6 +188,11 @@ export const ProductImg = styled.img`
         height:315px;
         width:315px;
         margin-top:8px;
+    }
+    ${mxw(600)}{
+        height:300px;
+        width:290px;
+        margin-top:0px;
     }
 `
 export const ProductDesc = styled.p`

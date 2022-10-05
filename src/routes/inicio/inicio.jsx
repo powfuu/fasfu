@@ -32,6 +32,7 @@ export default function Inicio(prop: any) {
         hour12: false
     })}`
   const [products, setProducts] = useState([]);
+    const [totalPrice,setTotalPrice]=useState(parseFloat("0"))
   const [currentJson, setCurrentJson] = useState([]);
   const [PSEx, setPSEx] = useState(false);
   const [BebEx, setBebEx] = useState(false);
@@ -179,6 +180,13 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
         setRestaurantStatusVisible(true)
     setDataCountry(prop.countrySelectionState)       
   }, [prop.countrySelectionState]);
+    useEffect(()=>{
+        if(localStorage.getItem("@fasfu: car")){
+        JSON.parse(localStorage.getItem("@fasfu: car")).map(data=>{
+        setTotalPrice(old=>old+parseFloat(data.totalPrice))
+        })
+        }
+    },[])
   return (
       <c.HomeView> 
       {prop.countrySelectionState ? 
@@ -234,8 +242,8 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       </c.CountrySelectionView>
       <c.InitialViewLogo src={logo} />
       <c.InitialViewCenterLogo src={logo2} />
-      <Carro productSign={priceSign} countrySelectionState={prop.countrySelectionState} isInCar={prop.isInCar} car={car} setCar={setCar} setCarAddons={setCarAddons} carAddons={carAddons} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setIsInCar={prop.setIsInCar}/>
-      <Product additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setCarAddons={setCarAddons} carAddons={carAddons} car={car} setCar={setCar} customization={customization} country={prop.countrySelectionState} productSign={priceSign} isInProduct={prop.isInProduct} currentProduct={prop.currentProduct} setCurrentProduct={prop.setCurrentProduct} setIsInProduct={prop.setIsInProduct}/>
+      <Carro totalPrice={totalPrice} setTotalPrice={setTotalPrice} productSign={priceSign} countrySelectionState={prop.countrySelectionState} isInCar={prop.isInCar} car={car} setCar={setCar} setCarAddons={setCarAddons} carAddons={carAddons} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setIsInCar={prop.setIsInCar}/>
+      <Product totalPrice={totalPrice} setTotalPrice={setTotalPrice} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setCarAddons={setCarAddons} carAddons={carAddons} car={car} setCar={setCar} customization={customization} country={prop.countrySelectionState} productSign={priceSign} isInProduct={prop.isInProduct} currentProduct={prop.currentProduct} setCurrentProduct={prop.setCurrentProduct} setIsInProduct={prop.setIsInProduct}/>
       </c.InitialViewContentTop>
       <c.InitialViewContentPresentation>
       <c.InitialViewContentTitleLeft>
@@ -300,7 +308,8 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
         .filter((prop) => prop.type == "BURGER")
         .map((data, index) => {
           return (
-              <c.Category onClick={()=>{
+              <c.Category 
+            onClick={()=>{
                   prop.setIsInProduct(true)
                   prop.setCurrentProduct(data)
                   setAdditionalProducts([])
@@ -325,7 +334,7 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
               ? data.desc.slice(0, 45) + "..."
               : data.desc}
             </c.ProductDesc>
-            <c.ProductQuickAdd style={{ marginTop: "-13px" }}>
+            <c.ProductQuickAdd id="acd" id="acd" style={{ marginTop: "-13px" }}>
         <ShoppingCartOutline id="quick-add-cart"/>
             <p
             style={{ marginTop: "10px", marginLeft: "5px" }}
@@ -353,7 +362,7 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
                                  ? data.desc.slice(0, 97) + "..."
                                  : data.desc} 
                          </c.ProductDescResponsive> 
-                          <c.ProductQuickAddResponsive style={{ marginTop: "-13px" }}>  
+                          <c.ProductQuickAddResponsive id="acd" id="acd" style={{ marginTop: "-13px" }}>  
         <ShoppingCartOutline id="quick-add-cart"/>
                              <p 
                                  style={{ marginTop: "10px", marginLeft: "5px" }} 
@@ -457,7 +466,7 @@ opacity: !loaded1 ? "0" : "1",
               ? data.desc.slice(0, 52) + "..."
               : data.desc}
             </c.ProductDesc>
-            <c.ProductQuickAdd style={{ marginTop: "-13px" }}>
+            <c.ProductQuickAdd id="acd" style={{ marginTop: "-13px" }}>
         <ShoppingCartOutline id="quick-add-cart"/>
             <p
             style={{ marginTop: "10px", marginLeft: "5px" }}
@@ -485,7 +494,7 @@ opacity: !loaded1 ? "0" : "1",
                                  ? data.desc.slice(0, 97) + "..."
                                  : data.desc} 
                          </c.ProductDescResponsive> 
-                          <c.ProductQuickAddResponsive style={{ marginTop: "-13px" }}>  
+                          <c.ProductQuickAddResponsive id="acd" style={{ marginTop: "-13px" }}>  
         <ShoppingCartOutline id="quick-add-cart"/>
                              <p 
                                  style={{ marginTop: "10px", marginLeft: "5px" }} 
@@ -577,7 +586,7 @@ opacity: !loaded1 ? "0" : "1",
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
             <c.ProductTitle>{data.name}</c.ProductTitle>
-            <c.ProductQuickAdd style={{ marginTop: "5px" }}>
+            <c.ProductQuickAdd id="acd" style={{ marginTop: "5px" }}>
                 <ShoppingCartOutline style={{marginTop:"9px"}} id="quick-add-cart"/>
             <p
             style={{ marginTop: "15px", marginLeft: "5px" }}
@@ -605,7 +614,7 @@ opacity: !loaded1 ? "0" : "1",
                                  ? data.desc.slice(0, 97) + "..."
                                  : data.desc} 
                          </c.ProductDescResponsive> 
-                          <c.ProductQuickAddResponsive style={{ marginTop: "-3px" }}>  
+                          <c.ProductQuickAddResponsive id="acd" style={{ marginTop: "-3px" }}>  
         <ShoppingCartOutline id="quick-add-cart"/>
                              <p 
                                  style={{ marginTop: "10px", marginLeft: "5px" }} 
@@ -728,7 +737,7 @@ opacity: !loaded1 ? "0" : "1",
                 src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                 <c.ProductTitle style={{fontSize:data.name=="Malteada de Chocolate y Aguacate" ? "15px": null}}>{data.name}</c.ProductTitle>
-            <c.ProductQuickAdd style={{ marginTop: "5px" }}>
+            <c.ProductQuickAdd id="acd" style={{ marginTop: "5px" }}>
                 <ShoppingCartOutline style={{marginTop:"9px"}} id="quick-add-cart"/>
             <p
             style={{ marginTop: "15px", marginLeft: "5px" }}
@@ -756,7 +765,7 @@ opacity: !loaded1 ? "0" : "1",
                                  ? data.desc.slice(0, 97) + "..."
                                  : data.desc} 
                          </c.ProductDescResponsive> 
-                          <c.ProductQuickAddResponsive style={{ marginTop: "-3px" }}>  
+                          <c.ProductQuickAddResponsive id="acd" style={{ marginTop: "-3px" }}>  
         <ShoppingCartOutline id="quick-add-cart"/>
                              <p 
                                  style={{ marginTop: "10px", marginLeft: "5px" }} 
@@ -886,7 +895,7 @@ opacity: !loaded1 ? "0" : "1",
             <c.ProductTitle>{data.name}</c.ProductTitle>
             </c.CategoryAbs>
 
-                    <c.ProductQuickAdd style={{ position:"absolute",zIndex:"5", marginTop:"180px", marginLeft:"25px" }}>
+                    <c.ProductQuickAdd id="acd" style={{ position:"absolute",zIndex:"5", marginTop:"180px", marginLeft:"25px" }}>
                         <ShoppingCartOutline style={{marginTop:"9px"}} id="quick-add-cart"/>
             <p
             style={{ marginTop: "15px", marginLeft: "5px" }}
@@ -913,7 +922,7 @@ opacity: !loaded1 ? "0" : "1",
                                  ? data.desc.slice(0, 97) + "..."
                                  : data.desc} 
                          </c.ProductDescResponsive> 
-                          <c.ProductQuickAddResponsive style={{ marginTop: "-3px" }}>  
+                          <c.ProductQuickAddResponsive id="acd" style={{ marginTop: "-3px" }}>  
         <ShoppingCartOutline id="quick-add-cart"/>
                              <p 
                                  style={{ marginTop: "10px", marginLeft: "5px" }} 

@@ -28,6 +28,12 @@ const CustomizationSpain = (prop) =>{
                         {
                             prop.name === "COMBO FASFÚ" ? <EditBurger productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/> : null
                         }
+
+                        {
+                            prop.name == "COMBO FRIED CHICKEN" ? 
+                                <EditFChicken productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts}/>
+                                : null
+                        }
                         <EditPatatas productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
             <EditBebida setFinalProductPrice={prop.setFinalProductPrice} additionalProducts={prop.additionalProducts} productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
             <CustomizeFasfu productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>

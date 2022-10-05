@@ -1,14 +1,14 @@
 [
     {
      "type":"COMBO",
-     "name":"COMBO FASFÚ",
+     "name":"COMBO FASFÚ BURGER",
      "desc":"Elige hamburgesa + Patatas + Bebida.",
      "price":"14.50",
      "pic":"combo0.webp"
     },
     {
      "type":"COMBO",
-     "name":"COMBO CHEESEBURGER",
+     "name":"COMBO CHEESEBURGER FASFÚ",
      "desc":"Nuestra hamburguesa estilo Smash (150gr), en pan de papa con una loncha de queso americano fundido, salsa Fasfú y vegetales + Bebida.",
      "price":"13.95",
      "pic":"combo1.webp"
@@ -36,14 +36,14 @@
     },
     {
         "type":"BURGER",
-        "name":"Fasfú Doble",
+        "name":"Fasfú Doble Burger",
         "desc":"Hamburguesa estilo Smash (150gr), en pan de papa con salsa Fasfú y vegetales.",
         "price":"14.00",
         "pic":"burger1.webp"
     },
     {
         "type":"BURGER",
-        "name":"Fasfú Cheese",
+        "name":"Fasfú Cheese Burger",
         "desc":"Hamburguesa estilo Smash (150gr), en pan de papa con una loncha de queso americano fundido, salsa Fasfú y vegetales.",
         "price":"11.95",
         "pic":"burger2.webp"

@@ -18,8 +18,7 @@ const Product = (prop) =>{
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
-  timer: 2000,
-  timerProgressBar: true,
+  timer: 1000, timerProgressBar: true,
   didOpen: (toast) => {
     toast.addEventListener('mouseenter', swal.stopTimer)
     toast.addEventListener('mouseleave', swal.resumeTimer)
@@ -51,10 +50,12 @@ const Product = (prop) =>{
             pic:prop.currentProduct.pic,
             id: prop.car.length+1
         }])
+            prop.setTotalPrice(old=>old+parseFloat(finalProductPrice))
         prop.setCarAddons(old=>[...old,...prop.additionalProducts])
+                            setDuplicatorVal(1)
 Toast.fire({
   icon: 'success',
-  title: `Se ha añadido tu pedido al carro`,
+    title: `<span style="font-weight:300">Se ha añadido tu pedido al carro</span>`,
   iconColor:'#73e415',
   showClass: {
     popup: 'animate__animated animate__fadeInDown animate__faster'
@@ -135,7 +136,9 @@ prop.setCurrentProduct([])
                                 {prop.productSign.format(parseFloat(finalProductPrice))}
                             </c.ProductPrice>
                                 </c.SectionPriceTotalView>
-                            <c.Motogato src={motogato}/>
+                                    <c.Motogato style={{marginTop:
+                                        prop.currentProduct.name == "COMBO CHE, MER, TOC" ? "-80px" : null
+                                    }} src={motogato}/>
                                 </c.SectionPriceCatView>
                         </c.LeftRelative>
 

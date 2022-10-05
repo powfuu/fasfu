@@ -27,6 +27,11 @@ const CustomizationCol = (prop) =>{
                 prop.category == "COMBO" ?
                     <>
             <CustomizeFasfu productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
+                        {
+                            prop.name == "COMBO FRIED CHICKEN" ? 
+                                <EditFChicken productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts}/>
+                                : null
+                        }
             <EditBebida additionalProducts={prop.additionalProducts} productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>
             <EditCondimentosAdicionales productId={prop.productId} isDefaultValues={prop.isDefaultValues} setAdditionalProducts={prop.setAdditionalProducts} setFinalProductPrice={prop.setFinalProductPrice} productSign={prop.productSign}/>
             <SalsasExtras productId={prop.productId} setAdditionalProducts={prop.setAdditionalProducts} isDefaultValues={prop.isDefaultValues}/>

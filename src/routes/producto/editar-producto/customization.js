@@ -102,11 +102,17 @@ export const SectionTopTitle = styled.div`
     display:flex;
     width:100%;
     position:relative;
+    ${mxw(600)}{
+        margin-bottom:20px;
+    }
 `
 export const SectionTopTitleN = styled.div`
     display:flex;
     flex-direction:column;
     width:100%;
+    ${mxw(600)}{
+        margin-bottom:20px;
+    }
 `
 export const SectionViewTitle = styled.h3`
     margin-bottom:15px;
