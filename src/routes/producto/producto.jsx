@@ -18,7 +18,7 @@ const Product = (prop) =>{
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
-  timer: 1000, timerProgressBar: true,
+  timer: 1500, timerProgressBar: true,
   didOpen: (toast) => {
     toast.addEventListener('mouseenter', swal.stopTimer)
     toast.addEventListener('mouseleave', swal.resumeTimer)
@@ -72,6 +72,7 @@ prop.setCurrentProduct([])
 
     useEffect(()=>{
         setFinalProductPrice(prop.currentProduct.price)
+        prop.setAdditionalProducts([])
     },[prop.isInProduct])
     useEffect(()=>{
         if(prop.car.length >= 1){

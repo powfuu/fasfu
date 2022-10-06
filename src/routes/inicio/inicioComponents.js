@@ -51,7 +51,7 @@ export const InitialViewContent = styled.div`
     margin-top:-1145px;
   }
   ${mxw(500)}{
-        width:102%;
+        width:100%;
   }
 `
 export const InitialViewContentPresentation=styled.div`
@@ -193,6 +193,12 @@ export const InitialViewContentTitle=styled.h1`
     text-align:center;
     margin-top:50px;
   }
+  ${mxw(980)}{
+        margin-left:-40px;
+  }
+  ${mxw(851)}{
+        margin-left:0px;
+  }
   ${mxw(668)}{
     margin-top:40px;
   }
@@ -209,6 +215,12 @@ export const InitialViewContentDesc=styled.p`
   color:rgb(220,220,220);
   ${mxw(1150)}{
     text-align:center;
+  }
+  ${mxw(980)}{
+        margin-left:-40px;
+  }
+  ${mxw(851)}{
+        margin-left:0px;
   }
   ${mxw(500)}{
         font-size:16.6px;
@@ -947,5 +959,160 @@ export const ProductQuickAddResponsive = styled.button`
         height:27px;
         width:27px;
         margin-top:5px;
+    }
+`
+export const NovedadesView = styled.div`
+    margin-top:-125px;
+    margin-bottom:345px;
+    width:100%;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:22.5px;
+    ${mxw(1535)}{
+        gap:15px;
+    }
+    ${mxw(1145)}{
+        flex-direction:column;
+    }
+    ${mxw(1145)}{
+        margin-top:-140px;
+    }
+    ${mxw(851)}{
+        margin-top:-90px;
+    }
+    ${mxw(668)}{
+        margin-top:-140px;
+    }
+    ${mxw(500)}{
+        margin-top:-194px;
+    }
+    ${mxw(440)}{
+        margin-bottom:410px;
+    }
+`
+export const NovedadesMainImg = styled.img`
+    height:100%;
+    width:100%;
+    background:rgb(220,220,220);
+    border-radius:9px;
+    object-fit:cover;
+    object-position:${p=>p.op};
+`
+export const NovedadesContent = styled.div`
+    position:relative;
+    height:245px;
+    width:29%;
+    transition:.45s;
+    &:hover{
+        height:350px;
+    }
+    ${mxw(1535)}{
+        &:hover{
+            height:300px;
+    }
+    }
+    ${mxw(1535)}{
+        width:31%;
+        height:230px;
+    }
+    ${mxw(1338)}{
+        &:hover{
+            height:280px;
+        }
+    }
+    ${mxw(1145)}{
+        width:65%;
+        height:250px;
+        &:hover{
+            height:380px;
+    }
+    }
+    ${mxw(925)}{
+        width:75%;
+        height:250px;
+        &:hover{
+            height:330px;
+    }
+    }
+    ${mxw(835)}{
+        width:85%;
+        height:250px;
+        &:hover{
+            height:340px;
+    }
+    }
+    ${mxw(650)}{
+        width:90%;
+        height:240px;
+        &:hover{
+            height:280px;
+    }
+    }
+    ${mxw(550)}{
+        width:92%;
+        height:235px;
+        &:hover{
+            height:270px;
+    }
+    }
+    ${mxw(460)}{
+        height:224px;
+    }
+    ${mxw(400)}{
+        height:215px;
+    }
+`
+export const NovedadView = styled.div`
+    position:absolute;
+    height:90px;
+    width:100%;
+    background:rgba(0,0,0,.4);
+    margin-top:-95px;
+    backdrop-filter:blur(2px);
+    border-bottom-left-radius:9px;
+    border-bottom-right-radius:9px;
+    position:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+    text-align:left;
+    ${mxw(520)}{
+        height:85px;
+        margin-top:-90px;
+    }
+`
+export const NovedadTitle = styled.h1`
+    color:white;
+    font-size:24px;
+    padding-top:12px;
+    padding-left:15px;
+    padding-right:20px;
+    ${mxw(1338)}{
+        font-size:22px;
+    }
+    ${mxw(1240)}{
+        font-size:20px;
+        padding-top:14px;
+    }
+    ${mxw(520)}{
+        font-size:17px;
+    }
+`
+export const NovedadDesc = styled.h3`
+    color:rgb(230,230,230);
+    font-weight:300;
+    padding-top:4px;
+    font-size:15px;
+    padding-left:16px;
+    padding-right:20px;
+    ${mxw(1338)}{
+        font-size:14px;
+        padding-top:6px;
+    }
+    ${mxw(520)}{
+        font-size:12.5px;
+        padding-top:9px;
     }
 `

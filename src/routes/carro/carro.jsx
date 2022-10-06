@@ -13,7 +13,7 @@ var prevScrollpos = window.pageYOffset;
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
-  timer: 1000,
+  timer: 1500,
   timerProgressBar: true,
   didOpen: (toast) => {
     toast.addEventListener('mouseenter', swal.stopTimer)
@@ -41,6 +41,7 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
+
 return(
     <>
         <ShoppingCartOutline onClick={()=>{
@@ -57,7 +58,7 @@ return(
             <c.CarContentBody>
             <c.TopInitialView ref={topviewref}>
             <c.CloseProduct onClick={()=>prop.setIsInCar(false)}/>
-            <c.TopViewTitle>Carro ({prop.car.length})</c.TopViewTitle>
+                <c.TopViewTitle style={{whiteSpace:"nowrap"}}>Carro ({prop.car.length})</c.TopViewTitle>
             </c.TopInitialView>
             <c.CarLeftView onScroll={(p)=>{
                 if(p.currentTarget.scrollTop >= 40){
@@ -85,14 +86,14 @@ return(
                             <c.CarProductContent>
                                 <c.CarProductImg src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}/>
                                 <c.CarProductRightContent>
-                                    <c.CarProductName>{data.productName}</c.CarProductName>
+                                    <c.CarProductName>{data.productName} {data.productQuantity >= 2 ? `x${data.productQuantity}` : null}</c.CarProductName>
 
                                     <c.CarProductAddonsView>
                         {
-                            prop.carAddons.filter((itm)=>itm.id == data.id).map((ap)=>{
-                                //FILTAR MAP Y AGREGAR PRODUCTNAME PARA Q SOLO SE MUESTREN EN ESTE ID 
+                            prop.carAddons.filter((itm,index)=>itm.id == data.id).reduce((unique, item) => (unique.includes(item.additionName) ? unique : [...unique, item.additionName]),
+  [],).map((ap)=>{
                                 return(
-                                        <c.CarProductAddon>{ap.additionName}</c.CarProductAddon>
+                                    <c.CarProductAddon>{ap} { prop.carAddons.filter(fi=>fi.id == data.id && fi.additionName === ap).length >= 2 ? `x${prop.carAddons.filter(fi=> fi.id == data.id && fi.additionName === ap).length}` : null}</c.CarProductAddon>
                                 )
                             })
                             }
@@ -147,11 +148,11 @@ Toast.fire({
   }
 })
                             prop.setTotalPrice(old=>old-parseFloat(data.totalPrice))
-                                        prop.setCar(old=>old.filter((fi, i)=> i != index))
-                                        prop.setCarAddons(old=>old.filter((fi, i)=> i != index))
+                            prop.setCar(old=>old.filter((fi, i)=> i != index))
+                            prop.setCarAddons(old=>old.filter((fi, i)=> fi.id != data.id))
     if(prop.car.length == 1){
-        localStorage.setItem("@fasfu: car",[])
-        localStorage.setItem("@fasfu: addons",[])
+        localStorage.setItem("@fasfu: car",JSON.stringify([]))
+        localStorage.setItem("@fasfu: addons",JSON.stringify([]))
     }
   }
 })

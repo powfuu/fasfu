@@ -26,7 +26,30 @@ import Product from "../producto/producto"
 import 'react-loading-skeleton/dist/skeleton.css'
 import {ShoppingCartOutline} from "@styled-icons/evaicons-outline/ShoppingCartOutline"
 import {Twitter, Facebook, Instagram} from "@styled-icons/boxicons-logos"
+import banner1 from "../../assets/banner7.jpg"
+import banner2 from "../../assets/banner4.jpg"
+import banner3 from "../../assets/banner8.jpeg"
 export default function Inicio(prop: any) {
+    let novedades=[
+        {
+            id:0,
+            title:"Llegamos a MADRID!",
+            desc:"Visitanos en C. de San Marcos, 24, 28004.",
+            banner:banner1
+        },
+        {
+            id:1,
+            title:"Nos seguimos expandiendo",
+            desc:"Nuestro sabor cruza fronteras!",
+            banner:banner2
+        },
+        {
+            id:2,
+            title:"Únete a nuestro #FASFULOVERS",
+            desc:"Comunidad 100% amante de las hamburguesas.",
+            banner:banner3
+        }
+    ]
   let date = new Date();
     let time = `${date.getHours({
         hour12: false
@@ -270,6 +293,22 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       </c.RightImageView>
       </c.InitialViewContentPresentation>
       </c.InitialViewContent>
+
+      <c.NovedadesView> 
+          {
+              novedades.map((data)=>{
+                  return(
+                      <c.NovedadesContent>
+                        <c.NovedadesMainImg op={"center"} src={data.banner}/>
+                          <c.NovedadView>
+                              <c.NovedadTitle>{data.title}</c.NovedadTitle>
+                              <c.NovedadDesc>{data.desc}</c.NovedadDesc>
+                          </c.NovedadView>
+                      </c.NovedadesContent>
+                  )
+          })
+          }
+    </c.NovedadesView>
 
 
       <c.CategoriesContent>

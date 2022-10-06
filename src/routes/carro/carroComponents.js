@@ -12,6 +12,11 @@ export const CarContent = styled.div`
     z-index:12;
     transition:.6s all ease-in-out;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    overflow-x:hidden;
+    overflow-y:hidden;
+::-webkit-scrollbar-thumb {
+  background:transparent;
+}
     ${mxw(1000)}{
         overflow-y: scroll;
     }
@@ -51,7 +56,7 @@ export const CarLeftView = styled.div`
     background:white;
     height:100vh;
     padding-top:110px;
-    margin-top:20px;
+    margin-top:0px;
     overflow:scroll;
 ::-webkit-scrollbar-thumb {
   background:transparent;
@@ -127,6 +132,16 @@ export const CarProductName = styled.h1`
         font-size:19px;
         margin-bottom:-5px;
     }
+    ${mxw(460)}{
+        margin-right:10px;
+        width:230px;
+    }
+    ${mxw(430)}{
+        width:200px;
+    }
+    ${mxw(400)}{
+        width:170px;
+    }
 `
 export const CarProductPrice = styled.h2`
     right:0;
@@ -138,6 +153,9 @@ export const CarProductPrice = styled.h2`
     font-size:18px;
     ${mxw(1500)}{
         margin-right:0px;
+    }
+    ${mxw(800)}{
+        display:none;
     }
 `
 export const CarProductQuantity = styled.h1`
@@ -155,6 +173,17 @@ export const CarProductRemove = styled.img`
     ${mxw(1500)}{
         margin-right:0px;
     }
+    ${mxw(500)}{
+        height:25px;
+        width:36px;
+        margin-top:1px;
+    }
+    ${mxw(375)}{
+        margin-right:-15px;
+    }
+    ${mxw(360)}{
+        margin-right:-10px;
+    }
 `
 export const CarProductAddonsView = styled.div`
     display:flex;
@@ -168,8 +197,18 @@ export const CarProductAddonsView = styled.div`
     ${mxw(1275)}{
         gap:8px;
     }
-    ${mxw(564)}{
-        margin-right:90px;
+    ${mxw(1000)}{
+        margin-right:50px;
+    }
+    ${mxw(800)}{
+        margin-right:0px;
+        margin-top:27px;
+    }
+    ${mxw(500)}{
+        margin-right:-38px;
+    }
+    ${mxw(470)}{
+        margin-right: -20px;
     }
 `
 export const CarProductAddon = styled.h1`
@@ -187,6 +226,10 @@ export const CarProductAddon = styled.h1`
     ${mxw(564)}{
         font-size:11px;
         padding:7px;
+    }
+    ${mxw(500)}{
+        font-size:9.45px;
+        padding:5.25px;
     }
 `
 export const CarProductContent = styled.div`
@@ -359,12 +402,22 @@ export const RealizarPedido = styled.button`
         -ms-transform:translate(-50%,-50%);
         margin-left:0px;
     }
+    @media screen and (max-height:800px){
+        margin-bottom:28px;
+    }
+    @media screen and (max-height:799px){
+        margin-bottom:40px;
+    }
+    }
 `
 export const CheckoutView = styled.div`
     overflow:scroll;
     height:62%;
     margin-bottom:30px;
     padding-bottom:20px;
+::-webkit-scrollbar-thumb {
+  background:transparent;
+}
     ${mxw(1000)}{
         overflow:hidden;
         height:max-content;
@@ -401,4 +454,13 @@ export const CheckoutTitle = styled.h1`
     margin-bottom:13px;
     font-weight:300;
     font-size:23px;
+    ${mxw(500)}{
+        margin-top:-45px;
+    }
+    @media screen and (max-height:800px){
+        display:none;
+    }
+    @media screen and (max-height:799px){
+        display:block;
+    }
 `
