@@ -73,6 +73,24 @@ prop.setCurrentProduct([])
     useEffect(()=>{
         setFinalProductPrice(prop.currentProduct.price)
         prop.setAdditionalProducts([])
+        if(prop.isInProduct == true){
+       prop.setAdditionalProducts(old=>[...old, {
+                                    additionName:"Si deseo servilletas",
+                                    id:prop.car.length+1
+                                }])
+        if(prop.currentProduct.type == "COMBO"){
+                 prop.setAdditionalProducts(old=>[...old, {
+                     additionName:"Coca-cola sabor original 400ml",
+                        id:prop.car.length+1
+                  }])
+            if(prop.country == "España"){
+                 prop.setAdditionalProducts(old=>[...old, {
+                        additionName:"Patatas Fritas Medianas",
+                        id:prop.car.length+1
+                  }])
+            }
+        }
+        }
     },[prop.isInProduct])
     useEffect(()=>{
         if(prop.car.length >= 1){
@@ -117,7 +135,7 @@ prop.setCurrentProduct([])
                                 prop.currentProduct.pic ? 
                                     <c.ProductImg display={!loaded ? "none" : "block"} onLoad={(p)=>{
                                             setLoaded(true)
-                                    }} src={require(`../../assets/products/${prop.country == "España" ? "spain" : "perucolmex"}/${prop.currentProduct.pic}`)}/> : null
+                                    }} alt="alt" src={require(`../../assets/products/${prop.country == "España" ? "spain" : "perucolmex"}/${prop.currentProduct.pic}`)}/> : null
                             }
                             <c.ProductDesc>
                                  {prop.currentProduct.desc}
@@ -139,7 +157,7 @@ prop.setCurrentProduct([])
                                 </c.SectionPriceTotalView>
                                     <c.Motogato style={{marginTop:
                                         prop.currentProduct.name == "COMBO CHE, MER, TOC" ? "-80px" : null
-                                    }} src={motogato}/>
+                                    }} alt="alt" src={motogato}/>
                                 </c.SectionPriceCatView>
                         </c.LeftRelative>
 
@@ -154,7 +172,7 @@ prop.setCurrentProduct([])
                                                 <CustomizationCol productId={prop.car.length+1} setAdditionalProducts={prop.setAdditionalProducts} additionalProducts={prop.additionalProducts} name={prop.currentProduct.name} isDefaultValues={isDefaultValues} setFinalProductPrice={setFinalProductPrice} productSign={prop.productSign} category={prop.currentProduct.type}/> : null
                             }
                             <c.GoUp onClick={()=>goUp()}/>
-                            <c.LogoBottom src={logo}/>
+                            <c.LogoBottom alt="alt" src={logo}/>
                         </c.ProductRight>
                     </c.ProductDivition>
 

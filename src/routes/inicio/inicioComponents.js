@@ -30,11 +30,11 @@ export const InitialView=styled.div`
 `
 export const InitialViewSvg=styled.svg`
   height:870px;
-  ${mxw(1150)}{
+  ${mxw(1180)}{
     height:1050px;
   }
   ${mxw(668)}{
-    height:1150px;
+    height:1180px;
   }
 `
 export const InitialViewContent = styled.div`
@@ -44,7 +44,7 @@ export const InitialViewContent = styled.div`
   flex-direction:column;
   width:100%;
   margin-top:-870px;
-  ${mxw(1150)}{
+  ${mxw(1180)}{
   margin-top:-1040px;
   }
   ${mxw(668)}{
@@ -57,7 +57,7 @@ export const InitialViewContent = styled.div`
 export const InitialViewContentPresentation=styled.div`
   display:flex;
   width:90%;
-  ${mxw(1150)}{
+  ${mxw(1180)}{
     flex-direction:column;
     align-items:center;
     padding-left:50px;
@@ -159,7 +159,10 @@ export const InitialViewContentPresentationDesc=styled.p`
   text-align:center;
   margin-top:-112px;
   font-size:15px;
-  ${mxw(1150)}{
+    ${mxw(1560)}{
+        margin-top:-90px;
+    }
+  ${mxw(1180)}{
     display:none;
   }
 `
@@ -168,7 +171,16 @@ export const InitialViewContentPresentationImg=styled.img`
   width:100%;
   object-fit:cover;
   margin-top:-105px;
-  ${mxw(1150)}{
+    ${mxw(1560)}{
+        height:500px;
+    margin-top:-55px;
+    }
+    ${mxw(1460)}{
+        height:450px;
+    margin-top:-25px;
+    }
+  ${mxw(1180)}{
+  height:590px;
     width:500px; 
     margin-left:0px;
     margin-top:-135px;
@@ -189,7 +201,7 @@ export const InitialViewContentTitle=styled.h1`
   text-align:left;
   font-size:38px;
   margin-top:80px;
-  ${mxw(1150)}{
+  ${mxw(1180)}{
     text-align:center;
     margin-top:50px;
   }
@@ -213,7 +225,7 @@ export const InitialViewContentDesc=styled.p`
   text-align:left;
   font-size:18.5px;
   color:rgb(220,220,220);
-  ${mxw(1150)}{
+  ${mxw(1180)}{
     text-align:center;
   }
   ${mxw(980)}{
@@ -252,7 +264,7 @@ export const InitialViewContentButton=styled.span`
   ${mxw(1223)}{
     margin:20px auto;
   }
-  ${mxw(1150)}{
+  ${mxw(1180)}{
     margin:30px auto;
   }
   ${mxw(440)}{
@@ -276,7 +288,7 @@ export const InitialViewContentTitleLeft=styled.div`
   ${mxw(1350)}{
     margin-top:-40px;
   }
-  ${mxw(1150)}{
+  ${mxw(1180)}{
     margin:0 auto;
     margin-left:70px;
     margin-right:70px;
@@ -301,7 +313,7 @@ export const LuisImg = styled.img`
   ${mxw(1350)}{
     margin-left:120px;
   }
-  ${mxw(1150)}{
+  ${mxw(1180)}{
     height:550px;
     margin-right:80px;
     margin-left:0px;
@@ -1004,14 +1016,8 @@ export const NovedadesContent = styled.div`
     position:relative;
     height:245px;
     width:29%;
-    transition:.45s;
     &:hover{
-        height:350px;
-    }
-    ${mxw(1535)}{
-        &:hover{
-            height:300px;
-    }
+        height:300px;
     }
     ${mxw(1535)}{
         width:31%;
@@ -1026,21 +1032,21 @@ export const NovedadesContent = styled.div`
         width:65%;
         height:250px;
         &:hover{
-            height:380px;
+            height:300px;
     }
     }
     ${mxw(925)}{
         width:75%;
         height:250px;
         &:hover{
-            height:330px;
+            height:310px;
     }
     }
     ${mxw(835)}{
         width:85%;
         height:250px;
         &:hover{
-            height:340px;
+            height:320px;
     }
     }
     ${mxw(650)}{

@@ -30,6 +30,7 @@ import banner1 from "../../assets/banner7.jpg"
 import banner2 from "../../assets/banner4.jpg"
 import banner3 from "../../assets/banner8.jpeg"
 export default function Inicio(prop: any) {
+    const [nt0, setNt0]=useState(0)
     let novedades=[
         {
             id:0,
@@ -200,6 +201,9 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
     }
         }
   useEffect(() => {
+      setTimeout(() => {
+          setNt0(".45s")
+      }, 500);
         setRestaurantStatusVisible(true)
     setDataCountry(prop.countrySelectionState)       
   }, [prop.countrySelectionState]);
@@ -233,10 +237,10 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       ></path>
       </c.InitialViewSvg>
 
-      <c.LuisImg data-aos="zoom-in-up" src={luis} />
+      <c.LuisImg data-aos="zoom-in-up" alt="alt" src={luis} />
       <c.InitialViewContent>
       <c.InitialViewContentTop>
-      <c.CountrySelection data-aos="zoom-in" data-aos-delay="100" onClick={()=> setCountriesViewStatus((prop)=>!prop)} src={countrySrc}/>
+      <c.CountrySelection data-aos="zoom-in" data-aos-delay="100" onClick={()=> setCountriesViewStatus((prop)=>!prop)} alt="alt" src={countrySrc}/>
       <c.CountrySelectionView height={
         countriesViewStatus ? 335 : 0
       }>
@@ -257,14 +261,14 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
               localStorage.setItem('@fasfu: countrySelected', data.country)
               }, 600);
             }}>
-            <c.CountryListSelection src={data.countryflag}/>
+            <c.CountryListSelection alt="alt" src={data.countryflag}/>
             </c.CountrySelectionListContent>
           )
         })
       }
       </c.CountrySelectionView>
-      <c.InitialViewLogo src={logo} />
-      <c.InitialViewCenterLogo src={logo2} />
+      <c.InitialViewLogo alt="alt" src={logo} />
+      <c.InitialViewCenterLogo alt="alt" src={logo2} />
       <Carro totalPrice={totalPrice} setTotalPrice={setTotalPrice} productSign={priceSign} countrySelectionState={prop.countrySelectionState} isInCar={prop.isInCar} car={car} setCar={setCar} setCarAddons={setCarAddons} carAddons={carAddons} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setIsInCar={prop.setIsInCar}/>
       <Product totalPrice={totalPrice} setTotalPrice={setTotalPrice} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setCarAddons={setCarAddons} carAddons={carAddons} car={car} setCar={setCar} customization={customization} country={prop.countrySelectionState} productSign={priceSign} isInProduct={prop.isInProduct} currentProduct={prop.currentProduct} setCurrentProduct={prop.setCurrentProduct} setIsInProduct={prop.setIsInProduct}/>
       </c.InitialViewContentTop>
@@ -286,7 +290,7 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       </c.InitialViewContentButton>
       </c.InitialViewContentTitleLeft>
       <c.RightImageView>
-      <c.InitialViewContentPresentationImg data-aos='zoom-in-up' data-aos-delay="300" src={initialburger} />
+      <c.InitialViewContentPresentationImg data-aos='zoom-in-up' data-aos-delay="300" alt="alt" src={initialburger} />
       <c.InitialViewContentPresentationDesc data-aos='fade-up' data-aos-delay="500">
       Experimenta una increíble experiencia y sabores 100% únicos
       </c.InitialViewContentPresentationDesc>
@@ -298,8 +302,13 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
           {
               novedades.map((data)=>{
                   return(
-                      <c.NovedadesContent>
-                        <c.NovedadesMainImg op={"center"} src={data.banner}/>
+                      <c.NovedadesContent style={{transition:nt0}} data-aos="zoom-in-up" data-aos-delay={
+                          data.id == 0 ? "20" : 
+                              data.id == 1 ? "200" :
+                              data.id == 2 ? "500" :
+                              null
+                          }>
+                        <c.NovedadesMainImg op={"center"} alt="alt" src={data.banner}/>
                           <c.NovedadView>
                               <c.NovedadTitle>{data.title}</c.NovedadTitle>
                               <c.NovedadDesc>{data.desc}</c.NovedadDesc>
@@ -314,7 +323,7 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       <c.CategoriesContent>
           <c.CategoriesView ref={burRef} style={{marginTop:"180px"}}>
       <c.TopTitleCategory data-aos="fade-up">
-      <c.TopTitleImg src={burger} />
+      <c.TopTitleImg alt="alt" src={burger} />
       <c.CategoryTitle>
       Fasfú Menu /{" "}
       <span
@@ -365,7 +374,7 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
+                alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
             <c.ProductTitle>{data.name}</c.ProductTitle>
             <c.ProductDesc>
@@ -418,7 +427,7 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
+                alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive id="cp">
                             {priceSign.format(parseFloat(data.price))}
@@ -436,7 +445,7 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       <c.CategoriesView ref={comRef}>
       <c.TopTitleCategory>
       <c.TopTitleImg
-      src={combo}
+      alt="alt" src={combo}
       style={{
         height: "54px",
           width: "54px",
@@ -497,7 +506,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
+                alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                 <c.ProductTitle style={{fontSize:"14px",marginBottom:"-1px"}}>{data.name}</c.ProductTitle>
             <c.ProductDesc>
@@ -550,7 +559,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
+                alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive id="cp">
                             {priceSign.format(parseFloat(data.price))}
@@ -567,7 +576,7 @@ opacity: !loaded1 ? "0" : "1",
           <c.CategoriesView style={{marginTop:"-60px"}}>
       <c.TopTitleCategory>
       <c.TopTitleImg
-      src={potato}
+      alt="alt" src={potato}
       style={{
         height: "56px",
           width: "56px",
@@ -622,7 +631,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
+                alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
             <c.ProductTitle>{data.name}</c.ProductTitle>
             <c.ProductQuickAdd id="acd" style={{ marginTop: "5px" }}>
@@ -670,7 +679,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
+                alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive id="cp">
                             {priceSign.format(parseFloat(data.price))}
@@ -686,7 +695,7 @@ opacity: !loaded1 ? "0" : "1",
       <c.CategoriesView ref={psRef}>
       <c.TopTitleCategory>
       <c.TopTitleImg
-      src={cake}
+      alt="alt" src={cake}
       style={{
         height: "52px",
           width: "64px",
@@ -773,7 +782,7 @@ opacity: !loaded1 ? "0" : "1",
                     }
                     }}
  
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
+                alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                 <c.ProductTitle style={{fontSize:data.name=="Malteada de Chocolate y Aguacate" ? "15px": null}}>{data.name}</c.ProductTitle>
             <c.ProductQuickAdd id="acd" style={{ marginTop: "5px" }}>
@@ -821,7 +830,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
+                alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive id="cp">
                             {priceSign.format(parseFloat(data.price))}
@@ -838,7 +847,7 @@ opacity: !loaded1 ? "0" : "1",
       <c.CategoriesView ref={bebRef}>
       <c.TopTitleCategory>
       <c.TopTitleImg
-      src={beverage}
+      alt="alt" src={beverage}
       style={{
         height: "50px",
           width: "30px",
@@ -929,7 +938,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
+                alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
             <c.ProductTitle>{data.name}</c.ProductTitle>
             </c.CategoryAbs>
@@ -978,7 +987,7 @@ opacity: !loaded1 ? "0" : "1",
                         }, 500);
                     }
                     }}
-                src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
+                alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}
             />
                         <c.ProductPriceResponsive id="cp">
                             {priceSign.format(parseFloat(data.price))}
@@ -999,17 +1008,17 @@ opacity: !loaded1 ? "0" : "1",
           <c.FooterWave2 xmlns="http://www.w3.org/2000/svg" viewBox="300 0 1440 320"><path fill="#0306a6" fill-opacity="1" d="M0,96L60,106.7C120,117,240,139,360,144C480,149,600,139,720,117.3C840,96,960,64,1080,53.3C1200,43,1320,53,1380,58.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
           </c.FooterWave2>
           <c.FooterContent>
-              <c.Logo3 src={logo3}/>
+              <c.Logo3 alt="alt" src={logo3}/>
               <c.FooterCenter>
                   <c.Frase>
 <i class='bx bxs-quote-alt-left' ></i>
-<img class="bx bxs-quote-alt-right" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAR9JREFUSEvdlW9xwkAUxHcV0CooKCB1gIQ6oA5AAjhoFbRVUCS0CkACOCAKlnnMJfOS5s/LDPlQ7vPO/u52390RIy+O7I87B0h6AbAEMCX53BVnm7YxIkkZgG8zdqYzksc6pE/7ByDpFcCHM/oFsCH502Deq60A0m72zmhLctMUTVRbBxwAzJPhO8l1W+6SQtoSkEqy3Iv1SPLcsnsrP6T1gM80Md7TSrXsLaqyYElhrQeYwVNLJHYSm6LriSSFtR6gnmfji6RNjQHC2iGAQ3HZAoBSOwQAkld9AFBqox2Yb07yIdBBResBbwBWHT34DsJaD7Dd2XRMGiA5gKwYVUlhbf0m2+Nmu1sk0AnALr1FlUsnKaS98w/nFv/1/4/oAgG/oBmbRFOdAAAAAElFTkSuQmCC"/>
+<img class="bx bxs-quote-alt-right" alt="alt" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAR9JREFUSEvdlW9xwkAUxHcV0CooKCB1gIQ6oA5AAjhoFbRVUCS0CkACOCAKlnnMJfOS5s/LDPlQ7vPO/u52390RIy+O7I87B0h6AbAEMCX53BVnm7YxIkkZgG8zdqYzksc6pE/7ByDpFcCHM/oFsCH502Deq60A0m72zmhLctMUTVRbBxwAzJPhO8l1W+6SQtoSkEqy3Iv1SPLcsnsrP6T1gM80Md7TSrXsLaqyYElhrQeYwVNLJHYSm6LriSSFtR6gnmfji6RNjQHC2iGAQ3HZAoBSOwQAkld9AFBqox2Yb07yIdBBResBbwBWHT34DsJaD7Dd2XRMGiA5gKwYVUlhbf0m2+Nmu1sk0AnALr1FlUsnKaS98w/nFv/1/4/oAgG/oBmbRFOdAAAAAElFTkSuQmCC"/>
                       Siete vidas no son suficientes para dejar de amar las hamburguesas
-<img class="bx bxs-quote-alt-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASZJREFUSEvtldtNw0AQRc+tADqAVAB0QAlQAaEDUkFogQ6gg3QCqYBQAelg0Fhra7LYu+sP/2Uky5J9PWdeOxYLmxb2zxlQrfBJiczsEtgCD8B1+noHbCQdordW7QAwM3f4CTgktyOwkuR35mgj4B14KuT8JuklAZq1EWCVgh4krRKgWTsHgKROb2Y1wKCNgC/gppRFADRr5/QgZlDrwWgGPj0+ihcTWfxI6kY3jWhJu5d069r8HLiDV+AeuMpAH5LW/bM0qlXt5C5KUf4GyKMkP3T/rKQtAWKdh5QnAJPaUYCZeeq+Mnq7k+STMxZ9UZv3wGvvjv3e27Mkj/DEzKxJm++i7+BlD6zHIk8NbtLmGXgZ/NpNNTRMUZP2/Ecrra7u3eIl+gMS1pgZ+J6NOAAAAABJRU5ErkJggg=="/>
+<img class="bx bxs-quote-alt-left" alt="alt" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASZJREFUSEvtldtNw0AQRc+tADqAVAB0QAlQAaEDUkFogQ6gg3QCqYBQAelg0Fhra7LYu+sP/2Uky5J9PWdeOxYLmxb2zxlQrfBJiczsEtgCD8B1+noHbCQdordW7QAwM3f4CTgktyOwkuR35mgj4B14KuT8JuklAZq1EWCVgh4krRKgWTsHgKROb2Y1wKCNgC/gppRFADRr5/QgZlDrwWgGPj0+ihcTWfxI6kY3jWhJu5d069r8HLiDV+AeuMpAH5LW/bM0qlXt5C5KUf4GyKMkP3T/rKQtAWKdh5QnAJPaUYCZeeq+Mnq7k+STMxZ9UZv3wGvvjv3e27Mkj/DEzKxJm++i7+BlD6zHIk8NbtLmGXgZ/NpNNTRMUZP2/Ecrra7u3eIl+gMS1pgZ+J6NOAAAAABJRU5ErkJggg=="/>
 <i class='bx bxs-quote-alt-right' ></i>
                   </c.Frase>
               </c.FooterCenter>
-              <c.FooterContentAri src={ari}/>
+              <c.FooterContentAri alt="alt" src={ari}/>
 
                   <c.SocialNetworks>
                       <a href="https://twitter.com/fasfuburgers?lang=es" target="_blank">

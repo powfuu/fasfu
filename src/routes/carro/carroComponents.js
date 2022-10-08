@@ -97,6 +97,7 @@ export const CarProduct = styled.div`
 `
 export const CarLeftContent = styled.div`
     overflow:scroll;
+    position:relative;
     overflow-x:hidden;
 `
 export const CarProductImg = styled.img`
@@ -463,4 +464,13 @@ export const CheckoutTitle = styled.h1`
     @media screen and (max-height:799px){
         display:block;
     }
+`
+export const CarLeftCat = styled.img`
+    position:relative;
+    transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    left:50%;
+    height:190px;
+    opacity:.45;
+    margin-top:60px;
 `

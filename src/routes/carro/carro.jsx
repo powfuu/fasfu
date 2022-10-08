@@ -84,7 +84,7 @@ return(
                             prop.car.length == index+1 ? "1px solid rgb(215,215,215)" : null
                             }>
                             <c.CarProductContent>
-                                <c.CarProductImg src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}/>
+                                <c.CarProductImg alt="alt" src={require(`../../assets/products/${prop.countrySelectionState == "España" ? "spain" : "perucolmex"}/${data.pic}`)}/>
                                 <c.CarProductRightContent>
                                     <c.CarProductName>{data.productName} {data.productQuantity >= 2 ? `x${data.productQuantity}` : null}</c.CarProductName>
 
@@ -156,7 +156,7 @@ Toast.fire({
     }
   }
 })
-                                    }} src={require("../../assets/remove-shopping-cart.png")}/>
+                                    }} alt="alt" src={require("../../assets/remove-shopping-cart.png")}/>
                                 </c.CarProductRightContent>
                             </c.CarProductContent>
                         </c.CarProduct>
@@ -165,10 +165,15 @@ Toast.fire({
             }
                         </>: 
                             <c.EmptyView>
-                                <c.EmptyImg src={Empty}/>
+                                <c.EmptyImg alt="alt" src={Empty}/>
                                 <c.EmptyText>No se ha añadido ningún producto al carro.</c.EmptyText>
                         </c.EmptyView>
                 }
+                    {
+                        prop.car.length <= 2  && prop.car.length >= 1 ? 
+                    <c.CarLeftCat src={require("../../assets/logos/logo0.webp")}/>
+                    : null
+                    }
                     </c.CarLeftContent>
             </c.CarLeftView>
             <c.CarRightView>

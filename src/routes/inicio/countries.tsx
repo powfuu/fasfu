@@ -25,14 +25,14 @@ export default function Countries(prop:any){
           countries.map((co:any)=>{
             return(
               <c.Country onClick={()=>chooseCountry(co.title)}>
-                <c.CountriesCountry src={co.flag}/>
+                <c.CountriesCountry alt="alt" src={co.flag}/>
                 <c.CountriesCountryVal id="cpc">{co.title}</c.CountriesCountryVal>
               </c.Country>
             )
          })
         }
       </c.CountriesContent> 
-      <c.CountriesLogo data-aos="zoom-in-left" src={logo}/>
+      <c.CountriesLogo data-aos="zoom-in-left" alt="alt" src={logo}/>
     </c.CountriesView>
 <c.Wave xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 256"><path fill="#0307A6" fill-opacity="1" d="M0,64L48,53.3C96,43,192,21,288,32C384,43,480,85,576,122.7C672,160,768,192,864,176C960,160,1056,96,1152,69.3C1248,43,1344,53,1392,58.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></c.Wave>
     </div>

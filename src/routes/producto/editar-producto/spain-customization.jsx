@@ -668,10 +668,6 @@ const EditServilletas = (prop) =>{
     ])
     useEffect(()=>{
         setBeb3(0)
-       prop.setAdditionalProducts(old=>[...old, {
-                                    additionName:"Si deseo servilletas",
-                                    id:prop.productId
-                                }])
     }, [prop.isDefaultValues])
     return(
         <c.SectionView>
