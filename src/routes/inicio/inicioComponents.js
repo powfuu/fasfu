@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Skeleton from 'react-loading-skeleton'
 import {ArrowDownwardOutline} from "@styled-icons/evaicons-outline/ArrowDownwardOutline"
+import { SpinnerCircular } from 'spinners-react';
 
 const mxw = (width) =>{
   return `@media (max-width: ${width}px)`
@@ -48,7 +49,7 @@ export const InitialViewContent = styled.div`
   margin-top:-1040px;
   }
   ${mxw(668)}{
-    margin-top:-1145px;
+    margin-top:-1165px;
   }
   ${mxw(500)}{
         width:100%;
@@ -1121,4 +1122,22 @@ export const NovedadDesc = styled.h3`
         font-size:12.5px;
         padding-top:9px;
     }
+`
+export const LoadingScreen = styled.div`
+    background:white;
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:fixed;
+    z-index:20;
+    transition:.5s;
+`
+export const Spinner = styled(SpinnerCircular)`
+`
+export const LogoSpinner = styled.img`
+    position:absolute;
+    height:100px;
+    width:90px;
 `

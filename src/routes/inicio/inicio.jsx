@@ -82,6 +82,8 @@ export default function Inicio(prop: any) {
     const [car, setCar] = useState(localStorage.getItem("@fasfu: car") ? JSON.parse(localStorage.getItem("@fasfu: car")) : [])
   const [additionalProducts, setAdditionalProducts]=useState([])
     const [carAddons,setCarAddons]=useState(localStorage.getItem("@fasfu: addons") ? JSON.parse(localStorage.getItem("@fasfu: addons")) : [])
+    const [loadingScreenStatus, setLoadingScreenStatus]=useState(true)
+    const [loadingScreenStatus2, setLoadingScreenStatus2]=useState(true)
 const formatterEs = new Intl.NumberFormat('es-ES', {
        style: 'currency',
        currency: 'EUR',
@@ -208,6 +210,12 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
     setDataCountry(prop.countrySelectionState)       
   }, [prop.countrySelectionState]);
     useEffect(()=>{
+        setTimeout(() => {
+            setLoadingScreenStatus(false)
+        }, 1500);
+        setTimeout(() => {
+            setLoadingScreenStatus2(false)
+        }, 2000);
         if(localStorage.getItem("@fasfu: car")){
         JSON.parse(localStorage.getItem("@fasfu: car")).map(data=>{
         setTotalPrice(old=>old+parseFloat(data.totalPrice))
@@ -216,8 +224,13 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
     },[])
   return (
       <c.HomeView> 
-      {prop.countrySelectionState ? 
+          {
+      prop.countrySelectionState ? 
       <c.InitialView>
+          <c.LoadingScreen style={{opacity: loadingScreenStatus ? 1 : 0, display: loadingScreenStatus2 ? "flex" : "none"}}>
+                  <c.Spinner size={200} color={"#0307a6"} thickness={45} secondaryColor={"transparent"}/>
+                  <c.LogoSpinner src={require(`../../assets/logos/logo1.webp`)}/>
+              </c.LoadingScreen>
           <c.IsRestaurantOpenResponsive statusVisible={ !restaurantStatusVisible ? -200 : 0 } backgroundStatus={restaurantStatus == "#00e57e" ? "#E9FCF2" : "#ffe2e2"} colorStatus={restaurantStatus}>
               <p>{restaurantStatusText}</p>
               <h1 class="bx bx-x" onClick={()=>setRestaurantStatusVisible(false)}>x</h1>
@@ -269,8 +282,13 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
       </c.CountrySelectionView>
       <c.InitialViewLogo alt="alt" src={logo} />
       <c.InitialViewCenterLogo alt="alt" src={logo2} />
+          {
+              !loadingScreenStatus ? <>
+
       <Carro totalPrice={totalPrice} setTotalPrice={setTotalPrice} productSign={priceSign} countrySelectionState={prop.countrySelectionState} isInCar={prop.isInCar} car={car} setCar={setCar} setCarAddons={setCarAddons} carAddons={carAddons} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setIsInCar={prop.setIsInCar}/>
       <Product totalPrice={totalPrice} setTotalPrice={setTotalPrice} additionalProducts={additionalProducts} setAdditionalProducts={setAdditionalProducts} setCarAddons={setCarAddons} carAddons={carAddons} car={car} setCar={setCar} customization={customization} country={prop.countrySelectionState} productSign={priceSign} isInProduct={prop.isInProduct} currentProduct={prop.currentProduct} setCurrentProduct={prop.setCurrentProduct} setIsInProduct={prop.setIsInProduct}/>
+    </> : null
+          }
       </c.InitialViewContentTop>
       <c.InitialViewContentPresentation>
       <c.InitialViewContentTitleLeft>
@@ -319,7 +337,8 @@ const formatterMex = new Intl.NumberFormat('es-MX', {
           }
     </c.NovedadesView>
 
-
+    {
+        !loadingScreenStatus ?
       <c.CategoriesContent>
           <c.CategoriesView ref={burRef} style={{marginTop:"180px"}}>
       <c.TopTitleCategory data-aos="fade-up">
@@ -1043,6 +1062,7 @@ opacity: !loaded1 ? "0" : "1",
           </c.Direction>
       </c.FooterView>
       </c.CategoriesContent>
+                      : null }
       </c.InitialView>
      : 
       <Countries country={prop.countrySelectionState} setCountrySelectionState={prop.setCountrySelectionState} />
